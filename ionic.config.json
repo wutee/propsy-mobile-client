@@ -1,0 +1,7 @@
+{
+  "name": "mobile-client_noAWT",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
