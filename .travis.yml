@@ -1,0 +1,23 @@
+language: node_js
+
+node_js:
+ — “8.9.4”
+
+branches:
+ only:
+ — master
+
+before_script:
+ — npm install -g ionic cordova
+
+script:
+ — ionic cordova build browser — prod
+
+deploy:
+ provider: pages
+ skip-cleanup: true
+ github-token: d6d353ade89bc2c769c3766e70c7766a64188f34
+ keep-history: true
+ on:
+   branch: master
+ local_dir: www
