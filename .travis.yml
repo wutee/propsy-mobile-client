@@ -11,7 +11,7 @@ script: ionic cordova build browser --prod
 deploy:
  provider: pages
  skip-cleanup: true
- github-token: d6d353ade89bc2c769c3766e70c7766a64188f34
+ github-token: 9fa0c37b45b5ab9b677001a00c84bf0d0975638d
  keep-history: true
  on:
    branch: master
