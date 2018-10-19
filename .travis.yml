@@ -7,9 +7,9 @@ node_js: stable
 before_script: npm install -g ionic cordova
 
 script:
-  - npm run test
+# - npm run test
   - npm run build:prod
-#  - ionic cordova build browser --prod
+# - ionic cordova build browser --prod
 
 deploy:
  provider: pages
