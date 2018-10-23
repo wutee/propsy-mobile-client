@@ -1,6 +1,7 @@
 ## propsy-mobile-client
 
 ![build](https://travis-ci.org/wutee/propsy-mobile-client.svg?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/wutee/propsy-mobile-client/badge.svg?branch=master)](https://coveralls.io/github/wutee/propsy-mobile-client?branch=master)
 
 [Live Demo](https://wutee.github.io/propsy-mobile-client/)
 
