@@ -7,7 +7,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:prod": "ng build --prod --output-path www --base-href propsy-mobile-client",
+    "build:prod": "ng build --prod --output-path www",
     "test": "ng test --watch=false --code-coverage",
     "test:watch": "ng test",
     "lint": "ng lint",
