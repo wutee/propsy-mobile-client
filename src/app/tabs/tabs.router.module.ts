@@ -5,7 +5,7 @@ import { TabsPage } from './tabs.page';
 import { HomePage } from '../home/home.page';
 import { AboutPage } from '../about/about.page';
 import { ContactPage } from '../contact/contact.page';
-import { OrderFormPage } from '../order-form/order-form.page';
+import { OrderFormPage } from '../order-form/page/order-form.page';
 
 const routes: Routes = [
   {
