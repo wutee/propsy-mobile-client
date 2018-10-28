@@ -6,23 +6,23 @@
 
 <ion-content padding>
   Lista dostępnych ofert:
-  <ion-card (tap)="tapEvent($event)">
+  <ion-card (click)="addProductToBucket(1)">
     <ion-item>
-      Test Product #1
+      Klopsiki
     </ion-item>
   </ion-card>
-  <ion-card (tap)="tapEvent($event)">
+  <ion-card (click)="addProductToBucket(2)">
     <ion-item>
-      Test Product #2
+      Flaki
     </ion-item>
   </ion-card>
-  <ion-card (tap)="tapEvent($event)">
+  <ion-card (click)="addProductToBucket(3)">
     <ion-item>
-      Test Product #3
+      Woda mineralna
     </ion-item>
   </ion-card>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button>
+    <ion-fab-button color="{{this.BucketService.products.length ? 'secondary' : 'light'}}">
       <ion-icon md="md-basket"></ion-icon>
     </ion-fab-button>
   </ion-fab>
