@@ -33,25 +33,26 @@
 
           <!--Third Level-->
           <div *ngIf="menu.isOpen && food.isOpen">
-            <ion-list justify-content-center>
-              <ion-item *ngIf="food.f_foodDescription != null" text-wrap>
+            <ion-list>
+              <ion-item *ngIf="food.f_foodDescription != null" text-wrap text-center>
                 <ion-label>
                   {{food.f_foodDescription}}
                 </ion-label>
               </ion-item>
               <ion-item *ngIf="food.f_calories >= 0">
-                Calories: {{food.f_calories}}
+                <ion-label>Calories:</ion-label>
+                <p slot="end">{{food.f_calories}} kcal</p>
               </ion-item>
               <ion-item *ngIf="food.f_isSpicy != null">
-                <ion-label>Spicy</ion-label>
+                <ion-label>Spicy:</ion-label>
                 <ion-checkbox slot="end" [disabled]="true" [(ngModel)]="food.f_isSpicy"></ion-checkbox>
               </ion-item>
               <ion-item *ngIf="food.f_isVege != null">
-                <ion-label>Vege</ion-label>
+                <ion-label>Vege:</ion-label>
                 <ion-checkbox slot="end" [disabled]="true" [(ngModel)]="food.f_isVege"></ion-checkbox>
               </ion-item>
               <ion-item *ngIf="food.f_isGlutenFree != null">
-                <ion-label>Gluten free</ion-label>
+                <ion-label>Gluten Free:</ion-label>
                 <ion-checkbox slot="end" [disabled]="true" [(ngModel)]="food.f_isGlutenFree"></ion-checkbox>
               </ion-item>
             </ion-list>

@@ -13,7 +13,7 @@ export class FoodInRestaurantPage implements OnInit {
   constructor(private foodInRestaurantService: FoodInRestaurantService) { }
 
   @Input()
-  restaurantId: number;
+  restaurantId: number = 4;
   menus: Menu[] = [];
 
 
