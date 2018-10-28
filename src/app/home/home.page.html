@@ -5,6 +5,25 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs">docs</a> will be your guide.</p>
+  Lista dostępnych ofert:
+  <ion-card (tap)="tapEvent($event)">
+    <ion-item>
+      Test Product #1
+    </ion-item>
+  </ion-card>
+  <ion-card (tap)="tapEvent($event)">
+    <ion-item>
+      Test Product #2
+    </ion-item>
+  </ion-card>
+  <ion-card (tap)="tapEvent($event)">
+    <ion-item>
+      Test Product #3
+    </ion-item>
+  </ion-card>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon md="md-basket"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
