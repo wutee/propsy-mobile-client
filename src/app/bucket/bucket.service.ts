@@ -11,6 +11,7 @@ export class BucketService {
 
   addProduct(product){
     this.products.push({...product, id: this.products.length + 1});
+    console.log(this.products);
   }
 
   removeProduct(id){

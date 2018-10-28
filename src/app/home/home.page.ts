@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {BucketService} from "../bucket/bucket.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import {BucketService} from "../bucket/bucket.service";
 })
 export class HomePage {
 
-  constructor(public BucketService: BucketService) { }
+  constructor(public BucketService: BucketService, private router: Router) { }
 
   products = [{
     foodId: 1,
@@ -21,7 +22,7 @@ export class HomePage {
     price: 40,
   },
     {
-      foodId: 1,
+      foodId: 2,
       foodName: 'Flaki',
       foodDescription: 'Pyszne flaczki',
       calories: 240,
@@ -31,7 +32,7 @@ export class HomePage {
       price: 20,
     },
     {
-      foodId: 1,
+      foodId: 3,
       foodName: 'Woda',
       foodDescription: 'Woda mineralna',
       calories: 100,
@@ -43,6 +44,11 @@ export class HomePage {
 
   addProductToBucket(id) {
     this.BucketService.addProduct(this.products.find((element) => {return id === element.foodId;}));
+  }
+
+  showBucket() {
+    if (this.BucketService.products.length)
+      this.router.navigate(['bucket']);
   }
 
 }
