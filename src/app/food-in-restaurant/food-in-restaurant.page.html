@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>foodInRestaurant</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="menus.length">
+    <!-- First Level -->
+    <ion-list justify-content-center *ngFor="let menu of menus; let i = index">
+      <ion-item>
+        <ion-button slot="start" fill="clear" (click)="toggleMenu(i)">
+          <ion-icon name="arrow-dropdown-circle" *ngIf="!menu.isOpen"></ion-icon>
+          <ion-icon name="arrow-dropup-circle" *ngIf="menu.isOpen"></ion-icon>
+        </ion-button>
+        <ion-label>{{menu.menuName | uppercase}}</ion-label>
+      </ion-item>
+
+      <!--Second Level-->
+      <div *ngIf="menu.isOpen">
+        <ion-list *ngFor="let food of menu.foods; let j = index">
+          <ion-item>
+            <ion-button slot="start" fill="clear" (click)="toggleFood(i, j)">
+              <ion-icon name="add-circle" *ngIf="!food.isOpen"></ion-icon>
+              <ion-icon name="close-circle" *ngIf="food.isOpen"></ion-icon>
+            </ion-button>
+            <img style="width: 40px; height: 40px; margin-right: 20px" src="../../assets/example/food.png" alt="Photo">
+            <ion-label>{{food.f_foodName | uppercase}}: {{food.fm_price}} ZŁ</ion-label>
+            <ion-button slot="end" fill="clear" (click)="mock()">
+              <ion-icon name="basket"></ion-icon>
+            </ion-button>
+          </ion-item>
+
+          <!--Third Level-->
+          <div *ngIf="menu.isOpen && food.isOpen">
+            <ion-list justify-content-center>
+              <ion-item *ngIf="food.f_foodDescription != null" text-wrap>
+                <ion-label>
+                  {{food.f_foodDescription}}
+                </ion-label>
+              </ion-item>
+              <ion-item *ngIf="food.f_calories >= 0">
+                Calories: {{food.f_calories}}
+              </ion-item>
+              <ion-item *ngIf="food.f_isSpicy != null">
+                <ion-label>Spicy</ion-label>
+                <ion-checkbox slot="end" [disabled]="true" [(ngModel)]="food.f_isSpicy"></ion-checkbox>
+              </ion-item>
+              <ion-item *ngIf="food.f_isVege != null">
+                <ion-label>Vege</ion-label>
+                <ion-checkbox slot="end" [disabled]="true" [(ngModel)]="food.f_isVege"></ion-checkbox>
+              </ion-item>
+              <ion-item *ngIf="food.f_isGlutenFree != null">
+                <ion-label>Gluten free</ion-label>
+                <ion-checkbox slot="end" [disabled]="true" [(ngModel)]="food.f_isGlutenFree"></ion-checkbox>
+              </ion-item>
+            </ion-list>
+          </div>
+        </ion-list>
+      </div>
+    </ion-list>
+  </div>
+</ion-content>
