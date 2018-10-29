@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {RestaurantService} from '../restaurant/service/restaurant.service';
+import {strict} from 'assert';
 
 @Component({
   selector: 'app-home',
@@ -8,12 +9,15 @@ import {RestaurantService} from '../restaurant/service/restaurant.service';
 })
 export class HomePage {
   restaurants: any;
+  isList: boolean;
+  currentRestaurant: any;
 
   constructor(public restProvider: RestaurantService) {
     this.getRestaurants();
   }
 
   getRestaurants() {
+    this.isList = true;
     this.restProvider.getRestaurants()
       .then(data => {
         this.restaurants = data;
@@ -21,7 +25,13 @@ export class HomePage {
       });
   }
 
-  itemSelected(item: string) {
+  itemSelected(item: number) {
+    this.isList = false;
     console.log('Selected Item', item);
+    this.restProvider.getRestaurantDetails(String(item))
+      .then(data => {
+        this.currentRestaurant = data;
+        console.log(this.currentRestaurant);
+      });
   }
 }

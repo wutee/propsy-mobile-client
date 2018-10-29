@@ -21,4 +21,14 @@ export class RestaurantService {
       });
     });
   }
+
+  getRestaurantDetails(id: string) {
+    return new Promise(resolve => {
+      this.http.get(this.apiUrl + '/restaurants/' + id + '/').subscribe(data => {
+        resolve(data[0]);
+      }, err => {
+        console.log(err);
+      });
+    });
+  }
 }

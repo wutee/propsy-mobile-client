@@ -5,10 +5,23 @@
 </ion-header>
 
 <ion-content padding="">
-  <ion-list inset>
-    <ion-item *ngFor="let restaurant of restaurants">
-      <h2>{{ restaurant.restaurantId }}</h2>
-      <p>{{ restaurant.restaurantName }}</p>
-    </ion-item>
-  </ion-list>
+  <div *ngIf="isList;else restaurantDetails">
+    <ion-list inset>
+      <ion-item *ngFor="let restaurant of restaurants">
+        <button ion-item (click)="itemSelected(restaurant.restaurantId)">
+          {{ restaurant.restaurantName }}
+        </button>
+      </ion-item>
+    </ion-list>
+  </div>
+  <ng-template #restaurantDetails>
+    <ion-card>
+      <ion-card-header>
+        {{ currentRestaurant.restaurantName }}
+      </ion-card-header>
+      <ion-card-content>
+        {{ currentRestaurant.adress }}
+      </ion-card-content>
+    </ion-card>
+  </ng-template>
 </ion-content>
