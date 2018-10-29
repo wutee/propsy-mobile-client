@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {RestaurantService} from '../restaurant/service/restaurant.service';
 
 @Component({
   selector: 'app-home',
@@ -6,12 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss']
 })
 export class HomePage {
-  items = [
-    'BinhMinh',
-    'Amrit Oriental Food',
-    'China Town',
-    'Amrit Kebab',
-  ];
+  restaurants: any;
+
+  constructor(public restProvider: RestaurantService) {
+    this.getRestaurants();
+  }
+
+  getRestaurants() {
+    this.restProvider.getRestaurants()
+      .then(data => {
+        this.restaurants = data;
+        console.log(this.restaurants);
+      });
+  }
 
   itemSelected(item: string) {
     console.log('Selected Item', item);
