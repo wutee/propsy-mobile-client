@@ -31,5 +31,16 @@
       </ion-card-content>
     </ion-card>
   </ng-template>
-  <ng-template #emptyBucket>Twój koszyk jest pusty!</ng-template>
+  <ng-template #emptyBucket>
+    <div text-center>
+      <ion-icon name="cart" style="padding-top: 60px"></ion-icon>
+      <br><br>
+      Koszyk jest pusty
+      <br>
+    </div>
+    <div text-center class="allign-bottom">
+    <ion-button shape="round" href="tabs/(home:home)" >Do sklepu</ion-button>
+    </div>
+
+  </ng-template>
 </ion-content>
