@@ -48,7 +48,7 @@ export class HomePage {
 
   showBucket() {
     if (this.BucketService.products.length)
-      this.router.navigate(['bucket']);
+      this.router.navigateByUrl('/tabs/(bucket:bucket)');
   }
 
 }
