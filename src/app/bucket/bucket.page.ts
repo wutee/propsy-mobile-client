@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {BucketService} from "./bucket.service";
+import {BucketService} from "./service/bucket.service";
 
 @Component({
   selector: 'app-bucket',
@@ -12,14 +12,14 @@ export class BucketPage {
 
   sumProducts(){
   	let sum = 0;
-  	for(let product of this.BucketService.products){
-  	 sum+=product.price;
+  	for(let food of this.BucketService.foods){
+  	 sum+=food.fm_price;
   	}
   	return sum;
   }
 
   countProducts(){
-  	return this.BucketService.products.length;
+  	return this.BucketService.foods.length;
   }
 
 }

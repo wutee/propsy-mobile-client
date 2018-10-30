@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FoodInRestaurantService} from "./service/food-in-restaurant.service";
 import {Menu} from "./model/menu";
-import {BucketService} from "../bucket/bucket.service";
+import {BucketService} from "../bucket/service/bucket.service";
 import {Router} from "@angular/router";
 
 @Component({
@@ -54,12 +54,12 @@ export class FoodInRestaurantPage implements OnInit {
     this.menus[i].foods[j].isOpen = !this.menus[i].foods[j].isOpen;
   }
 
-  addProductToBucket(idFood, idMenu) {
-    this.BucketService.addProduct(this.menus[idMenu].foods.find((element) => {return idFood === element.f_foodId;}));
+  addProductToBucket(food) {
+    this.BucketService.addProduct(food);
   }
 
   showBucket() {
-    if (this.BucketService.products.length)
+    if (this.BucketService.foods.length)
       this.router.navigateByUrl('/tabs/(bucket:bucket)');
   }
 

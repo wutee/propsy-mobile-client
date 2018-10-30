@@ -26,14 +26,14 @@
             </ion-button>
             <img style="width: 40px; height: 40px; margin-right: 20px" src="../../assets/example/food.png" alt="Photo">
             <ion-label>{{food.f_foodName | uppercase}}: {{food.fm_price}} ZŁ</ion-label>
-            <ion-button slot="end" fill="clear" (click)="mock()">
+            <ion-button slot="end" fill="clear" (click)="addProductToBucket(food)">
               <ion-icon name="basket"></ion-icon>
             </ion-button>
           </ion-item>
 
           <!--Third Level-->
           <div *ngIf="menu.isOpen && food.isOpen">
-            <ion-list (click)="addProductToBucket(food.f_foodId, menu.menuId)">
+            <ion-list>
               <ion-item *ngIf="food.f_foodDescription != null" text-wrap text-center>
                 <ion-label>
                   {{food.f_foodDescription}}
@@ -62,7 +62,7 @@
     </ion-list>
   </div>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="showBucket()">
-    <ion-fab-button color="{{this.BucketService.products.length ? 'primary' : 'light'}}">
+    <ion-fab-button color="{{this.BucketService.foods.length ? 'primary' : 'light'}}">
       <ion-icon md="md-basket"></ion-icon>
     </ion-fab-button>
   </ion-fab>
