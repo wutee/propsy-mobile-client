@@ -23,7 +23,7 @@
             </span>
           </ion-col>
           <ion-col text-right>
-            <ion-button color="danger" small icon-start (click)="this.BucketService.removeProduct(product.id)">
+            <ion-button color="danger" small (click)="this.BucketService.removeProduct(product.id)">
               Usuń
             </ion-button>
           </ion-col>
@@ -56,6 +56,5 @@
     <div text-center class="allign-bottom">
       <ion-button href="tabs/(home:home)">Do sklepu</ion-button>
     </div>
-
   </ng-template>
 </ion-content>
