@@ -1,11 +1,11 @@
-## propsy-mobile-client
+# PROP*psy* Mobile Client
 
 ![build](https://travis-ci.org/wutee/propsy-mobile-client.svg?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/wutee/propsy-mobile-client/badge.svg?branch=master)](https://coveralls.io/github/wutee/propsy-mobile-client?branch=master)
 
-[Live Demo](https://wutee.github.io/propsy-mobile-client/)
+**[Live Demo](https://wutee.github.io/propsy-mobile-client/)**
 
-[Ionic Docs](https://beta.ionicframework.com/docs/)
+**[Project Wiki](https://github.com/wutee/readme/wiki)**
 
 Aplikacja mobilna dla klienta końcowego - zamawiającego jedzenie. 
 
@@ -16,3 +16,4 @@ Aplikacja mobilna dla klienta końcowego - zamawiającego jedzenie.
 4) `npm run start`
 5) `npm run fast-rest`
 
+#### [Powered by Ionic - Docs](https://beta.ionicframework.com/docs/)

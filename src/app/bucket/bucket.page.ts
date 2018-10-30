@@ -11,19 +11,15 @@ export class BucketPage {
   constructor(public BucketService: BucketService) { }
 
   sumProducts(){
-  	var summ = 0;
+  	let sum = 0;
   	for(let product of this.BucketService.products){
-  	 summ+=product.price;
+  	 sum+=product.price;
   	}
-  	return summ;
+  	return sum;
   }
 
   countProducts(){
-  	var count = 0;
-  	for(let product of this.BucketService.products){
-  	 count+=1;
-  	}
-  	return count;
+  	return this.BucketService.products.length;
   }
 
 }

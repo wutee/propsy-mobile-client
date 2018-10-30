@@ -4,26 +4,5 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  Lista dostępnych ofert:
-  <ion-card (click)="addProductToBucket(1)">
-    <ion-item>
-      Klopsiki
-    </ion-item>
-  </ion-card>
-  <ion-card (click)="addProductToBucket(2)">
-    <ion-item>
-      Flaki
-    </ion-item>
-  </ion-card>
-  <ion-card (click)="addProductToBucket(3)">
-    <ion-item>
-      Woda mineralna
-    </ion-item>
-  </ion-card>
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="showBucket()">
-    <ion-fab-button color="{{this.BucketService.products.length ? 'primary' : 'light'}}">
-      <ion-icon md="md-basket"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+<ion-content>
 </ion-content>

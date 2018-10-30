@@ -6,6 +6,7 @@ import { HomePage } from '../home/home.page';
 import { AboutPage } from '../about/about.page';
 import { ContactPage } from '../contact/contact.page';
 import {BucketPage} from "../bucket/bucket.page";
+import {FoodInRestaurantPage} from '../food-in-restaurant/food-in-restaurant.page';
 
 const routes: Routes = [
   {
@@ -36,6 +37,11 @@ const routes: Routes = [
         path: 'bucket',
         outlet: 'bucket',
         component: BucketPage
+      },
+      {
+        path: 'food-in-restaurant',
+        outlet: 'food-in-restaurant',
+        component: FoodInRestaurantPage
       }
     ]
   },
