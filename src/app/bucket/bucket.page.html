@@ -17,13 +17,13 @@
         </p>
         <ion-row no-padding>
           <ion-col>
+            <ion-icon style="font-size: large" name='pricetag'></ion-icon>
             <span style="font-size: x-large;">
-            <ion-icon name='pricetag'></ion-icon>
-            {{product.price}} zł</span>
+            {{product.price}} zł
+            </span>
           </ion-col>
           <ion-col text-right>
             <ion-button color="danger" small icon-start (click)="this.BucketService.removeProduct(product.id)">
-              <ion-icon name='trash'></ion-icon>
               Usuń
             </ion-button>
           </ion-col>
@@ -37,12 +37,12 @@
       </ion-item>
 
       <ion-card-content>
-        {{countProducts()}} towarów na summę: {{summProducts()}} zł
+        <b>{{countProducts()}} towarów na sumę: {{sumProducts()}} zł</b>
       </ion-card-content>
     </ion-card>
 
     <div text-center>
-    <ion-button full href="**link_do_zamówienia**">Złóż zamówienie</ion-button>
+      <ion-button full href="**link_do_zamówienia**">Złóż zamówienie</ion-button>
     </div>
 
   </ng-template>
@@ -54,7 +54,7 @@
       <br>
     </div>
     <div text-center class="allign-bottom">
-    <ion-button href="tabs/(home:home)" >Do sklepu</ion-button>
+      <ion-button href="tabs/(home:home)">Do sklepu</ion-button>
     </div>
 
   </ng-template>

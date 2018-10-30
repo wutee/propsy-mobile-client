@@ -10,7 +10,7 @@ export class BucketPage {
 
   constructor(public BucketService: BucketService) { }
 
-  summProducts(){
+  sumProducts(){
   	var summ = 0;
   	for(let product of this.BucketService.products){
   	 summ+=product.price;
