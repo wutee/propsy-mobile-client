@@ -13,5 +13,4 @@ export class Order {
         deliveryManComment: string,
         loyalityPoints: number
     ) { }
-
 }
