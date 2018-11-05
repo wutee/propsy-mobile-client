@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { OrderFormComponent } from './order-form/component/order-form.component';
 
 const routes: Routes = [
   { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },
-  { path: 'order-form', loadChildren: './order-form/page/order-form.module#OrderFormPageModule' },
-  { path: 'order-form-component', loadChildren: './order-form/component/order-form.component.module#OrderFormComponentModule' }
+  { path: 'order-form', component: OrderFormComponent }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

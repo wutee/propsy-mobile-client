@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { OrderFormPage } from './order-form.page';
-import { OrderFormComponentModule } from '../component/order-form.component.module';
+import { OrderFormComponent } from '../component/order-form.component';
 
 const routes: Routes = [
   {
@@ -20,10 +20,13 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    OrderFormComponentModule,
     RouterModule.forChild(routes),
     ReactiveFormsModule
   ],
-  declarations: [OrderFormPage]
+  exports: [OrderFormComponent],
+  declarations: [
+    OrderFormPage,
+    OrderFormComponent
+  ]
 })
 export class OrderFormPageModule {}
