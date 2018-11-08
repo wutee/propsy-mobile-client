@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Koszyk</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="this.BucketService.foods.length; then bucket else emptyBucket"></div>
+  <ng-template #bucket>
+    <ion-card *ngFor="let food of this.BucketService.foods">
+      <ion-card-content>
+        <ion-card-title>
+          {{food.f_foodName}}
+        </ion-card-title>
+        <p>
+          {{food.foodDescription}}
+        </p>
+        <ion-row no-padding>
+          <ion-col>
+            <ion-icon style="font-size: large" name='pricetag'></ion-icon>
+            <span style="font-size: x-large;">
+            {{food.fm_price}} zł
+            </span>
+          </ion-col>
+          <ion-col text-right>
+            <ion-button color="danger" small (click)="this.BucketService.removeProduct(food.id)">
+              Usuń
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-item>
+        <ion-label>Razem</ion-label>
+      </ion-item>
+
+      <ion-card-content>
+        <b>{{countProducts()}} towarów na sumę: {{sumProducts()}} zł</b>
+      </ion-card-content>
+    </ion-card>
+
+    <div text-center>
+      <ion-button full href="**link_do_zamówienia**">Złóż zamówienie</ion-button>
+    </div>
+
+  </ng-template>
+  <ng-template #emptyBucket>
+    <div text-center>
+      <ion-icon name="cart" class="bucketWheelsIcon"></ion-icon>
+      <br><br>
+      Koszyk jest pusty
+      <br>
+    </div>
+    <div text-center class="allign-bottom">
+      <ion-button href="tabs/(food-in-restaurant:food-in-restaurant)">Do sklepu</ion-button>
+    </div>
+  </ng-template>
+</ion-content>

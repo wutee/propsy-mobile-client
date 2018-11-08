@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { OrderFormService } from '../service/order-form.service';
+import { Customer } from '../models/customer';
 
 @Component({
   selector: 'app-order-form-component',
@@ -8,11 +10,27 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class OrderFormComponent implements OnInit {
 
-  name = new FormControl('');
+  payLoad = ''
+  form: FormGroup;
 
-  constructor() { }
+  constructor(
+    private orderFormService: OrderFormService
+  ) {
+    this.form = new FormGroup({
+      name: new FormControl(),
+      surename: new FormControl(),
+      address: new FormControl(),
+      zipCode: new FormControl(),
+      city: new FormControl(),
+   });
+  }
+
 
   ngOnInit() {
+  }
+
+  onSubmit() {
+    this.orderFormService.doSomethingWithCustomerAddress(this.form.value as Customer)
   }
 
 }

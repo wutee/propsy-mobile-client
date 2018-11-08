@@ -10,6 +10,9 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { OrderFormComponent } from './order-form/component/order-form.component';
+import { HttpClientModule } from "@angular/common/http";
+import { FoodInRestaurantService } from "./food-in-restaurant/service/food-in-restaurant.service";
+
 
 @NgModule({
   declarations: [AppComponent, OrderFormComponent],
@@ -19,12 +22,14 @@ import { OrderFormComponent } from './order-form/component/order-form.component'
     IonicModule.forRoot(),
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    FoodInRestaurantService
   ],
   bootstrap: [AppComponent]
 })

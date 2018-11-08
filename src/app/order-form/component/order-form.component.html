@@ -1,30 +1,30 @@
 <h1>Order</h1>
-<ion-list>
+<form (submit)="onSubmit()" [formGroup]="form">
   <ion-item>
     <ion-label fixed>Name</ion-label>
-    <ion-input type="text" id=name></ion-input>
+    <ion-input formControlName="name" type="text" id=name></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label fixed>Surename</ion-label>
-    <ion-input type="text" id=name></ion-input>
+    <ion-input formControlName="surename" type="text" id=name></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label fixed>Address</ion-label>
-    <ion-input type="text" id=address></ion-input>
+    <ion-input formControlName="address" type="text" id=address></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label fixed>Zip code</ion-label>
-    <ion-input type="text" id=zipCode></ion-input>
+    <ion-input formControlName="zipCode" type="text" id=zipCode></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label fixed>City</ion-label>
-    <ion-input type="text" id=city></ion-input>
+    <ion-input formControlName="city" type="text" id=city></ion-input>
   </ion-item>
 
   <ion-button type="submit">Submit</ion-button>
 
-</ion-list>
+</form>
