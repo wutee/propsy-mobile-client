@@ -9,7 +9,6 @@ import {RestaurantService} from './service/restaurant.service';
 export class RestaurantPage {
   restaurants: any;
   isList: boolean;
-  currentRestaurant: any;
 
   constructor(public restProvider: RestaurantService) {
     this.getRestaurants();
@@ -20,15 +19,6 @@ export class RestaurantPage {
     this.restProvider.getRestaurants()
       .then(data => {
         this.restaurants = data;
-      });
-  }
-
-  itemSelected(item: number) {
-    this.isList = false;
-    console.log('Selected Item', item);
-    this.restProvider.getRestaurantDetails(String(item))
-      .then(data => {
-        this.currentRestaurant = data;
       });
   }
 }
