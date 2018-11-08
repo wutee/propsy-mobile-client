@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {FoodInRestaurantService} from "./service/food-in-restaurant.service";
-import {Food} from "./model/food";
-import {Menu} from "./model/menu";
+import { ActivatedRoute } from '@angular/router';
+import {FoodInRestaurantService} from './service/food-in-restaurant.service';
+import {Menu} from './model/menu';
 
 @Component({
   selector: 'app-food-in-restaurant',
@@ -10,14 +10,15 @@ import {Menu} from "./model/menu";
 })
 export class FoodInRestaurantPage implements OnInit {
 
-  constructor(private foodInRestaurantService: FoodInRestaurantService) { }
+  constructor(private foodInRestaurantService: FoodInRestaurantService, private route: ActivatedRoute) { }
 
   @Input()
-  restaurantId: number = 4;
+  restaurantId: number;
   menus: Menu[] = [];
 
 
   ngOnInit() {
+    this.restaurantId = Number(this.route.snapshot.paramMap.get('id'));
     this.getMenus();
   }
 
@@ -27,8 +28,8 @@ export class FoodInRestaurantPage implements OnInit {
         .getFoods(this.restaurantId, menu.menuId)
         .subscribe(
           response => menu.foods = response
-        )
-    })
+        );
+    });
   }
 
   getMenus(): void {
@@ -42,7 +43,7 @@ export class FoodInRestaurantPage implements OnInit {
           //   this.menus[0].isOpen = true;
           // }
         }
-      )
+      );
   }
 
   toggleMenu(i) {
@@ -53,6 +54,6 @@ export class FoodInRestaurantPage implements OnInit {
     this.menus[i].foods[j].isOpen = !this.menus[i].foods[j].isOpen;
   }
 
-  mock():void {}
+  mock(): void {}
 
 }
