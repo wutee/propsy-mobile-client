@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { OrderFormService } from '../service/order-form.service';
 import { Customer } from '../models/customer';
+import {TranslationService} from "../../translator/translaton.service";
 
 @Component({
   selector: 'app-order-form-component',
@@ -14,7 +15,9 @@ export class OrderFormComponent implements OnInit {
   form: FormGroup;
 
   constructor(
-    private orderFormService: OrderFormService
+    private orderFormService: OrderFormService,
+
+    private translationService: TranslationService
   ) {
     this.form = new FormGroup({
       name: new FormControl(),
