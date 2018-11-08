@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {RestaurantService} from '../restaurant/service/restaurant.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,28 +7,30 @@ import {RestaurantService} from '../restaurant/service/restaurant.service';
   styleUrls: ['home.page.scss']
 })
 export class HomePage {
-  restaurants: any;
-  isList: boolean;
-  currentRestaurant: any;
+  constructor(private router: Router) {}
 
-  constructor(public restProvider: RestaurantService) {
-    this.getRestaurants();
-  }
-
-  getRestaurants() {
-    this.isList = true;
-    this.restProvider.getRestaurants()
-      .then(data => {
-        this.restaurants = data;
-      });
-  }
-
-  itemSelected(item: number) {
-    this.isList = false;
-    console.log('Selected Item', item);
-    this.restProvider.getRestaurantDetails(String(item))
-      .then(data => {
-        this.currentRestaurant = data;
-      });
+  go() {
+    this.router.navigateByUrl('/restaurant');
   }
 }
+
+
+
+/*
+import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
+import { RestaurantPage } from '../restaurant/restaurant.page';
+
+
+@Component({
+  selector: 'app-home',
+  templateUrl: 'home.page.html',
+  styleUrls: ['home.page.scss']
+})
+export class HomePage {
+  constructor(private navCtrl: NavController) {}
+
+  listRestaurants() {
+    this.navCtrl.push(RestaurantPage);
+  }
+}*/

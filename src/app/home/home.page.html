@@ -4,24 +4,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <div *ngIf="isList;else restaurantDetails">
-    <ion-list>
-      <ion-item *ngFor="let restaurant of restaurants">
-        <ion-button (click)="itemSelected(restaurant.restaurantId)">
-          {{ restaurant.restaurantName }}
-        </ion-button>
-      </ion-item>
-    </ion-list>
-  </div>
-  <ng-template #restaurantDetails>
-    <ion-card>
-      <ion-card-header>
-        {{ currentRestaurant.restaurantName }}
-      </ion-card-header>
-      <ion-card-content>
-        {{ currentRestaurant.adress }}
-      </ion-card-content>
-    </ion-card>
-  </ng-template>
+<ion-content>
+  <!--<ion-button (click)="listRestaurants()" >Restaurants</ion-button>-->
+  <ion-button href="/restaurant">Restaurants</ion-button>
 </ion-content>
