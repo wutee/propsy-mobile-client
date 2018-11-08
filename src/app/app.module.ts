@@ -15,8 +15,6 @@ import { FoodInRestaurantService } from './food-in-restaurant/service/food-in-re
 
 import { TranslatePipe } from './translator/translate.pipe';
 import {TranslationService} from './translator/translaton.service';
-import {TranslateModule} from '@ngx-translate/core';
-
 
 @NgModule({
   declarations: [AppComponent, OrderFormComponent, TranslatePipe],

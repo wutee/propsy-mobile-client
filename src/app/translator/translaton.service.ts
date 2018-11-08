@@ -17,9 +17,13 @@ export class TranslationService {
     'eng' : {
       languange: 'eng',
       values: {
-        'Zamowienie' : 'Order',
-        'Imie' : 'Name',
-        'Nazwisko' : 'Surename'
+        'Order' : 'Order',
+        'Name' : 'Name',
+        'Surename' : 'Surename',
+        'Adress' : 'Adress',
+        'Zipcode' : 'Zip code',
+        'City' : 'City',
+        'Submit' : 'Submit'
       }
     },
     'pl' : {
@@ -27,7 +31,11 @@ export class TranslationService {
       values: {
         'Order' : 'Zamowienie',
         'Name' : 'Imie',
-        'Surename' : 'Nazwisko'
+        'Surename' : 'Nazwisko',
+        'Adress' : 'Adres',
+        'Zipcode' : 'Kod pocztowy',
+        'City' : 'Miasto',
+        'Submit' : 'Potwierdź'
       }
     }
   };
