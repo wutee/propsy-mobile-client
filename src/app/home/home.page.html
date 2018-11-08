@@ -4,13 +4,13 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding="">
+<ion-content padding>
   <div *ngIf="isList;else restaurantDetails">
-    <ion-list inset>
+    <ion-list>
       <ion-item *ngFor="let restaurant of restaurants">
-        <button ion-item (click)="itemSelected(restaurant.restaurantId)">
+        <ion-button (click)="itemSelected(restaurant.restaurantId)">
           {{ restaurant.restaurantName }}
-        </button>
+        </ion-button>
       </ion-item>
     </ion-list>
   </div>

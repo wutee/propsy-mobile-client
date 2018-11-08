@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {RestaurantService} from '../restaurant/service/restaurant.service';
-import {strict} from 'assert';
 
 @Component({
   selector: 'app-home',
@@ -21,7 +20,6 @@ export class HomePage {
     this.restProvider.getRestaurants()
       .then(data => {
         this.restaurants = data;
-        console.log(this.restaurants);
       });
   }
 
@@ -31,7 +29,6 @@ export class HomePage {
     this.restProvider.getRestaurantDetails(String(item))
       .then(data => {
         this.currentRestaurant = data;
-        console.log(this.currentRestaurant);
       });
   }
 }
