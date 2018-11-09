@@ -11,18 +11,15 @@ export class FoodInRestaurantService {
 
   constructor(private http: HttpClient) { }
 
-  // any global class ??
-  apiPath: string = "http://localhost:3000/api/";
-
   public getMenus(restaurantId: number): Observable<Menu[]>{
-    let requestPath: string = this.apiPath + "restaurants/" + restaurantId + "/menus?_fields=menuId,menuName"
+    let requestPath: string = "api/restaurants/" + restaurantId + "/menus?_fields=menuId,menuName"
 
     return this.http.get<Menu[]>(requestPath)
   }
 
   public getFoods(restaurantId: number, menuId: number): Observable<Food[]>{
 
-    let requestPath: string = this.apiPath + "xjoin?" +
+    let requestPath: string = "api/xjoin?" +
       "_join=r.restaurants," +
       "_j,m.menus," +
       "_j,fm.foodInMenus," +
