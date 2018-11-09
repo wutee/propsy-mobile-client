@@ -4,9 +4,18 @@
   </ion-toolbar>
 </ion-header>
 <ion-content padding>
-  <ion-card ion-item *ngFor="let item of items" (click)="tapEvent()" (press)="pressEvent()">
-    <ion-item>
-      {{ item }}
-    </ion-item>
+  <ion-card ion-item *ngFor="let order of orders" (click)="tapEvent()" (press)="pressEvent()">
+    <ion-card-header>
+      <b>Date: </b> {{ order.date }}
+    </ion-card-header>
+    <ion-card-content>
+      <b>Price: </b> {{ order.price }}
+    </ion-card-content>
+    <ion-card-content>
+      <b>User opinion: </b> {{ order.userOpinion }}
+    </ion-card-content>
+    <ion-card-content>
+      <b>User comment: </b> {{ order.userComment }}
+    </ion-card-content>
   </ion-card>
 </ion-content>
