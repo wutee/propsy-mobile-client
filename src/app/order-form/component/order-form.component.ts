@@ -16,7 +16,7 @@ export class OrderFormComponent implements OnInit {
 
   constructor(
     private orderFormService: OrderFormService,
-    private translationService: TranslationService
+    public translationService: TranslationService
   ) {
     this.form = new FormGroup({
       name: new FormControl(),
