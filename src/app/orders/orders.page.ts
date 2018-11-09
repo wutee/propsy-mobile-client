@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import 'hammerjs';
-import { OrderService } from './service/orders.service';
+import { OrdersService } from './service/orders.service';
 import {ActionSheetController} from '@ionic/angular';
 
 @Component({
@@ -11,7 +11,7 @@ import {ActionSheetController} from '@ionic/angular';
 export class OrdersPage {
   orders: any;
 
-  constructor(public orderService: OrderService, public actionSheetCtrl: ActionSheetController) {
+  constructor(public orderService: OrdersService, public actionSheetCtrl: ActionSheetController) {
     this.getOrders();
   }
 
