@@ -14,7 +14,7 @@ import { OrderComponent } from './order/order.component';
 
 @NgModule({
   declarations: [AppComponent, OrderComponent],
-  entryComponents: [],
+  entryComponents: [OrderComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),

@@ -13,7 +13,9 @@ export class OrdersPage {
   async presentOrder() {
     const modal = await this.modalController.create({
       component: OrderComponent,
-      componentProps: { idOrder: 123 }
+      componentProps: { idOrder: 123 },
+      showBackdrop: true,
+      backdropDismiss: true,
     });
     return await modal.present();
   }
