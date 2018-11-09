@@ -17,7 +17,7 @@ export class RestaurantPage {
   getRestaurants() {
     this.isList = true;
     this.restProvider.getRestaurants()
-      .then(data => {
+      .subscribe(data => {
         this.restaurants = data;
       });
   }

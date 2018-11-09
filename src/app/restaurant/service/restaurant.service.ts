@@ -12,22 +12,6 @@ export class RestaurantService {
   }
 
   getRestaurants() {
-    return new Promise(resolve => {
-      this.http.get(this.apiUrl + '/restaurants').subscribe(data => {
-        resolve(data);
-      }, err => {
-        console.log(err);
-      });
-    });
-  }
-
-  getRestaurantDetails(id: string) {
-    return new Promise(resolve => {
-      this.http.get(this.apiUrl + '/restaurants/' + id + '/').subscribe(data => {
-        resolve(data[0]);
-      }, err => {
-        console.log(err);
-      });
-    });
+    return this.http.get(this.apiUrl + '/restaurants');
   }
 }
