@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  API_URL: 'https://stark-sands-86101.herokuapp.com/'
 };

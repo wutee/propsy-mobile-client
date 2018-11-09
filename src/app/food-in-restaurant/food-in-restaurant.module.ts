@@ -6,6 +6,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { FoodInRestaurantPage } from './food-in-restaurant.page';
+import {HTTP_INTERCEPTORS} from '@angular/common/http';
+import {PropsyHttpInterceptor} from '../propsyHttpInterceptor';
 
 const routes: Routes = [
   {
@@ -21,6 +23,9 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [FoodInRestaurantPage]
+  declarations: [FoodInRestaurantPage],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: PropsyHttpInterceptor, multi: true }
+  ]
 })
 export class FoodInRestaurantPageModule {}
