@@ -14,7 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FoodInRestaurantService } from './food-in-restaurant/service/food-in-restaurant.service';
 
 import { TranslatePipe } from './translator/translate.pipe';
-import {TranslationService} from './translator/translaton.service';
+import {TranslationService} from './translator/translation.service';
 
 @NgModule({
   declarations: [AppComponent, OrderFormComponent, TranslatePipe],
