@@ -4,9 +4,9 @@
   </ion-toolbar>
 </ion-header>
 <ion-content padding>
-  <ion-card (click)="tapEvent()" (press)="pressEvent()">
+  <ion-card ion-item *ngFor="let item of items" (click)="tapEvent()" (press)="pressEvent()">
     <ion-item>
-      ELEMENT
+      {{ item }}
     </ion-item>
   </ion-card>
 </ion-content>
