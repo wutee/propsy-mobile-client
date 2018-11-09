@@ -7,6 +7,7 @@ import { AboutPage } from '../about/about.page';
 import { ContactPage } from '../contact/contact.page';
 import {BucketPage} from "../bucket/bucket.page";
 import {FoodInRestaurantPage} from '../food-in-restaurant/food-in-restaurant.page';
+import {OrdersPage} from '../orders/orders.page';
 
 const routes: Routes = [
   {
@@ -24,9 +25,9 @@ const routes: Routes = [
         component: HomePage
       },
       {
-        path: 'about',
-        outlet: 'about',
-        component: AboutPage
+        path: 'orders',
+        outlet: 'orders',
+        component: OrdersPage
       },
       {
         path: 'contact',
