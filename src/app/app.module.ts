@@ -10,9 +10,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from "@angular/common/http";
 import {FoodInRestaurantService} from "./food-in-restaurant/service/food-in-restaurant.service";
+import { OrderComponent } from './order/order.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, OrderComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
