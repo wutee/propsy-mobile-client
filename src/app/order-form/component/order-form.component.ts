@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
-import { OrderFormService } from '../service/order-form.service';
-import { Customer } from '../models/customer';
-import {TranslationService} from "../../translator/translation.service";
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup} from '@angular/forms';
+import {OrderFormService} from '../service/order-form.service';
+import {Customer} from '../models/customer';
+import {TranslationService} from '../../translator/translation.service';
 
 @Component({
   selector: 'app-order-form-component',
@@ -11,7 +11,7 @@ import {TranslationService} from "../../translator/translation.service";
 })
 export class OrderFormComponent implements OnInit {
 
-  payLoad = ''
+  payLoad = '';
   form: FormGroup;
 
   constructor(
@@ -32,7 +32,7 @@ export class OrderFormComponent implements OnInit {
   }
 
   onSubmit() {
-    this.orderFormService.doSomethingWithCustomerAddress(this.form.value as Customer)
+    this.orderFormService.doSomethingWithCustomerAddress(this.form.value as Customer);
   }
 
 }

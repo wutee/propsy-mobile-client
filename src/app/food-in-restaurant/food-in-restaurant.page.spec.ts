@@ -1,7 +1,7 @@
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { FoodInRestaurantPage } from './food-in-restaurant.page';
+import {FoodInRestaurantPage} from './food-in-restaurant.page';
 
 xdescribe('FoodInRestaurantPage', () => {
   let component: FoodInRestaurantPage;
