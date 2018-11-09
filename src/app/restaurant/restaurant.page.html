@@ -7,8 +7,8 @@
 
 <ion-content padding>
     <ion-list>
-      <ion-item href="/foodInRestaurant/{{ restaurant.restaurantId }}" *ngFor="let restaurant of restaurants">
-          {{ restaurant.restaurantName }} - {{ restaurant.adress }}
+      <ion-item href="restaurantFood/{{ restaurant.restaurantId }}" *ngFor="let restaurant of restaurants">
+          {{ restaurant.restaurantName }} - {{ restaurant.adress }} {{ restaurant.restaurantId}}
       </ion-item>
     </ion-list>
 </ion-content>

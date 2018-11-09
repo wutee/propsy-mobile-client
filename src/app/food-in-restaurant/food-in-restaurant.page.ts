@@ -2,9 +2,8 @@ import {Component, Input, OnInit} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {FoodInRestaurantService} from './service/food-in-restaurant.service';
 import {Menu} from './model/menu';
-import {Menu} from "./model/menu";
-import {BucketService} from "../bucket/service/bucket.service";
-import {Router} from "@angular/router";
+import {BucketService} from '../bucket/service/bucket.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-food-in-restaurant',
@@ -13,7 +12,8 @@ import {Router} from "@angular/router";
 })
 export class FoodInRestaurantPage implements OnInit {
 
-  constructor(private foodInRestaurantService: FoodInRestaurantService, public BucketService: BucketService, private router: Router,  private route: ActivatedRoute) { }
+  constructor(private foodInRestaurantService: FoodInRestaurantService, public bucketService: BucketService,
+              private router: Router,  private route: ActivatedRoute) { }
 
   @Input()
   restaurantId: number;
@@ -58,12 +58,13 @@ export class FoodInRestaurantPage implements OnInit {
   }
 
   addProductToBucket(food) {
-    this.BucketService.addProduct(food);
+    this.bucketService.addProduct(food);
   }
 
   showBucket() {
-    if (this.BucketService.foods.length)
+    if (this.bucketService.foods.length) {
       this.router.navigateByUrl('/tabs/(bucket:bucket)');
+    }
   }
 
   mock(): void {}
