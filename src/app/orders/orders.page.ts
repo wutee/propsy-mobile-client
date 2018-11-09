@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import 'hammerjs';
 import { OrderService } from './service/orders.service';
+import {ActionSheetController} from '@ionic/angular';
 
 @Component({
   selector: 'app-orders',
@@ -10,11 +11,45 @@ import { OrderService } from './service/orders.service';
 export class OrdersPage {
   orders: any;
 
-  constructor(public orderService: OrderService) {
+  constructor(public orderService: OrderService, public actionSheetCtrl: ActionSheetController) {
     this.getOrders();
   }
 
-  getOrders() {
+  async presentActionSheet() {
+    const actionSheet = await this.actionSheetCtrl.create({
+      buttons: [
+        {
+          text: 'Rate',
+          handler: () => {
+            console.log('Rate');
+          }
+        },
+        {
+          text: 'Complaint',
+          handler: () => {
+            console.log('Complaint');
+          }
+        },
+        {
+          text: 'Verify ',
+          handler: () => {
+            console.log('Verify');
+          }
+        },
+        {
+          text: 'Repeat ',
+          handler: () => {
+            console.log('Repeat');
+          }
+        },
+      ]
+    });
+
+    await actionSheet.present();
+  }
+
+
+getOrders() {
     this.orderService.getOrders()
       .then(data => {
         this.orders = data;
@@ -27,4 +62,6 @@ export class OrdersPage {
   tapEvent() {
     console.log('tap');
   }
+
+
 }

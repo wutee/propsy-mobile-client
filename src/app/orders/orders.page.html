@@ -4,7 +4,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content padding>
-  <ion-card ion-item *ngFor="let order of orders" (click)="tapEvent()" (press)="pressEvent()">
+  <ion-card ion-item *ngFor="let order of orders" (click)="tapEvent()" (press)="presentActionSheet()">
     <ion-card-header>
       <b>Date: </b> {{ order.date }}
     </ion-card-header>
