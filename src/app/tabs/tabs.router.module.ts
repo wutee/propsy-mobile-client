@@ -3,8 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { TabsPage } from './tabs.page';
 import { OrdersPage } from '../orders/orders.page';
-import { AboutPage } from '../about/about.page';
-import { ContactPage } from '../contact/contact.page';
 import {BucketPage} from "../bucket/bucket.page";
 import {FoodInRestaurantPage} from '../food-in-restaurant/food-in-restaurant.page';
 
@@ -22,16 +20,6 @@ const routes: Routes = [
         path: 'orders',
         outlet: 'orders',
         component: OrdersPage
-      },
-      {
-        path: 'about',
-        outlet: 'about',
-        component: AboutPage
-      },
-      {
-        path: 'contact',
-        outlet: 'contact',
-        component: ContactPage
       },
       {
         path: 'bucket',
