@@ -10,6 +10,5 @@ export class OrderFormService {
 
   doSomethingWithCustomerAddress(customer: Customer) {
     // TODO
-    console.log(customer)
   }
 }
