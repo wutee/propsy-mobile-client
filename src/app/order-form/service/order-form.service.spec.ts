@@ -1,12 +1,12 @@
 import {TestBed} from '@angular/core/testing';
 
-import {BucketService} from './bucket.service';
+import {OrderFormService} from './order-form.service';
 
-describe('BucketService', () => {
+describe('OrderFormService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: BucketService = TestBed.get(BucketService);
+    const service: OrderFormService = TestBed.get(OrderFormService);
     expect(service).toBeTruthy();
   });
 });

@@ -8,5 +8,5 @@ export class Food {
   f_isGlutenFree: boolean;
   f_photoLocation: string;
   fm_price: number;
-  isOpen: boolean = false;
+  isOpen = false;
 }
