@@ -9,7 +9,7 @@ import { TabsPage } from './tabs.page';
 import { ContactPageModule } from '../contact/contact.module';
 import { AboutPageModule } from '../about/about.module';
 import { HomePageModule } from '../home/home.module';
-import {BucketPageModule} from "../bucket/bucket.module";
+import {BucketPageModule} from '../bucket/bucket.module';
 import {FoodInRestaurantPageModule} from '../food-in-restaurant/food-in-restaurant.module';
 
 @NgModule({
