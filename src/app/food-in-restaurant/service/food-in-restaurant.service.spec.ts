@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { FoodInRestaurantService } from './food-in-restaurant.service';
+import {FoodInRestaurantService} from './food-in-restaurant.service';
 
 xdescribe('FoodInRestaurantService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
