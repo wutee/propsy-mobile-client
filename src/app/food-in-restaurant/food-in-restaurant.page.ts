@@ -1,10 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import {FoodInRestaurantService} from './service/food-in-restaurant.service';
 import {Menu} from './model/menu';
 import {BucketService} from '../bucket/service/bucket.service';
 import {Router} from '@angular/router';
-import { RestaurantService} from '../restaurant/service/restaurant.service';
+import {RestaurantService} from '../restaurant/service/restaurant.service';
 
 @Component({
   selector: 'app-food-in-restaurant',
@@ -14,7 +13,8 @@ import { RestaurantService} from '../restaurant/service/restaurant.service';
 export class FoodInRestaurantPage implements OnInit {
 
   constructor(private foodInRestaurantService: FoodInRestaurantService, public bucketService: BucketService,
-              private router: Router,  private route: ActivatedRoute, private restaurantService: RestaurantService) { }
+              private router: Router, private restaurantService: RestaurantService) {
+  }
 
   @Input()
   restaurantId: number;
@@ -22,9 +22,7 @@ export class FoodInRestaurantPage implements OnInit {
 
 
   ngOnInit() {
-    // this.restaurantId = Number(this.route.snapshot.paramMap.get('id'));
     this.restaurantId = this.restaurantService.id;
-    console.log(this.restaurantId );
     this.getMenus();
   }
 
@@ -48,6 +46,9 @@ export class FoodInRestaurantPage implements OnInit {
           // if(this.menus.length > 0){
           //   this.menus[0].isOpen = true;
           // }
+        },
+        err => {
+          setTimeout(() => this.getMenus(), 2000);
         }
       );
   }
@@ -70,6 +71,7 @@ export class FoodInRestaurantPage implements OnInit {
     }
   }
 
-  mock(): void {}
+  mock(): void {
+  }
 
 }

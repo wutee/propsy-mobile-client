@@ -8,19 +8,19 @@ import {BucketService} from './service/bucket.service';
 })
 export class BucketPage {
 
-  constructor(public BucketService: BucketService) {
+  constructor(public bucketService: BucketService) {
   }
 
   sumProducts() {
     let sum = 0;
-    for (let food of this.BucketService.foods) {
+    for (const food of this.bucketService.foods) {
       sum += food.fm_price;
     }
     return sum;
   }
 
   countProducts() {
-    return this.BucketService.foods.length;
+    return this.bucketService.foods.length;
   }
 
 }
