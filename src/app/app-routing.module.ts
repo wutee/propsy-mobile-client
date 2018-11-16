@@ -5,7 +5,7 @@ import { OrderFormComponent } from './order-form/component/order-form.component'
 const routes: Routes = [
   { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },
   { path: 'order-form', component: OrderFormComponent },
-  { path: 'restaurantFood/:id', loadChildren: './food-in-restaurant/food-in-restaurant.module#FoodInRestaurantPageModule' }
+  // { path: 'restaurantFood/:id', loadChildren: './food-in-restaurant/food-in-restaurant.module#FoodInRestaurantPageModule' }
 ];
 
 @NgModule({

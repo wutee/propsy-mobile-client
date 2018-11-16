@@ -4,6 +4,7 @@ import {FoodInRestaurantService} from './service/food-in-restaurant.service';
 import {Menu} from './model/menu';
 import {BucketService} from '../bucket/service/bucket.service';
 import {Router} from '@angular/router';
+import { RestaurantService} from '../restaurant/service/restaurant.service';
 
 @Component({
   selector: 'app-food-in-restaurant',
@@ -13,7 +14,7 @@ import {Router} from '@angular/router';
 export class FoodInRestaurantPage implements OnInit {
 
   constructor(private foodInRestaurantService: FoodInRestaurantService, public bucketService: BucketService,
-              private router: Router,  private route: ActivatedRoute) { }
+              private router: Router,  private route: ActivatedRoute, private restaurantService: RestaurantService) { }
 
   @Input()
   restaurantId: number;
@@ -21,7 +22,9 @@ export class FoodInRestaurantPage implements OnInit {
 
 
   ngOnInit() {
-    this.restaurantId = Number(this.route.snapshot.paramMap.get('id'));
+    // this.restaurantId = Number(this.route.snapshot.paramMap.get('id'));
+    this.restaurantId = this.restaurantService.id;
+    console.log(this.restaurantId );
     this.getMenus();
   }
 

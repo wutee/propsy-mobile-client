@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {RestaurantService} from './service/restaurant.service';
 
 @Component({
@@ -8,17 +8,31 @@ import {RestaurantService} from './service/restaurant.service';
 })
 export class RestaurantPage {
   restaurants: any;
-  isList: boolean;
+  restaurantList: boolean;
+  title: string;
 
   constructor(public restProvider: RestaurantService) {
     this.getRestaurants();
   }
 
   getRestaurants() {
-    this.isList = true;
+    this.restaurantList = true;
+    this.title = 'Restaurants';
     this.restProvider.getRestaurants()
       .subscribe(data => {
         this.restaurants = data;
       });
   }
+
+  getRestaurantFoods(id: number, name: string) {
+    this.restaurantList = false;
+    this.title = name;
+    this.restProvider.setSelectedRestaurant(id);
+  }
+
+
+  backButton() {
+    this.restaurantList = true;
+  }
+
 }
