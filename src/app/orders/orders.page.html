@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>orders</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-card *ngFor="let order of orders" (click)="tapEvent()" (press)="presentActionSheet()">
+    <ion-item>
+      <ion-badge color="secondary">{{ order.orderId }}</ion-badge> {{ order.date }}
+    </ion-item>
+    <ion-card-content>
+      <ion-icon name="ios-cash" item-start></ion-icon>
+      <b>Price: </b>
+      <ion-badge item-end>{{ order.price }}$</ion-badge>
+    </ion-card-content>
+    <ion-card-content>
+      <b>User opinion: </b> {{ order.userOpinion }}
+    </ion-card-content>
+    <ion-card-content>
+      <b>User comment: </b> {{ order.userComment }}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

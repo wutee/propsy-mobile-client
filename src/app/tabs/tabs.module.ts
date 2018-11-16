@@ -10,6 +10,7 @@ import {ContactPageModule} from '../contact/contact.module';
 import {AboutPageModule} from '../about/about.module';
 import {HomePageModule} from '../home/home.module';
 import {BucketPageModule} from '../bucket/bucket.module';
+import {OrdersPageModule} from '../orders/orders.module';
 import {RestaurantPageModule} from '../restaurant/restaurant.module';
 
 @NgModule({
@@ -22,8 +23,8 @@ import {RestaurantPageModule} from '../restaurant/restaurant.module';
     AboutPageModule,
     ContactPageModule,
     BucketPageModule,
-    ContactPageModule,
-    RestaurantPageModule
+    OrdersPageModule,
+    RestaurantPageModule,
   ],
   declarations: [TabsPage]
 })

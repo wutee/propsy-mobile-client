@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 
-import { TabsPage } from './tabs.page';
-import { HomePage } from '../home/home.page';
-import { AboutPage } from '../about/about.page';
-import { ContactPage } from '../contact/contact.page';
+import {TabsPage} from './tabs.page';
+import {HomePage} from '../home/home.page';
+import {ContactPage} from '../contact/contact.page';
 import {BucketPage} from '../bucket/bucket.page';
+import {OrdersPage} from '../orders/orders.page';
 import {RestaurantPage} from '../restaurant/restaurant.page';
 
 const routes: Routes = [
@@ -24,9 +24,9 @@ const routes: Routes = [
         component: HomePage
       },
       {
-        path: 'about',
-        outlet: 'about',
-        component: AboutPage
+        path: 'orders',
+        outlet: 'orders',
+        component: OrdersPage
       },
       {
         path: 'contact',
@@ -56,4 +56,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule {
+}
