@@ -38,4 +38,4 @@ import {PropsyHttpInterceptor} from './propsyHttpInterceptor';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
