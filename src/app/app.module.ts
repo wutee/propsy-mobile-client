@@ -16,6 +16,7 @@ import {PropsyHttpInterceptor} from "./propsyHttpInterceptor";
 import {TranslationService} from "./translator/translation.service";
 import {OrderFormComponent} from "./order-form/component/order-form.component";
 import {TranslatePipe} from "./translator/translate.pipe";
+import {ApiModule} from "../client";
 
 @NgModule({
   declarations: [AppComponent, OrderComponent, OrderFormComponent, TranslatePipe],
@@ -27,6 +28,7 @@ import {TranslatePipe} from "./translator/translate.pipe";
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    ApiModule,
   ],
   providers: [
     StatusBar,
