@@ -3,6 +3,7 @@ import 'hammerjs';
 import { OrdersService } from './service/orders.service';
 import {ActionSheetController} from '@ionic/angular';
 import {FoodOrder} from "../../client";
+import {element} from "protractor";
 
 @Component({
   selector: 'app-orders',
@@ -12,6 +13,7 @@ import {FoodOrder} from "../../client";
 export class OrdersPage {
   orders: FoodOrder[];
   showDetails: boolean;
+  presentOrder: FoodOrder;
 
   constructor(public orderService: OrdersService, public actionSheetCtrl: ActionSheetController) {
     this.getOrders();
@@ -62,8 +64,13 @@ export class OrdersPage {
     console.log('press');
   }
 
-  tapEvent() {
+  returnToOrderList() {
+    this.showDetails = false;
+  }
+
+  tapEvent(id: number) {
     this.showDetails = true;
+    this.presentOrder = this.orders.find((element) => element.id == id);
   }
 
 }
