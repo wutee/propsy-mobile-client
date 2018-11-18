@@ -5,7 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicModule } from '@ionic/angular';
 import { HTTP_INTERCEPTORS} from '@angular/common/http';
-
+import { ErrorHandler } from './service/error_handler';
 import { FoodInRestaurantPage } from './food-in-restaurant.page';
 
 const routes: Routes = [
@@ -25,6 +25,7 @@ const routes: Routes = [
   ],
   declarations: [FoodInRestaurantPage],
   providers:[
+    ErrorHandler,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: FoodInRestaurantPage,
