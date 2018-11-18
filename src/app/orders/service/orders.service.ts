@@ -1,19 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import {FoodOrderResourceService} from "../../../client";
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrdersService {
-  apiUrl = 'http://localhost:3000/api';
 
-  constructor(public http: HttpClient) {
+  constructor(public http: HttpClient, public foodOrderResourceService: FoodOrderResourceService) {
   }
 
   getOrders() {
     return new Promise(resolve => {
-      this.http.get(this.apiUrl + '/orders').subscribe(data => {
+      this.foodOrderResourceService.getAllFoodOrdersUsingGET().subscribe(data => {
         resolve(data);
       }, err => {
         console.log(err);

@@ -3,10 +3,16 @@
     <ion-title>orders</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content padding>
-  <ion-card *ngFor="let order of orders" (click)="tapEvent()" (press)="presentActionSheet()">
-    <ion-item>
-      <ion-badge color="secondary">{{ order.orderId }}</ion-badge> {{ order.date }}
+<ion-content padding *ngIf="!showDetails">
+  <ion-card *ngFor="let order of orders" (click)="tapEvent(order.id)" (press)="presentActionSheet()">
+    <ion-item [ngSwitch]="order.status">
+      <ion-badge style="background-color: #ff4c4d" *ngSwitchCase="0">Cancelled</ion-badge>
+      <ion-badge style="background-color: #ddd919" *ngSwitchCase="1">Waiting for accept</ion-badge>
+      <ion-badge style="background-color: #ffd199" *ngSwitchCase="2">Cooking</ion-badge>
+      <ion-badge style="background-color: #ffd199" *ngSwitchCase="3">Waiting for deliverer</ion-badge>
+      <ion-badge style="background-color: #7c7bff" *ngSwitchCase="4">Delivering</ion-badge>
+      <ion-badge style="background-color: #84ff83" *ngSwitchCase="5">Completed</ion-badge>
+      &nbsp;{{ order.date }}
     </ion-item>
     <ion-card-content>
       <ion-icon name="ios-cash" item-start></ion-icon>
@@ -20,4 +26,99 @@
       <b>User comment: </b> {{ order.userComment }}
     </ion-card-content>
   </ion-card>
+</ion-content>
+<ion-content padding *ngIf="showDetails">
+  <ion-button (click)="returnToOrderList()">
+    <ion-icon name="return-left"></ion-icon>&nbsp;Back to order list
+  </ion-button>
+  <ion-list-header style="font-size: 23px; margin-bottom: 0; margin-top: 10px;">Selected order</ion-list-header>
+  <ion-grid>
+    <ion-row style="border-bottom: #3a4e56 solid 1px">
+      <ion-col size="3">
+        Restaurant:
+      </ion-col>
+      <ion-col>
+        {{presentOrder.restaurant.nameSlug}}
+        <br>
+        {{presentOrder.restaurant.address}}
+      </ion-col>
+    </ion-row>
+    <ion-row style="border-bottom: #3a4e56 solid 1px">
+      <ion-col size="3">
+        Date:
+      </ion-col>
+      <ion-col>
+        {{ presentOrder.date }}
+      </ion-col>
+    </ion-row>
+    <ion-row style="border-bottom: #3a4e56 solid 1px">
+      <ion-col size="3">
+        Your comment:
+      </ion-col>
+      <ion-col>
+        {{ presentOrder.userComment }}
+      </ion-col>
+    </ion-row>
+    <ion-row style="border-bottom: #3a4e56 solid 1px">
+      <ion-col size="3">
+        Price:
+      </ion-col>
+      <ion-col>
+        {{ presentOrder.price }}$
+      </ion-col>
+    </ion-row>
+    <ion-row style="border-bottom: #3a4e56 solid 1px">
+      <ion-col size="3">
+        Loyalty points:
+      </ion-col>
+      <ion-col>
+        {{ presentOrder.loyaltyPoints }}
+      </ion-col>
+    </ion-row>
+    <ion-row style="border-bottom: #3a4e56 solid 1px">
+      <ion-col size="3">
+        Delivery comment:
+      </ion-col>
+      <ion-col>
+        {{ presentOrder.deliveryManComment }}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3">
+        Status:
+      </ion-col>
+      <ion-col>
+        <div [ngSwitch]="presentOrder.status">
+          <ion-badge style="background-color: #ff4c4d" *ngSwitchCase="0">Cancelled</ion-badge>
+          <ion-badge style="background-color: #ddd919" *ngSwitchCase="1">Waiting for accept</ion-badge>
+          <ion-badge style="background-color: #ffd199" *ngSwitchCase="2">Cooking</ion-badge>
+          <ion-badge style="background-color: #ffd199" *ngSwitchCase="3">Waiting for deliverer</ion-badge>
+          <ion-badge style="background-color: #7c7bff" *ngSwitchCase="4">Delivering</ion-badge>
+          <ion-badge style="background-color: #84ff83" *ngSwitchCase="5">Completed</ion-badge>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list-header style="font-size: 23px; margin-bottom: 0; margin-top: 10px;">Zamówione dania:</ion-list-header>
+  <ion-grid style="margin-left: 10px; margin-right: 10px">
+    <ion-row style="border-bottom: #3a4e56 solid 1px" *ngFor="let food of presentOrder.foodItems">
+      <ion-col>
+        {{food.nameSlug}}
+      </ion-col>
+      <ion-col size="2">
+        {{food.price}}$
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <b>Summary price:</b>
+      </ion-col>
+      <ion-col size="3">
+        <b>{{presentOrder.price}}$</b>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list-header style="font-size: 23px; margin-bottom: 0; margin-top: 10px;">Actions:</ion-list-header>
+  <ion-button expand="full" style="margin-bottom: 4px">Add Comment</ion-button>
+  <ion-button expand="full" ><ion-icon name="create"></ion-icon>&nbsp;Edit Order</ion-button>
 </ion-content>

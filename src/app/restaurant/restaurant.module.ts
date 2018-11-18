@@ -6,8 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { RestaurantPage } from './restaurant.page';
-import { FoodInRestaurantPage} from '../food-in-restaurant/food-in-restaurant.page';
-
+import {FoodInRestaurantPage} from "../food-in-restaurant/food-in-restaurant.page";
 
 const routes: Routes = [
   {

@@ -1,12 +1,10 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
-import {TabsPage} from './tabs.page';
-import {HomePage} from '../home/home.page';
-import {ContactPage} from '../contact/contact.page';
-import {BucketPage} from '../bucket/bucket.page';
-import {OrdersPage} from '../orders/orders.page';
-import {RestaurantPage} from '../restaurant/restaurant.page';
+import { TabsPage } from './tabs.page';
+import {BucketPage} from "../bucket/bucket.page";
+import {OrdersPage} from "../orders/orders.page";
+import {RestaurantPage} from "../restaurant/restaurant.page";
 
 const routes: Routes = [
   {
@@ -15,23 +13,13 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: '/tabs/(home:home)',
+        redirectTo: '/tabs/(orders:orders)',
         pathMatch: 'full',
-      },
-      {
-        path: 'home',
-        outlet: 'home',
-        component: HomePage
       },
       {
         path: 'orders',
         outlet: 'orders',
         component: OrdersPage
-      },
-      {
-        path: 'contact',
-        outlet: 'contact',
-        component: ContactPage
       },
       {
         path: 'bucket',
@@ -47,7 +35,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/tabs/(home:home)',
+    redirectTo: '/tabs/(orders:orders)',
     pathMatch: 'full'
   }
 ];
