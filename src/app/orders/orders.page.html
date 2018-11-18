@@ -3,10 +3,16 @@
     <ion-title>orders</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content padding>
+<ion-content padding *ngIf="!showDetails; else elseBlock">
   <ion-card *ngFor="let order of orders" (click)="tapEvent()" (press)="presentActionSheet()">
-    <ion-item>
-      <ion-badge color="secondary">{{ order.orderId }}</ion-badge> {{ order.date }}
+    <ion-item [ngSwitch]="order.status">
+      <ion-badge style="background-color: #ff4c4d" *ngSwitchCase="0">Cancelled</ion-badge>
+      <ion-badge style="background-color: #ddd919" *ngSwitchCase="1">Waiting for accept</ion-badge>
+      <ion-badge style="background-color: #ffd199" *ngSwitchCase="2">Cooking</ion-badge>
+      <ion-badge style="background-color: #ffd199" *ngSwitchCase="3">Waiting for deliverer</ion-badge>
+      <ion-badge style="background-color: #7c7bff" *ngSwitchCase="4">Delivering</ion-badge>
+      <ion-badge style="background-color: #84ff83" *ngSwitchCase="5">Completed</ion-badge>
+      &nbsp;{{ order.date }}
     </ion-item>
     <ion-card-content>
       <ion-icon name="ios-cash" item-start></ion-icon>
@@ -21,3 +27,8 @@
     </ion-card-content>
   </ion-card>
 </ion-content>
+<ng-template #elseBlock>
+  <ion-content padding>
+    dupa
+  </ion-content>
+</ng-template>

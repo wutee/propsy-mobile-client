@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import 'hammerjs';
 import { OrdersService } from './service/orders.service';
 import {ActionSheetController} from '@ionic/angular';
+import {FoodOrder} from "../../client";
 
 @Component({
   selector: 'app-orders',
@@ -9,10 +10,12 @@ import {ActionSheetController} from '@ionic/angular';
   styleUrls: ['./orders.page.scss'],
 })
 export class OrdersPage {
-  orders: any;
+  orders: FoodOrder[];
+  showDetails: boolean;
 
   constructor(public orderService: OrdersService, public actionSheetCtrl: ActionSheetController) {
     this.getOrders();
+    this.showDetails = false;
   }
 
   async presentActionSheet() {
@@ -48,20 +51,19 @@ export class OrdersPage {
     await actionSheet.present();
   }
 
-
-getOrders() {
+  getOrders() {
     this.orderService.getOrders()
-      .then(data => {
+      .then((data: FoodOrder[]) => {
         this.orders = data;
       });
   }
+
   pressEvent() {
     console.log('press');
   }
 
   tapEvent() {
-    console.log('tap');
+    this.showDetails = true;
   }
-
 
 }
