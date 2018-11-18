@@ -3,6 +3,7 @@ import {FoodInRestaurantService} from './service/food-in-restaurant.service';
 import {Menu} from './model/menu';
 import {BucketService} from '../bucket/service/bucket.service';
 import {Router} from '@angular/router';
+import {RestaurantService} from '../restaurant/service/restaurant.service';
 
 @Component({
   selector: 'app-food-in-restaurant',
@@ -11,14 +12,17 @@ import {Router} from '@angular/router';
 })
 export class FoodInRestaurantPage implements OnInit {
 
-  constructor(private foodInRestaurantService: FoodInRestaurantService, public bucketService: BucketService, private router: Router) {
+  constructor(private foodInRestaurantService: FoodInRestaurantService, public bucketService: BucketService,
+              private router: Router, private restaurantService: RestaurantService) {
   }
 
   @Input()
-  restaurantId = 4;
+  restaurantId: number;
   menus: Menu[] = [];
 
+
   ngOnInit() {
+    this.restaurantId = this.restaurantService.id;
     this.getMenus();
   }
 
@@ -46,8 +50,7 @@ export class FoodInRestaurantPage implements OnInit {
         err => {
           setTimeout(() => this.getMenus(), 2000);
         }
-      )
-    ;
+      );
   }
 
   toggleMenu(i) {

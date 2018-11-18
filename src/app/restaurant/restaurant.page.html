@@ -1,0 +1,18 @@
+<ion-router-outlet name="restaurant"></ion-router-outlet>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list *ngIf="restaurantList;else restaurantDetails">
+      <ion-item (click)="getRestaurantFoods(restaurant.restaurantId, restaurant.restaurantName)" *ngFor="let restaurant of restaurants">
+          {{ restaurant.restaurantName }} - {{ restaurant.adress }}
+      </ion-item>
+    </ion-list>
+  <ng-template #restaurantDetails>
+    <ion-button (click)="backButton()"><</ion-button>
+    <app-food-in-restaurant></app-food-in-restaurant>
+  </ng-template>
+</ion-content>
