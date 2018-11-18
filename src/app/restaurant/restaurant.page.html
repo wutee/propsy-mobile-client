@@ -7,8 +7,8 @@
 
 <ion-content padding>
     <ion-list *ngIf="restaurantList;else restaurantDetails">
-      <ion-item (click)="getRestaurantFoods(restaurant.restaurantId, restaurant.restaurantName)" *ngFor="let restaurant of restaurants">
-          {{ restaurant.restaurantName }} - {{ restaurant.adress }}
+      <ion-item (click)="getRestaurantFoods(restaurant.id, restaurant.nameSlug)" *ngFor="let restaurant of restaurants">
+          {{ restaurant.nameSlug }} - {{ restaurant.address }}
       </ion-item>
     </ion-list>
   <ng-template #restaurantDetails>

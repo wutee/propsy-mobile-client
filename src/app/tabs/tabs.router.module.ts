@@ -1,10 +1,10 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
-import { TabsPage } from './tabs.page';
-import {BucketPage} from "../bucket/bucket.page";
-import {OrdersPage} from "../orders/orders.page";
-import {RestaurantPage} from "../restaurant/restaurant.page";
+import {TabsPage} from './tabs.page';
+import {BucketPage} from '../bucket/bucket.page';
+import {OrdersPage} from '../orders/orders.page';
+import {RestaurantPage} from '../restaurant/restaurant.page';
 
 const routes: Routes = [
   {
