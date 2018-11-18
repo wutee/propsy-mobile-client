@@ -1,26 +1,21 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms';
 
-import { IonicModule } from '@ionic/angular';
+import {IonicModule} from '@ionic/angular';
 
-import { FoodInRestaurantPage } from './food-in-restaurant.page';
-
-const routes: Routes = [
-  {
-    path: '',
-    component: FoodInRestaurantPage
-  }
-];
+import {HTTP_INTERCEPTORS} from '@angular/common/http';
+import {PropsyHttpInterceptor} from '../propsyHttpInterceptor';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
   ],
-  declarations: [FoodInRestaurantPage]
+  declarations: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: PropsyHttpInterceptor, multi: true }
+  ]
 })
 export class FoodInRestaurantPageModule {}

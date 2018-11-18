@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { BucketService } from './bucket.service';
+import {BucketService} from './bucket.service';
 
 describe('BucketService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

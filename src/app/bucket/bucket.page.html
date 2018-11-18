@@ -5,9 +5,9 @@
 </ion-header>
 
 <ion-content>
-  <div *ngIf="this.BucketService.foods.length; then bucket else emptyBucket"></div>
+  <div *ngIf="this.bucketService.foods.length; then bucket else emptyBucket"></div>
   <ng-template #bucket>
-    <ion-card *ngFor="let food of this.BucketService.foods">
+    <ion-card *ngFor="let food of this.bucketService.foods">
       <ion-card-content>
         <ion-card-title>
           {{food.f_foodName}}
@@ -23,7 +23,7 @@
             </span>
           </ion-col>
           <ion-col text-right>
-            <ion-button color="danger" small (click)="this.BucketService.removeProduct(food.id)">
+            <ion-button color="danger" small (click)="this.bucketService.removeProduct(food.id)">
               Usuń
             </ion-button>
           </ion-col>
@@ -42,7 +42,7 @@
     </ion-card>
 
     <div text-center>
-      <ion-button full href="**link_do_zamówienia**">Złóż zamówienie</ion-button>
+      <ion-button full href="order-form">Złóż zamówienie</ion-button>
     </div>
 
   </ng-template>
@@ -54,7 +54,7 @@
       <br>
     </div>
     <div text-center class="allign-bottom">
-      <ion-button href="tabs/(food-in-restaurant:food-in-restaurant)">Do sklepu</ion-button>
+      <ion-button href="tabs/(restaurant:restaurant)">Do sklepu</ion-button>
     </div>
   </ng-template>
 </ion-content>

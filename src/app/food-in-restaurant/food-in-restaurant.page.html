@@ -1,9 +1,3 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>foodInRestaurant</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
   <div *ngIf="menus.length">
     <!-- First Level -->
@@ -62,7 +56,7 @@
     </ion-list>
   </div>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="showBucket()">
-    <ion-fab-button color="{{this.BucketService.foods.length ? 'primary' : 'light'}}">
+    <ion-fab-button color="{{this.bucketService.foods.length ? 'primary' : 'light'}}">
       <ion-icon md="md-basket"></ion-icon>
     </ion-fab-button>
   </ion-fab>

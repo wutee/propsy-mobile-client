@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 
 import { TabsPage } from './tabs.page';
-import { OrdersPage } from '../orders/orders.page';
 import {BucketPage} from "../bucket/bucket.page";
-import {FoodInRestaurantPage} from '../food-in-restaurant/food-in-restaurant.page';
+import {OrdersPage} from "../orders/orders.page";
+import {RestaurantPage} from "../restaurant/restaurant.page";
 
 const routes: Routes = [
   {
@@ -27,9 +27,9 @@ const routes: Routes = [
         component: BucketPage
       },
       {
-        path: 'food-in-restaurant',
-        outlet: 'food-in-restaurant',
-        component: FoodInRestaurantPage
+        path: 'restaurant',
+        outlet: 'restaurant',
+        component: RestaurantPage
       }
     ]
   },
@@ -44,4 +44,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule {
+}
