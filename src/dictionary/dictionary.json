@@ -8,7 +8,11 @@
       "Adress" : "Adress",
       "Zipcode" : "Zip code",
       "City" : "City",
-      "Submit" : "Submit"
+      "Submit" : "Submit",
+      "Home" : "Home",
+      "Contact" : "Contact",
+      "FoodInResraurant" : "Food in resraurant",
+      "Bucket" : "Bucket"
     }
   },
   "pl" : {
@@ -20,7 +24,12 @@
       "Adress" : "Adres",
       "Zipcode" : "Kod pocztowy",
       "City" : "Miasto",
-      "Submit" : "Potwierdź"
+      "Submit" : "Potwierdź",
+      "Home" : "Strona główna",
+      "About" : "City",
+      "Contact" : "City",
+      "FoodInResraurant" : "Jedzenie w reasturacji",
+      "Bucket" : "Koszyk"
     }
   }
 }
