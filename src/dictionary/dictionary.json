@@ -1,0 +1,26 @@
+{
+  "eng" : {
+    "language" : "eng",
+    "values" : {
+      "Order" : "Order",
+      "Name" : "Name",
+      "Surename" : "Surename",
+      "Adress" : "Adress",
+      "Zipcode" : "Zip code",
+      "City" : "City",
+      "Submit" : "Submit"
+    }
+  },
+  "pl" : {
+    "language" : "pl",
+    "values" : {
+      "Order" : "Zamówienie",
+      "Name" : "Imię",
+      "Surename" : "Nazwisko",
+      "Adress" : "Adres",
+      "Zipcode" : "Kod pocztowy",
+      "City" : "Miasto",
+      "Submit" : "Potwierdź"
+    }
+  }
+}
