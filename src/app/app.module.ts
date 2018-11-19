@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {RouteReuseStrategy} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -16,9 +16,11 @@ import {TranslationService} from "./translator/translation.service";
 import {OrderFormComponent} from "./order-form/component/order-form.component";
 import {TranslatePipe} from "./translator/translate.pipe";
 import {ApiModule} from "../client";
+import { LanguageComponent } from './language/language.component';
+import { TranslateModule } from './translator/translate.module';
 
 @NgModule({
-  declarations: [AppComponent, OrderFormComponent, TranslatePipe],
+  declarations: [AppComponent, OrderFormComponent, LanguageComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
@@ -28,15 +30,16 @@ import {ApiModule} from "../client";
     ReactiveFormsModule,
     HttpClientModule,
     ApiModule,
+    TranslateModule
   ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide: HTTP_INTERCEPTORS, useClass: PropsyHttpInterceptor, multi: true },
     FoodInRestaurantService,
-    TranslationService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

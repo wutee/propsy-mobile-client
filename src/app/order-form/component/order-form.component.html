@@ -1,8 +1,13 @@
-<h1>{{'Order' | translate }}</h1>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{'Order' | translate }}</ion-title>
+    <app-language></app-language>
+  </ion-toolbar>
+</ion-header>
 
 <form (submit)="onSubmit()" [formGroup]="form">
   <ion-item>
-    <ion-label fixed>{{'Name' | translate }}</ion-label>
+    <ion-label>{{'Name' | translate }}</ion-label>
     <ion-input formControlName="name" type="text" id=name></ion-input>
   </ion-item>
 
@@ -29,9 +34,3 @@
   <ion-button type="submit">{{'Submit' | translate }}</ion-button>
 
 </form>
-
-<select [(ngModel)]="translationService.language">
-  <option *ngFor="let language of translationService.languages" [ngValue]="language">{{language}}</option>
-</select>
-
-

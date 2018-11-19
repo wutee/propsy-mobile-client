@@ -23,7 +23,9 @@ export class TranslationService {
         'Adress' : 'Adress',
         'Zipcode' : 'Zip code',
         'City' : 'City',
-        'Submit' : 'Submit'
+        'Submit' : 'Submit',
+        'cart' : 'Cart',
+        'goToStore' : 'Go to store'
       }
     },
     'pl' : {
@@ -35,7 +37,9 @@ export class TranslationService {
         'Adress' : 'Adres',
         'Zipcode' : 'Kod pocztowy',
         'City' : 'Miasto',
-        'Submit' : 'Potwierdź'
+        'Submit' : 'Potwierdź',
+        'cart' : 'Koszyk',
+        'goToStore' : 'Do sklepu'
       }
     }
   };

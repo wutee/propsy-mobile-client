@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Koszyk</ion-title>
+    <ion-title>{{ 'cart' | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -54,7 +54,11 @@
       <br>
     </div>
     <div text-center class="allign-bottom">
-      <ion-button href="tabs/(restaurant:restaurant)">Do sklepu</ion-button>
+      <ion-button href="tabs/(restaurant:restaurant)">{{ 'goToStore' | translate }}</ion-button>
     </div>
   </ng-template>
 </ion-content>
+
+<ion-item>
+  <ion-label>{{ 'goToStore' | translate }}</ion-label>
+</ion-item>

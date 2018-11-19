@@ -5,6 +5,7 @@ import { TabsPage } from './tabs.page';
 import {BucketPage} from "../bucket/bucket.page";
 import {OrdersPage} from "../orders/orders.page";
 import {RestaurantPage} from "../restaurant/restaurant.page";
+import { TranslationService } from '../translator/translation.service';
 
 const routes: Routes = [
   {
