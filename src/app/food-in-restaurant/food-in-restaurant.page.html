@@ -1,18 +1,18 @@
 <ion-content>
-  <div *ngIf="menus.length">
+  <div *ngIf="restaurant.menus.length">
     <!-- First Level -->
-    <ion-list justify-content-center *ngFor="let menu of menus; let i = index">
+    <ion-list justify-content-center *ngFor="let menu of restaurant.menus; let i = index">
       <ion-item>
         <ion-button slot="start" fill="clear" (click)="toggleMenu(i)">
           <ion-icon name="arrow-dropdown-circle" *ngIf="!menu.isOpen"></ion-icon>
-          <ion-icon name="arrow-dropup-circle" *ngIf="menu.isOpen"></ion-icon>
+          <ion-icon name="arrow-dropup-circle" *ngIf="isOpenMenu"></ion-icon>
         </ion-button>
-        <ion-label>{{menu.menuName | uppercase}}</ion-label>
+        <ion-label>{{menu.nameSlug | uppercase}}</ion-label>
       </ion-item>
 
       <!--Second Level-->
-      <div *ngIf="menu.isOpen">
-        <ion-list *ngFor="let food of menu.foods; let j = index">
+      <div *ngIf="isOpenMenu">
+        <ion-list *ngFor="let food of menu.foodItems; let j = index">
           <ion-item>
             <ion-button slot="start" fill="clear" (click)="toggleFood(i, j)">
               <ion-icon name="add-circle" *ngIf="!food.isOpen"></ion-icon>
@@ -26,7 +26,7 @@
           </ion-item>
 
           <!--Third Level-->
-          <div *ngIf="menu.isOpen && food.isOpen">
+          <div *ngIf="isOpenMenu && food.isOpen">
             <ion-list>
               <ion-item *ngIf="food.f_foodDescription != null" text-wrap text-center>
                 <ion-label>
