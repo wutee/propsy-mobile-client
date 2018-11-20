@@ -34,6 +34,7 @@ export class RestaurantPage {
 
 
   backButton() {
+    this.title = 'Restaurants';
     this.restaurantList = true;
   }
 
