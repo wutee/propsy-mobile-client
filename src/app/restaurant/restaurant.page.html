@@ -22,8 +22,9 @@
         </ion-card>
       <!--</ion-item>-->
     </ion-list>
-  <ng-template #restaurantDetails>
-    <ion-button (click)="backButton()"><</ion-button>
-    <app-food-in-restaurant></app-food-in-restaurant>
-  </ng-template>
+    
+    <ng-template #restaurantDetails>
+        <ion-button (click)="backButton()"><</ion-button>
+        <app-food-in-restaurant [restaurantId]=1></app-food-in-restaurant>
+      </ng-template>
 </ion-content>

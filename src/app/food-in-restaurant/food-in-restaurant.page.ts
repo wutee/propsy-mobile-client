@@ -1,9 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {FoodInRestaurantService} from './service/food-in-restaurant.service';
-import {Menu} from './model/menu';
 import {BucketService} from '../bucket/service/bucket.service';
 import {Router} from '@angular/router';
-import {RestaurantService} from '../restaurant/service/restaurant.service';
+import {Restaurant, MenuResourceService, Menu, Food} from '../../client';
+import { equal } from 'assert';
 
 @Component({
   selector: 'app-food-in-restaurant',
@@ -12,53 +11,44 @@ import {RestaurantService} from '../restaurant/service/restaurant.service';
 })
 export class FoodInRestaurantPage implements OnInit {
 
-  constructor(private foodInRestaurantService: FoodInRestaurantService, public bucketService: BucketService,
-              private router: Router, private restaurantService: RestaurantService) {
+  constructor(public bucketService: BucketService,
+              private router: Router, private menuService: MenuResourceService) {
   }
 
   @Input()
   restaurantId: number;
   menus: Menu[] = [];
+  currentMenu: Menu;
+  currentFood: Food;
 
 
   ngOnInit() {
-    this.restaurantId = this.restaurantService.id;
     this.getMenus();
   }
 
-  getFoods(menus: Menu[]): void {
-    menus.forEach((menu, i) => {
-      this.foodInRestaurantService
-        .getFoods(this.restaurantId, menu.menuId)
-        .subscribe(
-          response => menu.foods = response
-        );
-    });
-  }
-
   getMenus(): void {
-    this.foodInRestaurantService
-      .getMenus(this.restaurantId)
+    this.menuService.getAllMenusUsingGET()
       .subscribe(
         response => {
-          this.menus = response;
-          this.getFoods(this.menus);
-          // if(this.menus.length > 0){
-          //   this.menus[0].isOpen = true;
-          // }
-        },
-        err => {
-          setTimeout(() => this.getMenus(), 2000);
+          this.menus = response.filter(
+            menu => menu.restaurant.id === this.restaurantId
+          );
         }
-      );
+      )
   }
 
-  toggleMenu(i) {
-    this.menus[i].isOpen = !this.menus[i].isOpen;
+  toggleMenu(menu: Menu) {
+    if(this.currentMenu == menu)
+      this.currentMenu = null;
+    else
+      this.currentMenu = menu;
   }
 
-  toggleFood(i, j) {
-    this.menus[i].foods[j].isOpen = !this.menus[i].foods[j].isOpen;
+  toggleFood(food: Food) {
+    if(this.currentFood == food)
+      this.currentFood = null;
+    else
+      this.currentFood = food;
   }
 
   addProductToBucket(food) {
