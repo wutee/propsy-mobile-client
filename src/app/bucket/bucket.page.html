@@ -10,7 +10,7 @@
     <ion-card *ngFor="let food of this.bucketService.foods">
       <ion-card-content>
         <ion-card-title>
-          {{food.f_foodName}}
+          {{food.nameSlug}}
         </ion-card-title>
         <p>
           {{food.foodDescription}}
@@ -19,7 +19,7 @@
           <ion-col>
             <ion-icon style="font-size: large" name='pricetag'></ion-icon>
             <span style="font-size: x-large;">
-            {{food.fm_price}} zł
+            {{food.price}} zł
             </span>
           </ion-col>
           <ion-col text-right>
