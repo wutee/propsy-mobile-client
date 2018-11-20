@@ -6,10 +6,21 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-list *ngIf="restaurantList;else restaurantDetails">
-      <ion-item (click)="getRestaurantFoods(restaurant.id, restaurant.nameSlug)" *ngFor="let restaurant of restaurants">
-          {{ restaurant.nameSlug }} - {{ restaurant.address }}
-      </ion-item>
+    <ion-list inset *ngIf="restaurantList;else restaurantDetails">
+      <!--<ion-item (click)="getRestaurantFoods(restaurant.id, restaurant.nameSlug)" *ngFor="let restaurant of restaurants">-->
+          <!--{{ restaurant.nameSlug }} - {{ restaurant.address }}-->
+        <ion-card (click)="getRestaurantFoods(restaurant.id, restaurant.nameSlug)" *ngFor="let restaurant of restaurants">
+          <!--<img src="http://ninlive.com/navbar/archives.jpg"/>-->
+          <ion-card-content>
+            <ion-card-title>
+              {{ restaurant.nameSlug }}
+            </ion-card-title>
+            <p>
+              <ion-badge>{{ restaurant.address }}</ion-badge>
+            </p>
+          </ion-card-content>
+        </ion-card>
+      <!--</ion-item>-->
     </ion-list>
   <ng-template #restaurantDetails>
     <ion-button (click)="backButton()"><</ion-button>
