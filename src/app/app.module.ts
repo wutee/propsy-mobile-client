@@ -10,7 +10,6 @@ import {StatusBar} from '@ionic-native/status-bar/ngx';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
-import {FoodInRestaurantService} from "./food-in-restaurant/service/food-in-restaurant.service";
 import {PropsyHttpInterceptor} from "./propsyHttpInterceptor";
 import {TranslationService} from "./translator/translation.service";
 import {OrderFormComponent} from "./order-form/component/order-form.component";
@@ -34,7 +33,6 @@ import {ApiModule} from "../client";
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide: HTTP_INTERCEPTORS, useClass: PropsyHttpInterceptor, multi: true },
-    FoodInRestaurantService,
     TranslationService
   ],
   bootstrap: [AppComponent]

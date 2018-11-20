@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Menu} from './model/menu';
 import {BucketService} from '../bucket/service/bucket.service';
 import {Router} from '@angular/router';
-import {Restaurant, RestaurantResourceService} from '../../client';
+import {Restaurant, MenuResourceService, Menu, Food} from '../../client';
+import { equal } from 'assert';
 
 @Component({
   selector: 'app-food-in-restaurant',
@@ -12,33 +12,43 @@ import {Restaurant, RestaurantResourceService} from '../../client';
 export class FoodInRestaurantPage implements OnInit {
 
   constructor(public bucketService: BucketService,
-              private router: Router, private restaurantService: RestaurantResourceService) {
+              private router: Router, private menuService: MenuResourceService) {
   }
 
-  // @Input()
-  restaurantId: number = 1;
-  restaurant: Restaurant;
-  isOpenMenu: boolean = true;
-  isOpenFood: boolean = true;
+  @Input()
+  restaurantId: number;
+  menus: Menu[] = [];
+  currentMenu: Menu;
+  currentFood: Food;
 
 
   ngOnInit() {
-    this.getFoods();
+    this.getMenus();
   }
 
-  getFoods(): void {
-    this.restaurantService.getRestaurantUsingGET(this.restaurantId)
+  getMenus(): void {
+    this.menuService.getAllMenusUsingGET()
       .subscribe(
-        response => this.restaurant = response
+        response => {
+          this.menus = response.filter(
+            menu => menu.restaurant.id === this.restaurantId
+          );
+        }
       )
   }
 
-  toggleMenu(i) {
-    this.isOpenMenu = !this.isOpenMenu;
+  toggleMenu(menu: Menu) {
+    if(this.currentMenu == menu)
+      this.currentMenu = null;
+    else
+      this.currentMenu = menu;
   }
 
-  toggleFood(i, j) {
-    this.isOpenFood = !this.isOpenFood;
+  toggleFood(food: Food) {
+    if(this.currentFood == food)
+      this.currentFood = null;
+    else
+      this.currentFood = food;
   }
 
   addProductToBucket(food) {
