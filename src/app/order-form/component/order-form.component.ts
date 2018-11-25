@@ -15,11 +15,9 @@ export class OrderFormComponent implements OnInit {
 
   payLoad = '';
   form: FormGroup;
-  data: any = null;
 
   constructor(
     private orderFormService: OrderFormService,
-  //  public navController: NavController,
     public translationService: TranslationService
   ) {
     this.form = new FormGroup({
