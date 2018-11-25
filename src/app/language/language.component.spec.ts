@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LanguageComponent } from './language.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
+import { TranslationService } from '../translator/translation.service';
 
 describe('LanguageComponent', () => {
   let component: LanguageComponent;
@@ -8,7 +12,14 @@ describe('LanguageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LanguageComponent ]
+      declarations: [ LanguageComponent ],
+      imports: [
+        ReactiveFormsModule,
+        FormsModule,
+        IonicModule.forRoot(),
+      ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+      providers: [ TranslationService ]
     })
     .compileComponents();
   }));

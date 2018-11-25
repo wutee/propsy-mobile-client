@@ -1,36 +1,36 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>{{'Order' | translate }}</ion-title>
+    <ion-title>{{ 'order' | translate }}</ion-title>
     <app-language></app-language>
   </ion-toolbar>
 </ion-header>
 
 <form (submit)="onSubmit()" [formGroup]="form">
   <ion-item>
-    <ion-label>{{'Name' | translate }}</ion-label>
+    <ion-label>{{ 'name' | translate }}</ion-label>
     <ion-input formControlName="name" type="text" id=name></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label fixed>{{'Surename' | translate }}</ion-label>
+    <ion-label>{{ 'surename' | translate }}</ion-label>
     <ion-input formControlName="surename" type="text" id=surename></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label fixed>{{'Adress' | translate }}</ion-label>
+    <ion-label>{{ 'adress' | translate }}</ion-label>
     <ion-input formControlName="address" type="text" id=address></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label fixed>{{'Zipcode' | translate }}</ion-label>
+    <ion-label>{{ 'zipcode' | translate }}</ion-label>
     <ion-input formControlName="zipCode" type="text" id=zipCode></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label fixed>{{'City' | translate }}</ion-label>
+    <ion-label>{{ 'city' | translate }}</ion-label>
     <ion-input formControlName="city" type="text" id=city></ion-input>
   </ion-item>
 
-  <ion-button type="submit">{{'Submit' | translate }}</ion-button>
+  <ion-button type="submit">{{ 'submit' | translate }}</ion-button>
 
 </form>

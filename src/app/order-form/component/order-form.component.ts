@@ -19,7 +19,7 @@ export class OrderFormComponent implements OnInit {
 
   constructor(
     private orderFormService: OrderFormService,
-    public navController: NavController,
+  //  public navController: NavController,
     public translationService: TranslationService
   ) {
     this.form = new FormGroup({
@@ -36,12 +36,6 @@ export class OrderFormComponent implements OnInit {
 
   onSubmit() {
     this.orderFormService.doSomethingWithCustomerAddress(this.form.value as Customer);
-  }
-
-  change($event) {
-    if($event == 'a') {
-      this.data = null;
-    }
   }
 
 }

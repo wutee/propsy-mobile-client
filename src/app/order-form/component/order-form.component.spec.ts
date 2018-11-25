@@ -7,6 +7,7 @@ import {TranslatePipe} from '../../translator/translate.pipe';
 import {OrderFormService} from '../service/order-form.service';
 import {TranslationService} from '../../translator/translation.service';
 import {IonicModule} from '@ionic/angular';
+import { TranslateModule } from '../../translator/translate.module';
 
 describe('OrderFormComponent', () => {
   let component: OrderFormComponent;
@@ -14,11 +15,12 @@ describe('OrderFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OrderFormComponent, TranslatePipe ],
+      declarations: [ OrderFormComponent ],
       imports: [
         ReactiveFormsModule,
         FormsModule,
-        IonicModule.forRoot()
+        IonicModule.forRoot(),
+        TranslateModule.forChild(),
        ],
       schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
       providers: [

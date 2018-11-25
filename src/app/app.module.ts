@@ -9,11 +9,11 @@ import {StatusBar} from '@ionic-native/status-bar/ngx';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
-import {PropsyHttpInterceptor} from "./propsyHttpInterceptor";
-import {TranslationService} from "./translator/translation.service";
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {PropsyHttpInterceptor} from './propsyHttpInterceptor';
+import {TranslationService} from './translator/translation.service';
 
-import {ApiModule} from "../client";
+import {ApiModule} from '../client';
 import { TranslateModule } from './translator/translate.module';
 import { OrderFormModule } from './order-form/order-form.module';
 
@@ -39,6 +39,6 @@ import { OrderFormModule } from './order-form/order-form.module';
     { provide: HTTP_INTERCEPTORS, useClass: PropsyHttpInterceptor, multi: true },
     TranslationService
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -17,8 +17,7 @@ export class TranslationService {
   public languages = Object.keys(this.dictionaries);
   public language = this.languages[0];
 
-  constructor() {
-  }
+  constructor() { }
 
   translate(value: string): string {
     if (this.dictionaries[this.language][value]) {
