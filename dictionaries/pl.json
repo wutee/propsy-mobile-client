@@ -7,5 +7,21 @@
     "City": "Miasto",
     "Submit": "Potwierdź",
     "cart": "Koszyk",
-    "goToStore": "Do sklepu"
+    "goToStore": "Do sklepu",
+    "cartIsEmpty": "Koszyk jest pusty",
+    "delete": "Usuń",
+    "sum": "Razem",
+    "itemsSummingTo": "towarów na sumę",
+    "makeAnOrder": "Złóż zamówienie",
+    "orders": "Zamówienia",
+    "price": "Cena",
+    "bonus": "Bonus",
+    "status": "Status",
+    "cancelled": "Cancelled",
+    "pending": "Pending",
+    "cooking": "Cooking",
+    "waiting": "Waiting",
+    "delivering": "Delivering",
+    "completed": "Completed",
+    "restaurants": "Restauracje"
 }

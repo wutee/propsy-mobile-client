@@ -15,13 +15,13 @@ export class TranslationService {
   }
 
   public languages = Object.keys(this.dictionaries);
-  public language = this.languages[1];
+  public language = this.languages[0];
 
   constructor() {
   }
 
   translate(value: string): string {
-    if (this.dictionaries[this.language] != null) {
+    if (this.dictionaries[this.language][value]) {
       return this.dictionaries[this.language][value];
     }
     return this.dictionaries.en[value];

@@ -25,7 +25,7 @@
           </ion-col>
           <ion-col text-right>
             <ion-button color="danger" small (click)="this.bucketService.removeProduct(food.id)">
-              Usuń
+              {{ 'delete' | translate }}
             </ion-button>
           </ion-col>
         </ion-row>
@@ -34,16 +34,16 @@
 
     <ion-card>
       <ion-item>
-        <ion-label>Razem</ion-label>
+        <ion-label>{{ 'sum' | translate }}</ion-label>
       </ion-item>
 
       <ion-card-content>
-        <b>{{countProducts()}} towarów na sumę: {{sumProducts()}} zł</b>
+        <b>{{countProducts()}} {{ 'itemsSummingTo' | translate }}: {{sumProducts()}} zł</b>
       </ion-card-content>
     </ion-card>
 
     <div text-center>
-      <ion-button full href="order-form">Złóż zamówienie</ion-button>
+      <ion-button full href="order-form">{{ 'makeAnOrder' | translate }}</ion-button>
     </div>
 
   </ng-template>
@@ -51,7 +51,7 @@
     <div text-center>
       <ion-icon name="cart" class="bucketWheelsIcon"></ion-icon>
       <br><br>
-      Koszyk jest pusty
+      {{ 'cartIsEmpty' | translate }}
       <br>
     </div>
     <div text-center class="allign-bottom">

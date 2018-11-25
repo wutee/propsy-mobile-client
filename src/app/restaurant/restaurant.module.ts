@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { RestaurantPage } from './restaurant.page';
 import {FoodInRestaurantPage} from "../food-in-restaurant/food-in-restaurant.page";
+import { TranslateModule } from '../translator/translate.module';
 
 const routes: Routes = [
   {
@@ -20,7 +21,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    TranslateModule.forChild()
   ],
   declarations: [RestaurantPage, FoodInRestaurantPage]
 })

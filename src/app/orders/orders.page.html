@@ -1,6 +1,7 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>orders</ion-title>
+    <ion-title>{{ 'orders' | translate }}</ion-title>
+    <app-language></app-language>
   </ion-toolbar>
 </ion-header>
 
@@ -16,21 +17,21 @@
     </ion-card-content>
     <ion-row>
       <ion-col>
-        <div><ion-icon name="ios-cash"></ion-icon> Price </div>
+        <div><ion-icon name="ios-cash"></ion-icon>{{ 'price' | translate }}</div>
         <ion-badge>{{ order.price }} PLN</ion-badge>
       </ion-col>
       <ion-col>
-        <div><ion-icon name="ios-card"></ion-icon> Bonus </div>
+        <div><ion-icon name="ios-card"></ion-icon>{{ 'bonus' | translate }}</div>
         <ion-badge color="secondary">+{{ order.loyaltyPoints }} PLN</ion-badge>
       </ion-col>
       <ion-col [ngSwitch]="order.status">
-        <div><ion-icon name="ios-clipboard"></ion-icon> Status </div>
-          <ion-badge style="background-color: #ff4c4d" *ngSwitchCase="0">Cancelled</ion-badge>
-          <ion-badge style="background-color: #ddd919" *ngSwitchCase="1">Pending</ion-badge>
-          <ion-badge style="background-color: #ffd199" *ngSwitchCase="2">Cooking</ion-badge>
-          <ion-badge style="background-color: #ffd199" *ngSwitchCase="3">Waiting</ion-badge>
-          <ion-badge style="background-color: #7c7bff" *ngSwitchCase="4">Delivering</ion-badge>
-          <ion-badge style="background-color: #84ff83" *ngSwitchCase="5">Completed</ion-badge>
+        <div><ion-icon name="ios-clipboard"></ion-icon>{{ 'status' | translate }}</div>
+          <ion-badge style="background-color: #ff4c4d" *ngSwitchCase="0">{{ 'cancelled' | translate }}</ion-badge>
+          <ion-badge style="background-color: #ddd919" *ngSwitchCase="1">{{ 'pending' | translate }}</ion-badge>
+          <ion-badge style="background-color: #ffd199" *ngSwitchCase="2">{{ 'cooking' | translate }}</ion-badge>
+          <ion-badge style="background-color: #ffd199" *ngSwitchCase="3">{{ 'waiting' | translate }}</ion-badge>
+          <ion-badge style="background-color: #7c7bff" *ngSwitchCase="4">{{ 'delivering' | translate }}</ion-badge>
+          <ion-badge style="background-color: #84ff83" *ngSwitchCase="5">{{ 'completed' | translate }}</ion-badge>
       </ion-col>
     </ion-row>
     <ion-card-content>

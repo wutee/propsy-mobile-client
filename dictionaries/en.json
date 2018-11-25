@@ -7,5 +7,21 @@
     "City": "City",
     "Submit": "Submit",
     "cart": "Cart",
-    "goToStore": "Go to store"
+    "goToStore": "Go to store",
+    "cartIsEmpty": "Cart is empty",
+    "delete": "Delete",
+    "sum": "Sum",
+    "itemsSummingTo": "items summing to",
+    "makeAnOrder": "Make an order",
+    "orders": "Orders",
+    "price": "Price",
+    "bonus": "Bonus",
+    "status": "Status",
+    "cancelled": "Cancelled",
+    "pending": "Pending",
+    "cooking": "Cooking",
+    "waiting": "Waiting",
+    "delivering": "Delivering",
+    "completed": "Completed",
+    "restaurants": "Restaurants"
 }
