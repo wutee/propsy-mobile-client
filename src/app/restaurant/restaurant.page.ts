@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {RestaurantService} from './service/restaurant.service';
 import {FoodInRestaurantPage} from '../food-in-restaurant/food-in-restaurant.page';
+import {Restaurant} from '../../client';
 
 @Component({
   selector: 'app-restaurant',
@@ -8,7 +9,7 @@ import {FoodInRestaurantPage} from '../food-in-restaurant/food-in-restaurant.pag
   styleUrls: ['./restaurant.page.scss'],
 })
 export class RestaurantPage {
-  restaurants: any;
+  restaurants: Restaurant[];
   restaurantList: boolean;
   title: string;
 
@@ -33,6 +34,7 @@ export class RestaurantPage {
 
 
   backButton() {
+    this.title = 'Restaurants';
     this.restaurantList = true;
   }
 

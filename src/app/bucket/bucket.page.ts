@@ -14,7 +14,7 @@ export class BucketPage {
   sumProducts() {
     let sum = 0;
     for (const food of this.bucketService.foods) {
-      sum += food.fm_price;
+      sum += food.price;
     }
     return sum;
   }

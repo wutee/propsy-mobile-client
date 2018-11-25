@@ -3,30 +3,44 @@
     <ion-title>orders</ion-title>
   </ion-toolbar>
 </ion-header>
+
+
 <ion-content padding *ngIf="!showDetails">
   <ion-card *ngFor="let order of orders" (click)="tapEvent(order.id)" (press)="presentActionSheet()">
-    <ion-item [ngSwitch]="order.status">
-      <ion-badge style="background-color: #ff4c4d" *ngSwitchCase="0">Cancelled</ion-badge>
-      <ion-badge style="background-color: #ddd919" *ngSwitchCase="1">Waiting for accept</ion-badge>
-      <ion-badge style="background-color: #ffd199" *ngSwitchCase="2">Cooking</ion-badge>
-      <ion-badge style="background-color: #ffd199" *ngSwitchCase="3">Waiting for deliverer</ion-badge>
-      <ion-badge style="background-color: #7c7bff" *ngSwitchCase="4">Delivering</ion-badge>
-      <ion-badge style="background-color: #84ff83" *ngSwitchCase="5">Completed</ion-badge>
-      &nbsp;{{ order.date }}
+    <ion-item>
+      <p>[{{ order.date }}] <b>{{ order.restaurant.nameSlug }}</b></p>
     </ion-item>
     <ion-card-content>
-      <ion-icon name="ios-cash" item-start></ion-icon>
-      <b>Price: </b>
-      <ion-badge item-end>{{ order.price }}$</ion-badge>
+      <b>{{ order.userOpinion }}</b>
+      <p>{{ order.userComment }}</p>
     </ion-card-content>
+    <ion-row>
+      <ion-col>
+        <div><ion-icon name="ios-cash"></ion-icon> Price </div>
+        <ion-badge>{{ order.price }} PLN</ion-badge>
+      </ion-col>
+      <ion-col>
+        <div><ion-icon name="ios-card"></ion-icon> Bonus </div>
+        <ion-badge color="secondary">+{{ order.loyaltyPoints }} PLN</ion-badge>
+      </ion-col>
+      <ion-col [ngSwitch]="order.status">
+        <div><ion-icon name="ios-clipboard"></ion-icon> Status </div>
+          <ion-badge style="background-color: #ff4c4d" *ngSwitchCase="0">Cancelled</ion-badge>
+          <ion-badge style="background-color: #ddd919" *ngSwitchCase="1">Pending</ion-badge>
+          <ion-badge style="background-color: #ffd199" *ngSwitchCase="2">Cooking</ion-badge>
+          <ion-badge style="background-color: #ffd199" *ngSwitchCase="3">Waiting</ion-badge>
+          <ion-badge style="background-color: #7c7bff" *ngSwitchCase="4">Delivering</ion-badge>
+          <ion-badge style="background-color: #84ff83" *ngSwitchCase="5">Completed</ion-badge>
+      </ion-col>
+    </ion-row>
     <ion-card-content>
-      <b>User opinion: </b> {{ order.userOpinion }}
+
     </ion-card-content>
-    <ion-card-content>
-      <b>User comment: </b> {{ order.userComment }}
-    </ion-card-content>
+
   </ion-card>
 </ion-content>
+
+
 <ion-content padding *ngIf="showDetails">
   <ion-button (click)="returnToOrderList()">
     <ion-icon name="return-left"></ion-icon>&nbsp;Back to order list

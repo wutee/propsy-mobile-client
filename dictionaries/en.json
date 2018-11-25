@@ -1,0 +1,11 @@
+{
+    "Order": "Order",
+    "Name": "Name",
+    "Surename": "Surename",
+    "Adress": "Adress",
+    "Zipcode": "Zip code",
+    "City": "City",
+    "Submit": "Submit",
+    "cart": "Cart",
+    "goToStore": "Go to store"
+}

@@ -1,0 +1,11 @@
+{
+    "Order": "Zamówienie",
+    "Name": "Imię",
+    "Surename": "Nazwisko",
+    "Adress": "Adres",
+    "Zipcode": "Kod pocztowy",
+    "City": "Miasto",
+    "Submit": "Potwierdź",
+    "cart": "Koszyk",
+    "goToStore": "Do sklepu"
+}

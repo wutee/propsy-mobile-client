@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {RestaurantResourceService} from '../../../client';
 
 
 @Injectable({
@@ -8,11 +9,11 @@ import {HttpClient} from '@angular/common/http';
 export class RestaurantService {
   id: number;
 
-  constructor(public http: HttpClient) {
+  constructor(public http: HttpClient, public restaurantService: RestaurantResourceService) {
   }
 
   getRestaurants() {
-    return this.http.get('api/restaurants');
+    return this.restaurantService.getAllRestaurantsUsingGET();
   }
 
 

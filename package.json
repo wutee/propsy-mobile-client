@@ -12,7 +12,7 @@
     "test:watch": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "fast-rest": "xmysql -h sql.modasu.home.pl -u 07500260_propsy -p +;:ake!T6@sW -d 07500260_propsy"
+    "fast-rest": "xmysql -h sql.modasu.home.pl -u 07500260_propsy -p '+;:ake!T6@sW' -d 07500260_propsy"
   },
   "dependencies": {
     "@angular/common": "~6.1.1",
