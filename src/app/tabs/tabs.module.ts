@@ -23,7 +23,7 @@ import { TranslateModule } from '../translator/translate.module';
     FoodInRestaurantPageModule,
     OrdersPageModule,
     RestaurantPageModule,
-    TranslateModule
+    TranslateModule.forChild()
   ],
   declarations: [TabsPage]
 })

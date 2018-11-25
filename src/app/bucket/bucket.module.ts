@@ -11,7 +11,7 @@ import { TranslateModule } from '../translator/translate.module';
     IonicModule,
     CommonModule,
     FormsModule,
-    TranslateModule,
+    TranslateModule.forChild(),
     RouterModule.forChild([{ path: '', component: BucketPage }])
   ],
   declarations: [BucketPage]

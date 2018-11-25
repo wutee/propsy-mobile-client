@@ -18,9 +18,10 @@ import {TranslatePipe} from "./translator/translate.pipe";
 import {ApiModule} from "../client";
 import { LanguageComponent } from './language/language.component';
 import { TranslateModule } from './translator/translate.module';
+import { OrderFormModule } from './order-form/order-form.module';
 
 @NgModule({
-  declarations: [AppComponent, OrderFormComponent, LanguageComponent],
+  declarations: [AppComponent ],
   entryComponents: [],
   imports: [
     BrowserModule,
@@ -30,7 +31,8 @@ import { TranslateModule } from './translator/translate.module';
     ReactiveFormsModule,
     HttpClientModule,
     ApiModule,
-    TranslateModule
+    OrderFormModule,
+    TranslateModule.forRoot()
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [

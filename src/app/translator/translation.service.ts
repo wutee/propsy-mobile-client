@@ -11,7 +11,7 @@ export class TranslationService {
 
   public languages = ['eng', 'pl'];
 
-  public language = 'eng';
+  public language = 'pl';
 
   private dictionary: {[key: string]: TranslationSet} = {
     'eng' : {
@@ -25,7 +25,8 @@ export class TranslationService {
         'City' : 'City',
         'Submit' : 'Submit',
         'cart' : 'Cart',
-        'goToStore' : 'Go to store'
+        'goToStore' : 'Go to store',
+        'apple' : 'Apple'
       }
     },
     'pl' : {
@@ -39,7 +40,8 @@ export class TranslationService {
         'City' : 'Miasto',
         'Submit' : 'Potwierdź',
         'cart' : 'Koszyk',
-        'goToStore' : 'Do sklepu'
+        'goToStore' : 'Do sklepu',
+        'apple' : 'jablko'
       }
     }
   };
