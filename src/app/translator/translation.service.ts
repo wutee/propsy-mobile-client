@@ -12,7 +12,7 @@ export class TranslationService {
   private dictionaries = {
     en: require('../../../dictionaries/en.json'),
     pl: require('../../../dictionaries/pl.json'),
-  }
+  };
 
   public languages = Object.keys(this.dictionaries);
   public language = this.languages[0];

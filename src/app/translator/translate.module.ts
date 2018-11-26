@@ -14,24 +14,23 @@ import { FormsModule } from '@angular/forms';
   declarations: [TranslatePipe, LanguageComponent],
   exports: [TranslatePipe, LanguageComponent],
 })
-class TranslateForChildModule{
-
+export class TranslateForChildModule {
 }
 
 @NgModule({
   providers: [TranslationService]
 })
-export class TranslateModule { 
+export class TranslateModule {
 
-  static forRoot(){
+  static forRoot() {
     return {
       ngModule: TranslateModule
-    }
+    };
   }
 
-  static forChild(){
+  static forChild() {
     return {
       ngModule: TranslateForChildModule
-    }
+    };
   }
 }
