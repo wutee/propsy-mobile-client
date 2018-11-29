@@ -1,7 +1,9 @@
-import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {BucketPage} from './bucket.page';
+import { BucketPage } from './bucket.page';
+import { TranslateModule } from '../translator/translate.module';
+import { TranslationService } from '../translator/translation.service';
 
 describe('BucketPage', () => {
   let component: BucketPage;
@@ -10,7 +12,13 @@ describe('BucketPage', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [BucketPage],
+      imports: [
+        TranslateModule.forChild(),
+      ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      providers: [
+        TranslationService
+      ]
     }).compileComponents();
   }));
 

@@ -1,50 +1,28 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 
 
 export class TranslationSet {
   public languange: string;
-  public values: {[key: string]: string} = {};
+  public values: { [key: string]: string } = {};
 }
 
 @Injectable()
 export class TranslationService {
 
-  public languages = ['eng', 'pl'];
-
-  public language = 'eng';
-
-  private dictionary: {[key: string]: TranslationSet} = {
-    'eng' : {
-      languange: 'eng',
-      values: {
-        'Order' : 'Order',
-        'Name' : 'Name',
-        'Surename' : 'Surename',
-        'Adress' : 'Adress',
-        'Zipcode' : 'Zip code',
-        'City' : 'City',
-        'Submit' : 'Submit'
-      }
-    },
-    'pl' : {
-      languange: 'pl',
-      values: {
-        'Order' : 'Zamowienie',
-        'Name' : 'Imie',
-        'Surename' : 'Nazwisko',
-        'Adress' : 'Adres',
-        'Zipcode' : 'Kod pocztowy',
-        'City' : 'Miasto',
-        'Submit' : 'Potwierdź'
-      }
-    }
+  private dictionaries = {
+    en: require('../../../dictionaries/en.json'),
+    pl: require('../../../dictionaries/pl.json'),
   };
+
+  public languages = Object.keys(this.dictionaries);
+  public language = this.languages[0];
 
   constructor() { }
 
   translate(value: string): string {
-    if ( this.dictionary[this.language] != null) {
-      return this.dictionary[this.language].values[value];
+    if (this.dictionaries[this.language][value]) {
+      return this.dictionaries[this.language][value];
     }
+    return this.dictionaries.en[value];
   }
 }

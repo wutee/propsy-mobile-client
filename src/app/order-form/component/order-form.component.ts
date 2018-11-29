@@ -2,13 +2,15 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {OrderFormService} from '../service/order-form.service';
 import {Customer} from '../models/customer';
-import {TranslationService} from '../../translator/translation.service';
+import { NavController } from '@ionic/angular';
+import { TranslationService } from '../../translator/translation.service';
 
 @Component({
   selector: 'app-order-form-component',
   templateUrl: './order-form.component.html',
-  styleUrls: ['./order-form.component.scss']
+  styleUrls: ['./order-form.component.scss'],
 })
+
 export class OrderFormComponent implements OnInit {
 
   payLoad = '';
@@ -26,7 +28,6 @@ export class OrderFormComponent implements OnInit {
       city: new FormControl(),
    });
   }
-
 
   ngOnInit() {
   }

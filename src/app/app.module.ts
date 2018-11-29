@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {RouteReuseStrategy} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -13,13 +13,12 @@ import {AppComponent} from './app.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {PropsyHttpInterceptor} from './propsyHttpInterceptor';
 import {TranslationService} from './translator/translation.service';
-import {OrderFormComponent} from './order-form/component/order-form.component';
-import {TranslatePipe} from './translator/translate.pipe';
 import {ApiModule} from '../client';
-
+import { TranslateModule } from './translator/translate.module';
+import { OrderFormModule } from './order-form/order-form.module';
 
 @NgModule({
-  declarations: [AppComponent, OrderFormComponent, TranslatePipe],
+  declarations: [AppComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
@@ -29,7 +28,10 @@ import {ApiModule} from '../client';
     ReactiveFormsModule,
     HttpClientModule,
     ApiModule,
+    OrderFormModule,
+    TranslateModule.forRoot()
   ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [
     StatusBar,
     SplashScreen,
