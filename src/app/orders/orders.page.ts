@@ -3,7 +3,6 @@ import 'hammerjs';
 import { OrdersService } from './service/orders.service';
 import {ActionSheetController} from '@ionic/angular';
 import {FoodOrder} from "../../client";
-import {element} from "protractor";
 
 @Component({
   selector: 'app-orders',
@@ -13,11 +12,20 @@ import {element} from "protractor";
 export class OrdersPage {
   orders: FoodOrder[];
   showDetails: boolean;
+  timeRating: number;
   presentOrder: FoodOrder;
+  isSavedComment: boolean;
+  isEditingComment: boolean;
+  priceRating: number;
+  qualityRating: number;
+  comment: string;
 
   constructor(public orderService: OrdersService, public actionSheetCtrl: ActionSheetController) {
     this.getOrders();
     this.showDetails = false;
+    this.timeRating = 0;
+    this.qualityRating = 0;
+    this.priceRating = 0;
   }
 
   async presentActionSheet() {
@@ -60,17 +68,49 @@ export class OrdersPage {
       });
   }
 
+  saveOrder() {
+    this.orderService.saveOrder(this.presentOrder).then(() => this.getOrders());
+  }
+
   pressEvent() {
     console.log('press');
   }
 
   returnToOrderList() {
     this.showDetails = false;
+    this.isEditingComment = false;
   }
 
   tapEvent(id: number) {
     this.showDetails = true;
     this.presentOrder = this.orders.find((element) => element.id == id);
+  }
+
+  addComment() {
+    this.isEditingComment = true;
+  }
+
+  onTimeRatingChangeClick(rating: number) {
+    this.timeRating = rating;
+  }
+
+  onPriceRatingClick(rating: number) {
+    this.priceRating = rating;
+  }
+
+  onQualityRatingClick(rating: number) {
+    this.qualityRating = rating;
+  }
+
+  closeCommentPanel() {
+    this.isEditingComment = false;
+  }
+
+  saveComment() {
+    this.isSavedComment = true;
+    this.isEditingComment = false;
+    this.presentOrder.userComment = "{ssss}";
+    this.saveOrder();
   }
 
 }

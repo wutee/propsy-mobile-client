@@ -9,7 +9,7 @@ export class PropsyHttpInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
     const updatedRequest = req.clone({
-      headers: req.headers.set('Authorization', 'Some-dummyCode'),
+      // headers: req.headers.set('Authorization', 'Some-dummyCode'),
       url: `${environment.API_URL}${req.url}`
     });
 
