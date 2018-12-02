@@ -1,0 +1,11 @@
+npm install -g protractor
+webdriver-manager update
+npm install -g cucumber
+
+npm install --save-dev protractor-cucumber-framework
+
+
+##
+
+npm install --save-dev webdriver-manager protractor cucumber protractor-cucumber-framework
+protractor e2e/protractor.conf.js
