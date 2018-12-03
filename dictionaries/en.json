@@ -1,7 +1,7 @@
 {
     "order": "Order",
     "name": "Name",
-    "surename": "Surename",
+    "surname": "Surname",
     "adress": "Adress",
     "zipcode": "Zip code",
     "city": "City",

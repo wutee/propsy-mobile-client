@@ -1,7 +1,7 @@
 {
     "order": "Zamówienie",
     "name": "Imię",
-    "surename": "Nazwisko",
+    "surname": "Nazwisko",
     "adress": "Adres",
     "zipcode": "Kod pocztowy",
     "city": "Miasto",

@@ -5,15 +5,15 @@
   </ion-toolbar>
 </ion-header>
 
-<form (submit)="onSubmit()" [formGroup]="form">
+<form (ngSubmit)="onSubmit()" [formGroup]="form">
   <ion-item>
     <ion-label>{{ 'name' | translate }}</ion-label>
     <ion-input formControlName="name" type="text" id=name></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label>{{ 'surename' | translate }}</ion-label>
-    <ion-input formControlName="surename" type="text" id=surename></ion-input>
+    <ion-label>{{ 'surname' | translate }}</ion-label>
+    <ion-input formControlName="surname" type="text" id=surname></ion-input>
   </ion-item>
 
   <ion-item>
@@ -31,6 +31,7 @@
     <ion-input formControlName="city" type="text" id=city></ion-input>
   </ion-item>
 
-  <ion-button type="submit">{{ 'submit' | translate }}</ion-button>
+  <button [disabled]="!form.valid" (onclick)="onSubmit()">DUPA</button>
+  <ion-button type="submit" [disabled]="!form.valid" block onclick="onSubmit()">{{ 'submit' | translate }}</ion-button>
 
 </form>
