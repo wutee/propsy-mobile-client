@@ -3,6 +3,7 @@ import {BucketService} from '../bucket/service/bucket.service';
 import {Router} from '@angular/router';
 import {Restaurant, MenuResourceService, Menu, Food} from '../../client';
 import { equal } from 'assert';
+import {RestaurantService} from '../restaurant/service/restaurant.service';
 
 @Component({
   selector: 'app-food-in-restaurant',
@@ -12,11 +13,11 @@ import { equal } from 'assert';
 export class FoodInRestaurantPage implements OnInit {
 
   constructor(public bucketService: BucketService,
-              private router: Router, private menuService: MenuResourceService) {
+              private router: Router, private menuService: MenuResourceService, private restaurantService: RestaurantService) {
   }
 
   @Input()
-  restaurantId: number;
+  restaurantId: number = this.restaurantService.id;
   menus: Menu[] = [];
   currentMenu: Menu;
   currentFood: Food;
