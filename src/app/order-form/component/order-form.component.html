@@ -5,7 +5,7 @@
   </ion-toolbar>
 </ion-header>
 
-<form (ngSubmit)="onSubmit()" [formGroup]="form">
+<form  [formGroup]="form" acion="#">
   <ion-item>
     <ion-label>{{ 'name' | translate }}</ion-label>
     <ion-input formControlName="name" type="text" id=name></ion-input>
@@ -31,7 +31,8 @@
     <ion-input formControlName="city" type="text" id=city></ion-input>
   </ion-item>
 
-  <button [disabled]="!form.valid" (onclick)="onSubmit()">DUPA</button>
-  <ion-button type="submit" [disabled]="!form.valid" block onclick="onSubmit()">{{ 'submit' | translate }}</ion-button>
+  <!--<button [disabled]="!form.valid" (onclick)="onSubmit()">DUPA</button>-->
+
+  <ion-button [disabled]="!form.valid" (click)="onSubmit()">{{ 'submit' | translate }}</ion-button>
 
 </form>
