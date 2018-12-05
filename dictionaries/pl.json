@@ -23,5 +23,8 @@
     "waiting": "Waiting",
     "delivering": "Delivering",
     "completed": "Completed",
-    "restaurants": "Restauracje"
+    "restaurants": "Restauracje",
+    "login": "ZALOGUJ SIĘ",
+    "register": "ZAREJESTRUJ SIĘ",
+    "checkbox": "Zgadzam się na przetwarzanie danych osobowych na mocy konieczności uzyskania pozytywnej oceny z projektowania oprogramowania"
 }

@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-avatar class="avatar">
+      <img src="assets/login/logo.png">
+    </ion-avatar>
+    <app-language></app-language>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-thumbnail slot="start">
+    <img src="assets/login/logo.png">
+  </ion-thumbnail>
+
+<ion-item>
+  <form class="form-1">
+
+    <p class="field">
+      <input type="text" name="login" placeholder="Login">
+      <i class="fa fa-user"></i>
+    </p>
+
+    <p class="field">
+      <input type="password" name="password" placeholder="Password">
+      <i class="fa fa-lock"></i>
+    </p>
+
+    <ion-button (click)="onSubmit()" color="warning" expand="full">{{'login' | translate }}</ion-button>
+    <ion-button (click)="onSubmit()" color="danger" expand="full">{{'register' | translate }}</ion-button>
+    <ion-item>
+      <ion-checkbox checked="false" color="warning"></ion-checkbox>
+      <ion-label text-wrap>
+        {{'checkbox' | translate}}
+      </ion-label>
+    </ion-item>
+
+  </form>
+</ion-item>
+</ion-content>

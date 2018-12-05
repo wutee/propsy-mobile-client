@@ -16,6 +16,8 @@ import {TranslationService} from './translator/translation.service';
 import {ApiModule} from '../client';
 import { TranslateModule } from './translator/translate.module';
 import { OrderFormModule } from './order-form/order-form.module';
+import {LoginPageModule} from './login/login.module';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,7 +31,9 @@ import { OrderFormModule } from './order-form/order-form.module';
     HttpClientModule,
     ApiModule,
     OrderFormModule,
-    TranslateModule.forRoot()
+    TranslateModule.forRoot(),
+    LoginPageModule,
+    AngularFontAwesomeModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [

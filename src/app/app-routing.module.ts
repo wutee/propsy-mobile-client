@@ -6,6 +6,7 @@ const routes: Routes = [
   { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },
   { path: 'order-form', component: OrderFormComponent },
   { path: 'orders', loadChildren: './orders/orders.module#OrdersPageModule' },
+  { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
 ];
 
 @NgModule({
