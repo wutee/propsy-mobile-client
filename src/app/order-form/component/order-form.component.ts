@@ -33,7 +33,6 @@ export class OrderFormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('teraz dziala');
     this.orderFormService.doSomethingWithCustomerAddress(this.form.value as Customer);
   }
 

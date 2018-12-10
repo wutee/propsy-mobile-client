@@ -9,7 +9,7 @@ export class OrderFormService {
   constructor() { }
 
   doSomethingWithCustomerAddress(customer: Customer) {
-    console.log("DZIAŁĄ!")
     // TODO
+    return customer;
   }
 }

@@ -5,6 +5,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { TranslationService } from '../translator/translation.service';
+import { analyzeAndValidateNgModules } from '@angular/compiler';
 
 describe('LanguageComponent', () => {
   let component: LanguageComponent;
@@ -32,5 +33,23 @@ describe('LanguageComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should contain at least one langauge', () => {
+    expect(fixture.debugElement.nativeElement.querySelectorAll('option').length).toBeGreaterThan(1);
+  });
+
+  it('should contain english langauge', () => {
+    
+    function containtsOption(select, option) {
+      let found = false;
+      select.forEach(item => found = found || (item.text == option));
+      return found;
+    }
+
+    expect(containtsOption(
+      fixture.debugElement.nativeElement.querySelectorAll('option'),
+      "en"
+    )).toEqual(true);
   });
 });
