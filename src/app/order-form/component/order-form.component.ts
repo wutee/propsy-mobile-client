@@ -35,9 +35,4 @@ export class OrderFormComponent implements OnInit {
   onSubmit() {
     this.orderFormService.doSomethingWithCustomerAddress(this.form.value as Customer);
   }
-
-  test() {
-
-  }
-
 }
