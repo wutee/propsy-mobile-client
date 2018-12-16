@@ -10,5 +10,6 @@ export class OrderFormService {
 
   doSomethingWithCustomerAddress(customer: Customer) {
     // TODO
+    return customer;
   }
 }
