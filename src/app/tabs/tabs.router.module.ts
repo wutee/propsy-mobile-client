@@ -5,6 +5,7 @@ import { TabsPage } from './tabs.page';
 import { BucketPage } from '../bucket/bucket.page';
 import { OrdersPage } from '../orders/orders.page';
 import { RestaurantPage } from "../restaurant/restaurant.page";
+import { ClosestRestaurantPage } from '../closest-restaurant/closest-restaurant.page';
 
 const routes: Routes = [
   {
@@ -30,12 +31,17 @@ const routes: Routes = [
         path: 'restaurant',
         outlet: 'restaurant',
         component: RestaurantPage
+      },
+      {
+        path: 'closest-restaurant',
+        outlet: 'closest-restaurant',
+        component: ClosestRestaurantPage
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/(orders:orders)',
+    redirectTo: '/tabs/(closest-restaurant:closest-restaurant)',
     pathMatch: 'full'
   }
 ];
