@@ -65,7 +65,6 @@ describe('OrderFormComponent', () => {
   });
 
   it('should call the onSubmit method', async () => {
-    // bug? przycisk ignoruje to, że jest disabled i się klika
     spyOn(component, 'onSubmit');
     const element = fixture.debugElement.nativeElement.querySelector('ion-button');
     element.click();
