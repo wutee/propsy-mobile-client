@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import 'hammerjs';
-import { OrdersService } from './service/orders.service';
+import {OrdersService} from './service/orders.service';
 import {ActionSheetController} from '@ionic/angular';
-import {FoodOrder} from "../../client";
+import {FoodOrder} from '../../client';
+import { BucketService } from '../bucket/service/bucket.service';
+
 
 @Component({
   selector: 'app-orders',
@@ -20,7 +22,7 @@ export class OrdersPage {
   qualityRating: number;
   comment: string;
 
-  constructor(public orderService: OrdersService, public actionSheetCtrl: ActionSheetController) {
+  constructor(public orderService: OrdersService, public actionSheetCtrl: ActionSheetController, public bucketService: BucketService) {
     this.getOrders();
     this.showDetails = false;
     this.timeRating = 0;
@@ -28,7 +30,7 @@ export class OrdersPage {
     this.priceRating = 0;
   }
 
-  async presentActionSheet() {
+  async presentActionSheet(order: any) {
     const actionSheet = await this.actionSheetCtrl.create({
       buttons: [
         {
@@ -44,9 +46,14 @@ export class OrdersPage {
           }
         },
         {
-          text: 'Verify ',
+          text: 'Edit ',
           handler: () => {
-            console.log('Verify');
+            if (order.status >= 2) {
+              for (const food of order.foodItems) {
+                this.bucketService.addProduct(food);
+              }
+
+            }
           }
         },
         {
@@ -109,7 +116,7 @@ export class OrdersPage {
   saveComment() {
     this.isSavedComment = true;
     this.isEditingComment = false;
-    this.presentOrder.userComment = "{ssss}";
+    this.presentOrder.userComment = '{ssss}';
     this.saveOrder();
   }
 

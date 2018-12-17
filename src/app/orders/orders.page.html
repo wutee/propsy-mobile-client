@@ -7,7 +7,7 @@
 
 
 <ion-content padding *ngIf="!showDetails">
-  <ion-card *ngFor="let order of orders" (click)="tapEvent(order.id)" (press)="presentActionSheet()">
+  <ion-card *ngFor="let order of orders" (click)="tapEvent(order.id)" (press)="presentActionSheet(order)">
     <ion-item>
       <p>[{{ order.date }}] <b>{{ order.restaurant.nameSlug }}</b></p>
     </ion-item>

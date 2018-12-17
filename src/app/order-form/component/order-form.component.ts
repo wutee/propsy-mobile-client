@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {OrderFormService} from '../service/order-form.service';
 import {Customer} from '../models/customer';
-import { NavController } from '@ionic/angular';
+import {ActivatedRoute} from '@angular/router';
 import { TranslationService } from '../../translator/translation.service';
 
 @Component({
@@ -14,10 +14,12 @@ import { TranslationService } from '../../translator/translation.service';
 export class OrderFormComponent implements OnInit {
 
   payLoad = '';
+  id: string;
   form: FormGroup;
 
   constructor(
     private orderFormService: OrderFormService,
+    private route: ActivatedRoute,
     public translationService: TranslationService
   ) {
     this.form = new FormGroup({
@@ -30,6 +32,7 @@ export class OrderFormComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.id = this.route.snapshot.paramMap.get('id');
   }
 
   onSubmit() {
