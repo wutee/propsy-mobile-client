@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {OrderFormService} from '../service/order-form.service';
 import {Customer} from '../models/customer';
 import {ActivatedRoute} from '@angular/router';
@@ -23,11 +23,11 @@ export class OrderFormComponent implements OnInit {
     public translationService: TranslationService
   ) {
     this.form = new FormGroup({
-      name: new FormControl(),
-      surename: new FormControl(),
-      address: new FormControl(),
-      zipCode: new FormControl(),
-      city: new FormControl(),
+      name: new FormControl('', [Validators.required]),
+      surname: new FormControl('', [Validators.required]),
+      address: new FormControl('', [Validators.required]),
+      zipCode: new FormControl('', [Validators.required]),
+      city: new FormControl('', [Validators.required]),
    });
   }
 
@@ -38,5 +38,4 @@ export class OrderFormComponent implements OnInit {
   onSubmit() {
     this.orderFormService.doSomethingWithCustomerAddress(this.form.value as Customer);
   }
-
 }

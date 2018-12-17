@@ -33,4 +33,22 @@ describe('LanguageComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should contain at least one langauge', () => {
+    expect(fixture.debugElement.nativeElement.querySelectorAll('option').length).toBeGreaterThan(0);
+  });
+
+  it('should contain english langauge', () => {
+    
+    function containtsOption(select, option) {
+      let found = false;
+      select.forEach(item => found = found || (item.text == option));
+      return found;
+    }
+
+    expect(containtsOption(
+      fixture.debugElement.nativeElement.querySelectorAll('option'),
+      "en"
+    )).toEqual(true);
+  });
 });
