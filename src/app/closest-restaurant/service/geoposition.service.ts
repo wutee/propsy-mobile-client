@@ -10,8 +10,10 @@ import { RestaurantGeoposition } from '../model/restaurant-geoposition'
 })
 export class GeopositionService {
 
+  restaurants_geoposition: RestaurantGeoposition[];
+
   constructor(private restaurantService: RestaurantResourceService, private geolocation: Geolocation) {
-   }
+  }
 
   public async get_device_geoposition(): Promise<Geoposition> {
     let device_geoposition: Geoposition = null;
@@ -50,6 +52,7 @@ export class GeopositionService {
         .then(resp => restaurnts_geoposition.push(resp))
         .catch(err => console.log(err))
     }
+    this.restaurants_geoposition = restaurnts_geoposition
     
     return restaurnts_geoposition
   }
@@ -60,17 +63,24 @@ export class GeopositionService {
 
     for (var _i = 1; _i < restaurants_geoposition.length; _i++) {
       let restaurant_distance = restaurants_geoposition[_i].calculate_distance(device_geoposition);
-      if(closest_restaurant_distance > restaurant_distance)
-        closest_restaurant_geoposition = restaurants_geoposition[_i];
-        closest_restaurant_distance = restaurant_distance;
+      if(closest_restaurant_distance > restaurant_distance){
+          closest_restaurant_geoposition = restaurants_geoposition[_i];
+          closest_restaurant_distance = restaurant_distance;
       }
+    }
+
+      
   
     return closest_restaurant_geoposition
   }
 
   public async get_closest_restaurant(): Promise<RestaurantGeoposition> {
     let device_geoposition = await this.geolocation.getCurrentPosition();
-    let restaurnts_geoposition = await this.get_restaurants_geoposition()
+    let restaurnts_geoposition
+    if(this.restaurants_geoposition == undefined || this.restaurants_geoposition == null)
+      restaurnts_geoposition = await this.get_restaurants_geoposition()
+    else
+      restaurnts_geoposition = this.restaurants_geoposition
     
     return this.find_closest_restaurant(device_geoposition, restaurnts_geoposition)
   }

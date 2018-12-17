@@ -33,7 +33,7 @@ export class ClosestRestaurantPage implements OnInit {
       API_KEY_FOR_BROWSER_RELEASE: 'AIzaSyBNvmvnqWm94i0QPftK95siu8dMErRnF1g'
     })
 
-    this.create_map(this.device_geoposition.coords.latitude, this.device_geoposition.coords.longitude, 8, 18)
+    this.create_map(this.device_geoposition.coords.latitude, this.device_geoposition.coords.longitude, 12, 18)
     this.add_maker("Your position", 'blue', this.device_geoposition.coords.latitude, this.device_geoposition.coords.longitude)
   }
 
@@ -66,7 +66,7 @@ export class ClosestRestaurantPage implements OnInit {
     this.geopositionService.get_restaurants_geoposition()
       .then(resp => {
         this.restaurants_geoposition = resp;
-        resp.forEach(r => this.add_maker(r.restaurant.nameSlug, 'red', r.latitude, r.longitude))
+        resp.forEach(r => this.add_maker("\"" + r.restaurant.nameSlug + "\" " + r.restaurant.address, 'red', r.latitude, r.longitude))
       })
       .catch(err => console.log(err))
   }
@@ -75,7 +75,7 @@ export class ClosestRestaurantPage implements OnInit {
     this.geopositionService.get_closest_restaurant()
       .then(resp => {
         this.closest_restaurant_geoposition = resp;
-        this.add_maker(resp.restaurant.nameSlug, 'green', resp.latitude, resp.longitude)
+        this.add_maker("\"" + resp.restaurant.nameSlug + "\" " + resp.restaurant.address, 'green', resp.latitude, resp.longitude)
       })
       .catch(err => console.log(err))
   }
