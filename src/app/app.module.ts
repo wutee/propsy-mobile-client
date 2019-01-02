@@ -19,6 +19,10 @@ import { OrderFormModule } from './order-form/order-form.module';
 import {LoginPageModule} from './login/login.module';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
+import { GeopositionService } from './closest-restaurant/service/geoposition.service'
+import { Geolocation } from '@ionic-native/geolocation/ngx'
+import { GoogleMaps } from '@ionic-native/google-maps/ngx'
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -39,6 +43,9 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
   providers: [
     StatusBar,
     SplashScreen,
+    Geolocation,
+    GoogleMaps,
+    GeopositionService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide: HTTP_INTERCEPTORS, useClass: PropsyHttpInterceptor, multi: true },
     TranslationService
