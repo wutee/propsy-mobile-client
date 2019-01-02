@@ -1,0 +1,99 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Płatność</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-label style="margin-left: 10px; font-size: 23px; color: #000000ba">
+    Wybierz formę płatności
+  </ion-label>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card (click)="selectPaymentForm('creditCard')">
+          <ion-img src="http://kontostudenta.pl/images/art/studenckie-karty-kredytowe.jpg"
+                   style="height: 81px !important;"></ion-img>
+          <ion-card-header [style.backgroundColor]="selectedMethod === 'creditCard' ? '#f3ef59' : ''">
+            <ion-card-title style="font-size: 16px">Karta kredytowa</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card (click)="selectPaymentForm('transfer')">
+          <ion-img src="http://kreatywnisamozatrudnieni.pl/pliki/795x529_dotpay-jak-dziala-wrec.jpg"
+                   style="height: 81px !important;"></ion-img>
+          <ion-card-header [style.backgroundColor]="selectedMethod === 'transfer' ? '#f3ef59' : ''">
+            <ion-card-title style="font-size: 16px">Przelew dotpay</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card (click)="selectPaymentForm('cash')">
+          <ion-img src="https://apollo-ireland.akamaized.net/v1/files/xnvvbgjp3yr71-PL/image;s=644x461"
+                   style="height: 81px !important;"></ion-img>
+          <ion-card-header [style.backgroundColor]="selectedMethod === 'cash' ? '#f3ef59' : ''">
+            <ion-card-title style="font-size: 16px">Płatność na miejscu</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card (click)="selectPaymentForm('loyalty')">
+          <ion-img src="https://wazirx.com/static/media/wrxCoin.9d1266c9.png"
+                   style="height: 81px !important;"></ion-img>
+          <ion-card-header [style.backgroundColor]="selectedMethod === 'loyalty' ? '#f3ef59' : ''">
+            <ion-card-title style="font-size: 16px">Punkty lojalnościowe</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div [ngSwitch]="selectedMethod">
+    <div *ngSwitchCase="'creditCard'">
+      <ion-label style="margin-left: 10px; font-size: 23px; color: #000000ba">
+        Wprowadź dane dotyczące karty
+      </ion-label>
+      <ion-item>
+        <ion-label>Numer karty</ion-label>
+        <ion-input [(ngModel)]="cardNumber" (ngModelChange)="changeInput()" type="number" id="cardNumber"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Data ważności</ion-label>
+        <ion-input [(ngModel)]="experienceDate" (ngModelChange)="changeInput()" type="text" id="experienceDate"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>CVV</ion-label>
+        <ion-input [(ngModel)]="cvv" (ngModelChange)="changeInput()" type="number" id="cvv"></ion-input>
+      </ion-item>
+    </div>
+    <div *ngSwitchCase="'transfer'">
+      <ion-label style="margin-left: 10px; font-size: 23px; color: #000000ba">
+        Przekierowanie na stronę dotpay
+      </ion-label>
+      <ion-card>
+        <ion-img src="http://kreatywnisamozatrudnieni.pl/pliki/795x529_dotpay-jak-dziala-wrec.jpg"
+                 style="height: 100px !important;"></ion-img>
+        <ion-card-header style="background-color: #45baff;">
+          <ion-card-title style="font-size: 16px">Po kliknięciu tutaj zostaniesz przekierowany na stronę dotpay gdzie
+            będziesz mógł dokonać przelewu
+          </ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </div>
+    <div *ngSwitchCase="'loyalty'" style="text-align: center">
+      <ion-label style="margin-left: 10px; font-size: 23px; color: #000000ba">
+        Musisz być zalogowany!
+      </ion-label>
+      <ion-label style="margin-left: 10px; font-size: 23px; color: #000000ba">
+        By móc skorzystać z tej opcji.
+      </ion-label>
+    </div>
+  </div>
+  <ion-button *ngIf="buyButton" style="position: fixed; bottom: 5vh; left: 5vw; width: 90vw" expand="full" color="secondary"><ion-icon name="save"></ion-icon>&nbsp;Zamów</ion-button>
+</ion-content>

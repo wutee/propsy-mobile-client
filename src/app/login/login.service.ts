@@ -6,8 +6,8 @@ import { Injectable } from '@angular/core';
 export class LoginService {
 
   constructor() { }
-  login(username: string, password: string) {
-    // this.httpService.post()
+
+  async login(username: string, password: string) {
+
   }
 }
-

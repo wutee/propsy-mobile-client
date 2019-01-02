@@ -5,7 +5,6 @@ import {ActionSheetController} from '@ionic/angular';
 import {FoodOrder} from '../../client';
 import { BucketService } from '../bucket/service/bucket.service';
 
-
 @Component({
   selector: 'app-orders',
   templateUrl: './orders.page.html',

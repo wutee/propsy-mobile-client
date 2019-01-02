@@ -7,7 +7,6 @@ import {OrderFormService} from '../service/order-form.service';
 import {TranslationService} from '../../translator/translation.service';
 import {IonicModule} from '@ionic/angular';
 import {TranslateModule} from '../../translator/translate.module';
-import {By} from '@angular/platform-browser';
 import {CommonModule} from '@angular/common';
 import {OrderFormModule} from '../order-form.module';
 
