@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: 'order-form/:id', component: OrderFormComponent },
   { path: 'orders', loadChildren: './orders/orders.module#OrdersPageModule' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
+  { path: 'payment', loadChildren: './payment/payment.module#PaymentModule'}
 ];
 
 @NgModule({

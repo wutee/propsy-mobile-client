@@ -4,6 +4,7 @@ import {OrderFormService} from '../service/order-form.service';
 import {Customer} from '../models/customer';
 import {ActivatedRoute} from '@angular/router';
 import { TranslationService } from '../../translator/translation.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-order-form-component',
@@ -20,7 +21,8 @@ export class OrderFormComponent implements OnInit {
   constructor(
     private orderFormService: OrderFormService,
     private route: ActivatedRoute,
-    public translationService: TranslationService
+    public translationService: TranslationService,
+    private router: Router
   ) {
     this.form = new FormGroup({
       name: new FormControl('', [Validators.required]),
@@ -37,5 +39,6 @@ export class OrderFormComponent implements OnInit {
 
   onSubmit() {
     this.orderFormService.doSomethingWithCustomerAddress(this.form.value as Customer);
+    this.router.navigateByUrl('/payment');
   }
 }
