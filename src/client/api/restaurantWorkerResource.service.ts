@@ -91,7 +91,7 @@ export class RestaurantWorkerResourceService {
             headers = headers.set("Content-Type", httpContentTypeSelected);
         }
 
-        return this.httpClient.post<RestaurantWorker>(`${this.basePath}/api/restaurant-workers`,
+        return this.httpClient.post<RestaurantWorker>(`api/restaurant-workers`,
             restaurantWorker,
             {
                 withCredentials: this.configuration.withCredentials,
@@ -132,7 +132,7 @@ export class RestaurantWorkerResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.delete<any>(`${this.basePath}/api/restaurant-workers/${encodeURIComponent(String(id))}`,
+        return this.httpClient.delete<any>(`api/restaurant-workers/${encodeURIComponent(String(id))}`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -174,7 +174,7 @@ export class RestaurantWorkerResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.get<Array<RestaurantWorker>>(`${this.basePath}/api/restaurant-workers`,
+        return this.httpClient.get<Array<RestaurantWorker>>(`api/restaurant-workers`,
             {
                 params: queryParameters,
                 withCredentials: this.configuration.withCredentials,
@@ -215,7 +215,7 @@ export class RestaurantWorkerResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.get<RestaurantWorker>(`${this.basePath}/api/restaurant-workers/${encodeURIComponent(String(id))}`,
+        return this.httpClient.get<RestaurantWorker>(`api/restaurant-workers/${encodeURIComponent(String(id))}`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -260,7 +260,7 @@ export class RestaurantWorkerResourceService {
             headers = headers.set("Content-Type", httpContentTypeSelected);
         }
 
-        return this.httpClient.put<RestaurantWorker>(`${this.basePath}/api/restaurant-workers`,
+        return this.httpClient.put<RestaurantWorker>(`api/restaurant-workers`,
             restaurantWorker,
             {
                 withCredentials: this.configuration.withCredentials,

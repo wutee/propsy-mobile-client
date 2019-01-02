@@ -91,7 +91,7 @@ export class MenuResourceService {
             headers = headers.set("Content-Type", httpContentTypeSelected);
         }
 
-        return this.httpClient.post<Menu>(`${this.basePath}/api/menus`,
+        return this.httpClient.post<Menu>(`api/menus`,
             menu,
             {
                 withCredentials: this.configuration.withCredentials,
@@ -132,7 +132,7 @@ export class MenuResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.delete<any>(`${this.basePath}/api/menus/${encodeURIComponent(String(id))}`,
+        return this.httpClient.delete<any>(`api/menus/${encodeURIComponent(String(id))}`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -174,7 +174,7 @@ export class MenuResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.get<Array<Menu>>(`${this.basePath}/api/menus`,
+        return this.httpClient.get<Array<Menu>>(`api/menus`,
             {
                 params: queryParameters,
                 withCredentials: this.configuration.withCredentials,
@@ -215,7 +215,7 @@ export class MenuResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.get<Menu>(`${this.basePath}/api/menus/${encodeURIComponent(String(id))}`,
+        return this.httpClient.get<Menu>(`api/menus/${encodeURIComponent(String(id))}`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -260,7 +260,7 @@ export class MenuResourceService {
             headers = headers.set("Content-Type", httpContentTypeSelected);
         }
 
-        return this.httpClient.put<Menu>(`${this.basePath}/api/menus`,
+        return this.httpClient.put<Menu>(`api/menus`,
             menu,
             {
                 withCredentials: this.configuration.withCredentials,

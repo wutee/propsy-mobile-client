@@ -91,7 +91,7 @@ export class LanguageResourceService {
             headers = headers.set("Content-Type", httpContentTypeSelected);
         }
 
-        return this.httpClient.post<Language>(`${this.basePath}/api/languages`,
+        return this.httpClient.post<Language>(`api/languages`,
             language,
             {
                 withCredentials: this.configuration.withCredentials,
@@ -132,7 +132,7 @@ export class LanguageResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.delete<any>(`${this.basePath}/api/languages/${encodeURIComponent(String(id))}`,
+        return this.httpClient.delete<any>(`api/languages/${encodeURIComponent(String(id))}`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -168,7 +168,7 @@ export class LanguageResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.get<Array<Language>>(`${this.basePath}/api/languages`,
+        return this.httpClient.get<Array<Language>>(`api/languages`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -208,7 +208,7 @@ export class LanguageResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.get<Language>(`${this.basePath}/api/languages/${encodeURIComponent(String(id))}`,
+        return this.httpClient.get<Language>(`api/languages/${encodeURIComponent(String(id))}`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -253,7 +253,7 @@ export class LanguageResourceService {
             headers = headers.set("Content-Type", httpContentTypeSelected);
         }
 
-        return this.httpClient.put<Language>(`${this.basePath}/api/languages`,
+        return this.httpClient.put<Language>(`api/languages`,
             language,
             {
                 withCredentials: this.configuration.withCredentials,

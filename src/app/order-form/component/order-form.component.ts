@@ -4,7 +4,7 @@ import {OrderFormService} from '../service/order-form.service';
 import {Customer} from '../models/customer';
 import {ActivatedRoute} from '@angular/router';
 import { TranslationService } from '../../translator/translation.service';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-order-form-component',

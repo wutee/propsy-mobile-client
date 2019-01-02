@@ -91,7 +91,7 @@ export class PaymentResourceService {
             headers = headers.set("Content-Type", httpContentTypeSelected);
         }
 
-        return this.httpClient.post<Payment>(`${this.basePath}/api/payments`,
+        return this.httpClient.post<Payment>(`api/payments`,
             payment,
             {
                 withCredentials: this.configuration.withCredentials,
@@ -132,7 +132,7 @@ export class PaymentResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.delete<any>(`${this.basePath}/api/payments/${encodeURIComponent(String(id))}`,
+        return this.httpClient.delete<any>(`api/payments/${encodeURIComponent(String(id))}`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -168,7 +168,7 @@ export class PaymentResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.get<Array<Payment>>(`${this.basePath}/api/payments`,
+        return this.httpClient.get<Array<Payment>>(`api/payments`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -208,7 +208,7 @@ export class PaymentResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.get<Payment>(`${this.basePath}/api/payments/${encodeURIComponent(String(id))}`,
+        return this.httpClient.get<Payment>(`api/payments/${encodeURIComponent(String(id))}`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -253,7 +253,7 @@ export class PaymentResourceService {
             headers = headers.set("Content-Type", httpContentTypeSelected);
         }
 
-        return this.httpClient.put<Payment>(`${this.basePath}/api/payments`,
+        return this.httpClient.put<Payment>(`api/payments`,
             payment,
             {
                 withCredentials: this.configuration.withCredentials,

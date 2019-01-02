@@ -91,7 +91,7 @@ export class DeliveryPersonnelResourceService {
             headers = headers.set("Content-Type", httpContentTypeSelected);
         }
 
-        return this.httpClient.post<DeliveryPersonnel>(`${this.basePath}/api/delivery-personnels`,
+        return this.httpClient.post<DeliveryPersonnel>(`api/delivery-personnels`,
             deliveryPersonnel,
             {
                 withCredentials: this.configuration.withCredentials,
@@ -132,7 +132,7 @@ export class DeliveryPersonnelResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.delete<any>(`${this.basePath}/api/delivery-personnels/${encodeURIComponent(String(id))}`,
+        return this.httpClient.delete<any>(`api/delivery-personnels/${encodeURIComponent(String(id))}`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -168,7 +168,7 @@ export class DeliveryPersonnelResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.get<Array<DeliveryPersonnel>>(`${this.basePath}/api/delivery-personnels`,
+        return this.httpClient.get<Array<DeliveryPersonnel>>(`api/delivery-personnels`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -208,7 +208,7 @@ export class DeliveryPersonnelResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.get<DeliveryPersonnel>(`${this.basePath}/api/delivery-personnels/${encodeURIComponent(String(id))}`,
+        return this.httpClient.get<DeliveryPersonnel>(`api/delivery-personnels/${encodeURIComponent(String(id))}`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -253,7 +253,7 @@ export class DeliveryPersonnelResourceService {
             headers = headers.set("Content-Type", httpContentTypeSelected);
         }
 
-        return this.httpClient.put<DeliveryPersonnel>(`${this.basePath}/api/delivery-personnels`,
+        return this.httpClient.put<DeliveryPersonnel>(`api/delivery-personnels`,
             deliveryPersonnel,
             {
                 withCredentials: this.configuration.withCredentials,

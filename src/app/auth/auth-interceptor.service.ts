@@ -3,11 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class AuthInterceptorService {
 
   constructor() { }
-
-  async login(username: string, password: string) {
-
-  }
 }

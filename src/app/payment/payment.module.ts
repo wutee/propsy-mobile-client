@@ -5,7 +5,7 @@ import {RouterModule, Routes} from '@angular/router';
 
 import {IonicModule} from '@ionic/angular';
 import {TranslateModule} from '../translator/translate.module';
-import {PaymentComponent} from "./payment.component";
+import {PaymentComponent} from './payment.component';
 
 const routes: Routes = [
   {

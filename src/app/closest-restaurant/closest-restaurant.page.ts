@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Platform } from '@ionic/angular'
+import { Platform } from '@ionic/angular';
 import { Geolocation, Geoposition } from '@ionic-native/geolocation/ngx';
 import { GoogleMaps, GoogleMap, GoogleMapOptions, Environment } from '@ionic-native/google-maps/ngx';
 import { GeopositionService } from './service/geoposition.service';
@@ -18,11 +18,11 @@ export class ClosestRestaurantPage implements OnInit {
   closest_restaurant_geoposition: RestaurantGeoposition;
 
   async ngOnInit() {
-    await this.platformService.ready()
-    this.device_geoposition = await this.geopositionService.get_device_geoposition()
-    this.loadMap()
-    this.get_restaurants_geoposition()
-    this.get_closest_restaurant()
+    await this.platformService.ready();
+    this.device_geoposition = await this.geopositionService.get_device_geoposition();
+    this.loadMap();
+    this.get_restaurants_geoposition();
+    this.get_closest_restaurant();
   }
 
   constructor(private platformService: Platform, private geopositionService: GeopositionService, private googleMaps: GoogleMaps) { }
@@ -31,14 +31,14 @@ export class ClosestRestaurantPage implements OnInit {
     Environment.setEnv({
       API_KEY_FOR_BROWSER_DEBUG: 'AIzaSyBNvmvnqWm94i0QPftK95siu8dMErRnF1g',
       API_KEY_FOR_BROWSER_RELEASE: 'AIzaSyBNvmvnqWm94i0QPftK95siu8dMErRnF1g'
-    })
+    });
 
-    this.create_map(this.device_geoposition.coords.latitude, this.device_geoposition.coords.longitude, 12, 18)
-    this.add_maker("Your position", 'blue', this.device_geoposition.coords.latitude, this.device_geoposition.coords.longitude)
+    this.create_map(this.device_geoposition.coords.latitude, this.device_geoposition.coords.longitude, 12, 18);
+    this.add_maker('Your position', 'blue', this.device_geoposition.coords.latitude, this.device_geoposition.coords.longitude);
   }
 
   private create_map(latitude: number, longitude: number, zoom: number, tilt: number): void {
-    this.map = this.googleMaps.create('map_canvas', {
+    this.map = (this.googleMaps as any).create('map_canvas', {
     camera: {
       target: {
         lat: latitude,
@@ -57,27 +57,27 @@ export class ClosestRestaurantPage implements OnInit {
       animation: 'DROP',
       position: {
         lat: latitude,
-        lng: longitude 
+        lng: longitude
       }
-    })
+    });
   }
 
   get_restaurants_geoposition(): void {
     this.geopositionService.get_restaurants_geoposition()
       .then(resp => {
         this.restaurants_geoposition = resp;
-        resp.forEach(r => this.add_maker("\"" + r.restaurant.nameSlug + "\" " + r.restaurant.address, 'red', r.latitude, r.longitude))
+        resp.forEach(r => this.add_maker('"' + r.restaurant.nameSlug + '" ' + r.restaurant.address, 'red', r.latitude, r.longitude));
       })
-      .catch(err => console.log(err))
+      .catch(err => console.log(err));
   }
 
-  get_closest_restaurant(): void{
+  get_closest_restaurant(): void {
     this.geopositionService.get_closest_restaurant()
       .then(resp => {
         this.closest_restaurant_geoposition = resp;
-        this.add_maker("\"" + resp.restaurant.nameSlug + "\" " + resp.restaurant.address, 'green', resp.latitude, resp.longitude)
+        this.add_maker('"' + resp.restaurant.nameSlug + '" ' + resp.restaurant.address, 'green', resp.latitude, resp.longitude);
       })
-      .catch(err => console.log(err))
+      .catch(err => console.log(err));
   }
 
 }

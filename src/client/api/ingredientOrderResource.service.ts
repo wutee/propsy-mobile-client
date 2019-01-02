@@ -91,7 +91,7 @@ export class IngredientOrderResourceService {
             headers = headers.set("Content-Type", httpContentTypeSelected);
         }
 
-        return this.httpClient.post<IngredientOrder>(`${this.basePath}/api/ingredient-orders`,
+        return this.httpClient.post<IngredientOrder>(`api/ingredient-orders`,
             ingredientOrder,
             {
                 withCredentials: this.configuration.withCredentials,
@@ -132,7 +132,7 @@ export class IngredientOrderResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.delete<any>(`${this.basePath}/api/ingredient-orders/${encodeURIComponent(String(id))}`,
+        return this.httpClient.delete<any>(`api/ingredient-orders/${encodeURIComponent(String(id))}`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -174,7 +174,7 @@ export class IngredientOrderResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.get<Array<IngredientOrder>>(`${this.basePath}/api/ingredient-orders`,
+        return this.httpClient.get<Array<IngredientOrder>>(`api/ingredient-orders`,
             {
                 params: queryParameters,
                 withCredentials: this.configuration.withCredentials,
@@ -215,7 +215,7 @@ export class IngredientOrderResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.get<IngredientOrder>(`${this.basePath}/api/ingredient-orders/${encodeURIComponent(String(id))}`,
+        return this.httpClient.get<IngredientOrder>(`api/ingredient-orders/${encodeURIComponent(String(id))}`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -260,7 +260,7 @@ export class IngredientOrderResourceService {
             headers = headers.set("Content-Type", httpContentTypeSelected);
         }
 
-        return this.httpClient.put<IngredientOrder>(`${this.basePath}/api/ingredient-orders`,
+        return this.httpClient.put<IngredientOrder>(`api/ingredient-orders`,
             ingredientOrder,
             {
                 withCredentials: this.configuration.withCredentials,

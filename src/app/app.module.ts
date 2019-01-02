@@ -22,6 +22,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { GeopositionService } from './closest-restaurant/service/geoposition.service'
 import { Geolocation } from '@ionic-native/geolocation/ngx'
 import { GoogleMaps } from '@ionic-native/google-maps/ngx'
+import {AuthModule} from './auth/auth.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -34,6 +35,7 @@ import { GoogleMaps } from '@ionic-native/google-maps/ngx'
     ReactiveFormsModule,
     HttpClientModule,
     ApiModule,
+    AuthModule,
     OrderFormModule,
     TranslateModule.forRoot(),
     LoginPageModule,

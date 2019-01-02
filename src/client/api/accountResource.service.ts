@@ -95,7 +95,7 @@ export class AccountResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.get<any>(`${this.basePath}/api/activate`,
+        return this.httpClient.get<any>(`api/activate`,
             {
                 params: queryParameters,
                 withCredentials: this.configuration.withCredentials,
@@ -141,7 +141,7 @@ export class AccountResourceService {
             headers = headers.set("Content-Type", httpContentTypeSelected);
         }
 
-        return this.httpClient.post<any>(`${this.basePath}/api/account/change-password`,
+        return this.httpClient.post<any>(`api/account/change-password`,
             passwordChangeDto,
             {
                 withCredentials: this.configuration.withCredentials,
@@ -187,7 +187,7 @@ export class AccountResourceService {
             headers = headers.set("Content-Type", httpContentTypeSelected);
         }
 
-        return this.httpClient.post<any>(`${this.basePath}/api/account/reset-password/finish`,
+        return this.httpClient.post<any>(`api/account/reset-password/finish`,
             keyAndPassword,
             {
                 withCredentials: this.configuration.withCredentials,
@@ -224,7 +224,7 @@ export class AccountResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.get<UserDTO>(`${this.basePath}/api/account`,
+        return this.httpClient.get<UserDTO>(`api/account`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -260,7 +260,7 @@ export class AccountResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.get<Array<PersistentToken>>(`${this.basePath}/api/account/sessions`,
+        return this.httpClient.get<Array<PersistentToken>>(`api/account/sessions`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -300,7 +300,7 @@ export class AccountResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.delete<any>(`${this.basePath}/api/account/sessions/${encodeURIComponent(String(series))}`,
+        return this.httpClient.delete<any>(`api/account/sessions/${encodeURIComponent(String(series))}`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -336,7 +336,7 @@ export class AccountResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.get<string>(`${this.basePath}/api/authenticate`,
+        return this.httpClient.get<string>(`api/authenticate`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -381,7 +381,7 @@ export class AccountResourceService {
             headers = headers.set("Content-Type", httpContentTypeSelected);
         }
 
-        return this.httpClient.post<any>(`${this.basePath}/api/register`,
+        return this.httpClient.post<any>(`api/register`,
             managedUserVM,
             {
                 withCredentials: this.configuration.withCredentials,
@@ -427,7 +427,7 @@ export class AccountResourceService {
             headers = headers.set("Content-Type", httpContentTypeSelected);
         }
 
-        return this.httpClient.post<any>(`${this.basePath}/api/account/reset-password/init`,
+        return this.httpClient.post<any>(`api/account/reset-password/init`,
             mail,
             {
                 withCredentials: this.configuration.withCredentials,
@@ -473,7 +473,7 @@ export class AccountResourceService {
             headers = headers.set("Content-Type", httpContentTypeSelected);
         }
 
-        return this.httpClient.post<any>(`${this.basePath}/api/account`,
+        return this.httpClient.post<any>(`api/account`,
             userDTO,
             {
                 withCredentials: this.configuration.withCredentials,

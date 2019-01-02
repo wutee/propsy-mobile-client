@@ -91,7 +91,7 @@ export class IngredientResourceService {
             headers = headers.set("Content-Type", httpContentTypeSelected);
         }
 
-        return this.httpClient.post<Ingredient>(`${this.basePath}/api/ingredients`,
+        return this.httpClient.post<Ingredient>(`api/ingredients`,
             ingredient,
             {
                 withCredentials: this.configuration.withCredentials,
@@ -132,7 +132,7 @@ export class IngredientResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.delete<any>(`${this.basePath}/api/ingredients/${encodeURIComponent(String(id))}`,
+        return this.httpClient.delete<any>(`api/ingredients/${encodeURIComponent(String(id))}`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -168,7 +168,7 @@ export class IngredientResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.get<Array<Ingredient>>(`${this.basePath}/api/ingredients`,
+        return this.httpClient.get<Array<Ingredient>>(`api/ingredients`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -208,7 +208,7 @@ export class IngredientResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.get<Ingredient>(`${this.basePath}/api/ingredients/${encodeURIComponent(String(id))}`,
+        return this.httpClient.get<Ingredient>(`api/ingredients/${encodeURIComponent(String(id))}`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -253,7 +253,7 @@ export class IngredientResourceService {
             headers = headers.set("Content-Type", httpContentTypeSelected);
         }
 
-        return this.httpClient.put<Ingredient>(`${this.basePath}/api/ingredients`,
+        return this.httpClient.put<Ingredient>(`api/ingredients`,
             ingredient,
             {
                 withCredentials: this.configuration.withCredentials,

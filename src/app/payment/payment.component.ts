@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-payment',
@@ -6,17 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./payment.component.scss']
 })
 export class PaymentComponent implements OnInit {
-
-  constructor() { }
+  cvv: string;
+  buyButton = false;
+  cardNumber: number;
+  selectedMethod: string;
+  experienceDate: string;
 
   ngOnInit() {
   }
 
-  public selectedMethod: string;
-  public buyButton: boolean = false;
-  public cardNumber: number;
-  public experienceDate: string;
-  public cvv: string;
+  order() {
+
+  }
 
   private selectPaymentForm(method: string) {
     this.selectedMethod = method;

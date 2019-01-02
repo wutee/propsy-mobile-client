@@ -91,7 +91,7 @@ export class TranslationResourceService {
             headers = headers.set("Content-Type", httpContentTypeSelected);
         }
 
-        return this.httpClient.post<Translation>(`${this.basePath}/api/translations`,
+        return this.httpClient.post<Translation>(`api/translations`,
             translation,
             {
                 withCredentials: this.configuration.withCredentials,
@@ -132,7 +132,7 @@ export class TranslationResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.delete<any>(`${this.basePath}/api/translations/${encodeURIComponent(String(id))}`,
+        return this.httpClient.delete<any>(`api/translations/${encodeURIComponent(String(id))}`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -168,7 +168,7 @@ export class TranslationResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.get<Array<Translation>>(`${this.basePath}/api/translations`,
+        return this.httpClient.get<Array<Translation>>(`api/translations`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -208,7 +208,7 @@ export class TranslationResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.get<Translation>(`${this.basePath}/api/translations/${encodeURIComponent(String(id))}`,
+        return this.httpClient.get<Translation>(`api/translations/${encodeURIComponent(String(id))}`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -253,7 +253,7 @@ export class TranslationResourceService {
             headers = headers.set("Content-Type", httpContentTypeSelected);
         }
 
-        return this.httpClient.put<Translation>(`${this.basePath}/api/translations`,
+        return this.httpClient.put<Translation>(`api/translations`,
             translation,
             {
                 withCredentials: this.configuration.withCredentials,

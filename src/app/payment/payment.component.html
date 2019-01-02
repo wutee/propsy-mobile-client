@@ -95,5 +95,5 @@
       </ion-label>
     </div>
   </div>
-  <ion-button *ngIf="buyButton" style="position: fixed; bottom: 5vh; left: 5vw; width: 90vw" expand="full" color="secondary"><ion-icon name="save"></ion-icon>&nbsp;Zamów</ion-button>
+  <ion-button (onClick)="order()" *ngIf="buyButton" style="position: fixed; bottom: 5vh; left: 5vw; width: 90vw" expand="full" color="secondary"><ion-icon name="save"></ion-icon>&nbsp;Zamów</ion-button>
 </ion-content>
