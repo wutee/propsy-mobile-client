@@ -24,6 +24,7 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { GoogleMaps } from '@ionic-native/google-maps/ngx';
 import {AuthModule} from './auth/auth.module';
 import {HomePageModule} from './home/home.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent],
@@ -41,7 +42,8 @@ import {HomePageModule} from './home/home.module';
     TranslateModule.forRoot(),
     LoginPageModule,
     AngularFontAwesomeModule,
-    HomePageModule
+    HomePageModule,
+    BrowserAnimationsModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [
