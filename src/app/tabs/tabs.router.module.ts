@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
 import { BucketPage } from '../bucket/bucket.page';
 import { OrdersPage } from '../orders/orders.page';
-import { RestaurantPage } from "../restaurant/restaurant.page";
+import { RestaurantPage } from '../restaurant/restaurant.page';
 import { ClosestRestaurantPage } from '../closest-restaurant/closest-restaurant.page';
 
 const routes: Routes = [

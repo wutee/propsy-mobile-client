@@ -19,10 +19,11 @@ import { OrderFormModule } from './order-form/order-form.module';
 import {LoginPageModule} from './login/login.module';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
-import { GeopositionService } from './closest-restaurant/service/geoposition.service'
-import { Geolocation } from '@ionic-native/geolocation/ngx'
-import { GoogleMaps } from '@ionic-native/google-maps/ngx'
+import { GeopositionService } from './closest-restaurant/service/geoposition.service';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { GoogleMaps } from '@ionic-native/google-maps/ngx';
 import {AuthModule} from './auth/auth.module';
+import {HomePageModule} from './home/home.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -39,7 +40,8 @@ import {AuthModule} from './auth/auth.module';
     OrderFormModule,
     TranslateModule.forRoot(),
     LoginPageModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    HomePageModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [

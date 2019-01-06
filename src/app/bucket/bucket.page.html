@@ -57,6 +57,7 @@
     <div text-center class="allign-bottom">
       <ion-button href="tabs/(restaurant:restaurant)">{{ 'goToStore' | translate }}</ion-button>
       <ion-button href="login">{{ 'goToLogin' | translate }}</ion-button>
+      <ion-button (click)="logout()">{{'logout' | translate}}</ion-button>
     </div>
   </ng-template>
 </ion-content>

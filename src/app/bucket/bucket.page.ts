@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
 import {BucketService} from './service/bucket.service';
+import {AuthService} from '../auth/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-bucket',
@@ -8,7 +10,9 @@ import {BucketService} from './service/bucket.service';
 })
 export class BucketPage {
 
-  constructor(public bucketService: BucketService) {
+  constructor(public bucketService: BucketService,
+              private router: Router,
+              private authService: AuthService) {
   }
 
   sumProducts() {
@@ -21,6 +25,11 @@ export class BucketPage {
 
   countProducts() {
     return this.bucketService.foods.length;
+  }
+
+  public logout() {
+    this.authService.logout();
+    this.router.navigate(['login']);
   }
 
 }

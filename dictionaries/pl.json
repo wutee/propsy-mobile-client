@@ -27,5 +27,6 @@
     "restaurants": "Restauracje",
     "login": "ZALOGUJ SIĘ",
     "register": "ZAREJESTRUJ SIĘ",
-    "checkbox": "Zgadzam się na przetwarzanie danych osobowych na mocy konieczności uzyskania pozytywnej oceny z projektowania oprogramowania"
+    "checkbox": "Zgadzam się na przetwarzanie danych osobowych na mocy konieczności uzyskania pozytywnej oceny z projektowania oprogramowania",
+    "logout": "WYLOGUJ SIĘ"
 }

@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-avatar class="avatar">
+      <img src="assets/login/logo.png">
+    </ion-avatar>
+    <app-language></app-language>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div text-center class="allign-bottom">
+    <ion-button (click)="logout()" color="danger">{{'logout' | translate}}</ion-button>
+  </div>
+</ion-content>
