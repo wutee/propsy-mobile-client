@@ -57,7 +57,7 @@ export class FoodInRestaurantPage implements OnInit {
   }
 
   showBucket() {
-    if (this.bucketService.foods.length) {
+    if (BucketService.foods.length) {
       this.router.navigateByUrl('/tabs/(bucket:bucket)');
     }
   }

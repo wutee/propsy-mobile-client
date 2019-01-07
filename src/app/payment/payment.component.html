@@ -95,5 +95,6 @@
       </ion-label>
     </div>
   </div>
-  <ion-button (onClick)="order()" *ngIf="buyButton" style="position: fixed; bottom: 5vh; left: 5vw; width: 90vw" expand="full" color="secondary"><ion-icon name="save"></ion-icon>&nbsp;Zamów</ion-button>
+  <ion-button *ngIf="orderFormService.error" style="position: fixed; bottom: 12vh; left: 5vw; width: 90vw; background: red" expand="full" color="danger">Wystąpił problem. Spróbuj ponownie!</ion-button>
+  <ion-button (click)="order()" *ngIf="buyButton" style="position: fixed; bottom: 5vh; left: 5vw; width: 90vw" expand="full" color="secondary"><ion-icon name="save"></ion-icon>&nbsp;Zamów</ion-button>
 </ion-content>

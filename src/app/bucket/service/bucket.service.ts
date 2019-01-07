@@ -8,15 +8,19 @@ export class BucketService {
   constructor() {
   }
 
-  foods = [];
+  static foods = [];
+
+  getFoods() {
+    return BucketService.foods;
+  }
 
   addProduct(food) {
-    this.foods.push({...food, id: this.foods.length + 1});
+    BucketService.foods.push({...food});
   }
 
   removeProduct(id) {
-    this.foods = this.foods.filter((element) => {
-      return element.id !== id;
+    BucketService.foods = BucketService.foods.filter((element, index) => {
+      return index !== id;
     });
   }
 }

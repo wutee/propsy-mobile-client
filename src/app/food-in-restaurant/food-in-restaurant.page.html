@@ -59,7 +59,7 @@
     </ion-list>
   </div>
   <ion-fab style="margin-top: -20px" vertical="bottom" horizontal="end" slot="fixed" (click)="showBucket()">
-    <ion-fab-button color="{{this.bucketService.foods.length ? 'primary' : 'light'}}">
+    <ion-fab-button color="{{this.bucketService.getFoods().length ? 'primary' : 'light'}}">
       <ion-icon md="md-basket"></ion-icon>
     </ion-fab-button>
   </ion-fab>

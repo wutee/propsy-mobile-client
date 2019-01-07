@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {OrderFormService} from "../order-form/service/order-form.service";
 
 @Component({
   selector: 'app-payment',
@@ -12,11 +13,15 @@ export class PaymentComponent implements OnInit {
   selectedMethod: string;
   experienceDate: string;
 
+  constructor(
+    public orderFormService: OrderFormService,
+  ) {};
+
   ngOnInit() {
   }
 
-  order() {
-
+  private order() {
+    this.orderFormService.makeOrder();
   }
 
   private selectPaymentForm(method: string) {

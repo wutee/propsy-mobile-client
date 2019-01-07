@@ -6,9 +6,9 @@
 </ion-header>
 
 <ion-content>
-  <div *ngIf="this.bucketService.foods.length; then bucket else emptyBucket"></div>
+  <div *ngIf="this.bucketService.getFoods().length; then bucket else emptyBucket"></div>
   <ng-template #bucket>
-    <ion-card *ngFor="let food of this.bucketService.foods">
+    <ion-card *ngFor="let food of this.bucketService.getFoods(); let i=index">
       <ion-card-content>
         <ion-card-title>
           {{food.nameSlug}}
@@ -24,7 +24,7 @@
             </span>
           </ion-col>
           <ion-col text-right>
-            <ion-button color="danger" small (click)="this.bucketService.removeProduct(food.id)">
+            <ion-button color="danger" small (click)="this.bucketService.removeProduct(i)">
               {{ 'delete' | translate }}
             </ion-button>
           </ion-col>

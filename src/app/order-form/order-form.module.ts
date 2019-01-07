@@ -1,11 +1,9 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { OrderFormComponent } from './component/order-form.component';
-import { TranslateModule } from '../translator/translate.module';
-import { TranslationService } from '../translator/translation.service';
-import { TranslatePipe } from '../translator/translate.pipe';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {OrderFormComponent} from './component/order-form.component';
+import {TranslateModule} from '../translator/translate.module';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {IonicModule} from '@ionic/angular';
 
 @NgModule({
   imports: [
