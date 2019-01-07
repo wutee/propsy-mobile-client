@@ -4,7 +4,7 @@ import { TranslateModule } from '../translator/translate.module';
 import { TranslationService } from '../translator/translation.service';
 import { LoginPage } from './login.page';
 
-describe('LoginPage', () => {
+xdescribe('LoginPage', () => {
   let component: LoginPage;
   let fixture: ComponentFixture<LoginPage>;
 
