@@ -1,0 +1,10 @@
+
+export enum OrderStatus {
+  NEW = 'NEW',
+  PAYMENT = 'PAYMENT',
+  CONFIRMED = 'CONFIRMED',
+  IN_PROGRESS = 'IN_PROGRESS',
+  TO_PICK_UP = 'TO_PICK_UP',
+  IN_DELIVERY = 'IN_DELIVERY',
+  DELIVERED = 'DELIVERED'
+}

@@ -91,16 +91,16 @@ export class FoodOrderResourceService {
             headers = headers.set("Content-Type", httpContentTypeSelected);
         }
 
-        return this.httpClient.post<FoodOrder>(`${this.basePath}/api/food-orders`,
-            foodOrder,
-            {
-                withCredentials: this.configuration.withCredentials,
-                headers: headers,
-                observe: observe,
-                reportProgress: reportProgress
-            }
-        );
-    }
+    return this.httpClient.post<FoodOrder>(`api/food-orders`,
+      foodOrder,
+      {
+        withCredentials: this.configuration.withCredentials,
+        headers: headers,
+        observe: observe,
+        reportProgress: reportProgress
+      }
+    );
+  }
 
     /**
      * deleteFoodOrder
@@ -132,15 +132,15 @@ export class FoodOrderResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.delete<any>(`${this.basePath}/api/food-orders/${encodeURIComponent(String(id))}`,
-            {
-                withCredentials: this.configuration.withCredentials,
-                headers: headers,
-                observe: observe,
-                reportProgress: reportProgress
-            }
-        );
-    }
+    return this.httpClient.delete<any>(`api/food-orders/${encodeURIComponent(String(id))}`,
+      {
+        withCredentials: this.configuration.withCredentials,
+        headers: headers,
+        observe: observe,
+        reportProgress: reportProgress
+      }
+    );
+  }
 
     /**
      * getAllFoodOrders
@@ -174,16 +174,16 @@ export class FoodOrderResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.get<Array<FoodOrder>>(`${this.basePath}/api/food-orders`,
-            {
-                params: queryParameters,
-                withCredentials: this.configuration.withCredentials,
-                headers: headers,
-                observe: observe,
-                reportProgress: reportProgress
-            }
-        );
-    }
+    return this.httpClient.get<Array<FoodOrder>>(`api/food-orders`,
+      {
+        params: queryParameters,
+        withCredentials: this.configuration.withCredentials,
+        headers: headers,
+        observe: observe,
+        reportProgress: reportProgress
+      }
+    );
+  }
 
     /**
      * getFoodOrder
@@ -215,15 +215,15 @@ export class FoodOrderResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.get<FoodOrder>(`${this.basePath}/api/food-orders/${encodeURIComponent(String(id))}`,
-            {
-                withCredentials: this.configuration.withCredentials,
-                headers: headers,
-                observe: observe,
-                reportProgress: reportProgress
-            }
-        );
-    }
+    return this.httpClient.get<FoodOrder>(`api/food-orders/${encodeURIComponent(String(id))}`,
+      {
+        withCredentials: this.configuration.withCredentials,
+        headers: headers,
+        observe: observe,
+        reportProgress: reportProgress
+      }
+    );
+  }
 
     /**
      * updateFoodOrder
@@ -260,15 +260,15 @@ export class FoodOrderResourceService {
             headers = headers.set("Content-Type", httpContentTypeSelected);
         }
 
-        return this.httpClient.put<FoodOrder>(`${this.basePath}/api/food-orders`,
-            foodOrder,
-            {
-                withCredentials: this.configuration.withCredentials,
-                headers: headers,
-                observe: observe,
-                reportProgress: reportProgress
-            }
-        );
-    }
+    return this.httpClient.put<FoodOrder>(`api/food-orders`,
+      foodOrder,
+      {
+        withCredentials: this.configuration.withCredentials,
+        headers: headers,
+        observe: observe,
+        reportProgress: reportProgress
+      }
+    );
+  }
 
 }

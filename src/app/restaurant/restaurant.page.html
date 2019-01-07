@@ -10,7 +10,7 @@
     <ion-list inset *ngIf="restaurantList;else restaurantDetails">
       <!--<ion-item (click)="getRestaurantFoods(restaurant.id, restaurant.nameSlug)" *ngFor="let restaurant of restaurants">-->
           <!--{{ restaurant.nameSlug }} - {{ restaurant.address }}-->
-        <ion-card (click)="getRestaurantFoods(restaurant.id, restaurant.nameSlug)" *ngFor="let restaurant of restaurants">
+        <ion-card (click)="getRestaurantFoods(restaurant.id, restaurant.nameSlug)" *ngFor="let restaurant of restProvider.restaurants">
           <!--<img src="http://ninlive.com/navbar/archives.jpg"/>-->
           <ion-card-content>
             <ion-card-title>

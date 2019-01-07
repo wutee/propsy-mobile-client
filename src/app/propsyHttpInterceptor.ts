@@ -3,13 +3,21 @@ import {Observable} from 'rxjs';
 import {Injectable} from '@angular/core';
 import {tap} from 'rxjs/operators';
 import {environment} from '../environments/environment';
+import { AuthService } from './auth/auth.service';
 
 @Injectable()
 export class PropsyHttpInterceptor implements HttpInterceptor {
+  constructor(private authService: AuthService) {}
+
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    const authHeaders = this.authService.isAuthenticated
+      ? {
+        headers: req.headers.set('Authorization', this.authService.getHttpToken())
+      }
+      : {};
 
     const updatedRequest = req.clone({
-      // headers: req.headers.set('Authorization', 'Some-dummyCode'),
+      ...authHeaders,
       url: `${environment.API_URL}${req.url}`
     });
 

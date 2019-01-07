@@ -7,9 +7,9 @@
 
 
 <ion-content padding *ngIf="!showDetails">
-  <ion-card *ngFor="let order of orders" (click)="tapEvent(order.id)" (press)="presentActionSheet(order)">
+  <ion-card *ngFor="let order of orders$ | async" (click)="tapEvent(order.id)" (press)="presentActionSheet(order)">
     <ion-item>
-      <p>[{{ order.date }}] <b>{{ order.restaurant.nameSlug }}</b></p>
+      <p>{{ order.date }} <b>{{ order.restaurant.nameSlug }}</b></p>
     </ion-item>
     <ion-card-content>
       <b>{{ order.userOpinion }}</b>
@@ -26,12 +26,12 @@
       </ion-col>
       <ion-col [ngSwitch]="order.status">
         <div><ion-icon name="ios-clipboard"></ion-icon>{{ 'status' | translate }}</div>
-          <ion-badge style="background-color: #ff4c4d" *ngSwitchCase="0">{{ 'cancelled' | translate }}</ion-badge>
-          <ion-badge style="background-color: #ddd919" *ngSwitchCase="1">{{ 'pending' | translate }}</ion-badge>
-          <ion-badge style="background-color: #ffd199" *ngSwitchCase="2">{{ 'cooking' | translate }}</ion-badge>
-          <ion-badge style="background-color: #ffd199" *ngSwitchCase="3">{{ 'waiting' | translate }}</ion-badge>
-          <ion-badge style="background-color: #7c7bff" *ngSwitchCase="4">{{ 'delivering' | translate }}</ion-badge>
-          <ion-badge style="background-color: #84ff83" *ngSwitchCase="5">{{ 'completed' | translate }}</ion-badge>
+          <ion-badge style="background-color: #ff4c4d" *ngSwitchCase="'IN_PROGRESS'">{{ 'cancelled' | translate }}</ion-badge>
+          <ion-badge style="background-color: #ddd919" *ngSwitchCase="'NEW'">{{ 'pending' | translate }}</ion-badge>
+          <ion-badge style="background-color: #ffd199" *ngSwitchCase="'CONFIRMED'">{{ 'cooking' | translate }}</ion-badge>
+          <ion-badge style="background-color: #ffd199" *ngSwitchCase="'TO_PICK_UP'">{{ 'waiting' | translate }}</ion-badge>
+          <ion-badge style="background-color: #7c7bff" *ngSwitchCase="'IN_DELIVERY'">{{ 'delivering' | translate }}</ion-badge>
+          <ion-badge style="background-color: #84ff83" *ngSwitchCase="'DELIVERED'">{{ 'completed' | translate }}</ion-badge>
       </ion-col>
     </ion-row>
     <ion-card-content>

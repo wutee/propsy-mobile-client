@@ -21,3 +21,7 @@ export interface Restaurant {
     orders?: Array<FoodOrder>;
     ownerId?: string;
 }
+
+export interface IRestaurant extends Restaurant{
+
+}

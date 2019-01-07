@@ -91,7 +91,7 @@ export class FoodResourceService {
             headers = headers.set("Content-Type", httpContentTypeSelected);
         }
 
-        return this.httpClient.post<Food>(`${this.basePath}/api/foods`,
+        return this.httpClient.post<Food>(`api/foods`,
             food,
             {
                 withCredentials: this.configuration.withCredentials,
@@ -132,7 +132,7 @@ export class FoodResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.delete<any>(`${this.basePath}/api/foods/${encodeURIComponent(String(id))}`,
+        return this.httpClient.delete<any>(`api/foods/${encodeURIComponent(String(id))}`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -174,7 +174,7 @@ export class FoodResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.get<Array<Food>>(`${this.basePath}/api/foods`,
+        return this.httpClient.get<Array<Food>>(`api/foods`,
             {
                 params: queryParameters,
                 withCredentials: this.configuration.withCredentials,
@@ -215,7 +215,7 @@ export class FoodResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.get<Food>(`${this.basePath}/api/foods/${encodeURIComponent(String(id))}`,
+        return this.httpClient.get<Food>(`api/foods/${encodeURIComponent(String(id))}`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -260,7 +260,7 @@ export class FoodResourceService {
             headers = headers.set("Content-Type", httpContentTypeSelected);
         }
 
-        return this.httpClient.put<Food>(`${this.basePath}/api/foods`,
+        return this.httpClient.put<Food>(`api/foods`,
             food,
             {
                 withCredentials: this.configuration.withCredentials,

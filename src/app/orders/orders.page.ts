@@ -3,8 +3,9 @@ import 'hammerjs';
 import {OrdersService} from './service/orders.service';
 import {ActionSheetController} from '@ionic/angular';
 import {FoodOrder} from '../../client';
-import { BucketService } from '../bucket/service/bucket.service';
-
+import {BucketService} from '../bucket/service/bucket.service';
+import {Observable} from 'rxjs';
+import {tap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-orders',
@@ -12,6 +13,7 @@ import { BucketService } from '../bucket/service/bucket.service';
   styleUrls: ['./orders.page.scss'],
 })
 export class OrdersPage {
+  orders$: Observable<FoodOrder[]>;
   orders: FoodOrder[];
   showDetails: boolean;
   timeRating: number;
@@ -22,7 +24,11 @@ export class OrdersPage {
   qualityRating: number;
   comment: string;
 
-  constructor(public orderService: OrdersService, public actionSheetCtrl: ActionSheetController, public bucketService: BucketService) {
+  constructor(
+    public orderService: OrdersService,
+    public actionSheetCtrl: ActionSheetController,
+    public bucketService: BucketService
+  ) {
     this.getOrders();
     this.showDetails = false;
     this.timeRating = 0;
@@ -69,10 +75,12 @@ export class OrdersPage {
   }
 
   getOrders() {
-    this.orderService.getOrders()
-      .then((data: FoodOrder[]) => {
-        this.orders = data;
-      });
+    this.orders$ = this.orderService.getOrders()
+      .pipe(
+        tap((data) => {
+          this.orders = data;
+        })
+      );
   }
 
   saveOrder() {

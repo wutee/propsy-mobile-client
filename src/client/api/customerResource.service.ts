@@ -91,7 +91,7 @@ export class CustomerResourceService {
             headers = headers.set("Content-Type", httpContentTypeSelected);
         }
 
-        return this.httpClient.post<Customer>(`${this.basePath}/api/customers`,
+        return this.httpClient.post<Customer>(`api/customers`,
             customer,
             {
                 withCredentials: this.configuration.withCredentials,
@@ -132,7 +132,7 @@ export class CustomerResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.delete<any>(`${this.basePath}/api/customers/${encodeURIComponent(String(id))}`,
+        return this.httpClient.delete<any>(`api/customers/${encodeURIComponent(String(id))}`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -168,7 +168,7 @@ export class CustomerResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.get<Array<Customer>>(`${this.basePath}/api/customers`,
+        return this.httpClient.get<Array<Customer>>(`api/customers`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -208,7 +208,7 @@ export class CustomerResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.get<Customer>(`${this.basePath}/api/customers/${encodeURIComponent(String(id))}`,
+        return this.httpClient.get<Customer>(`api/customers/${encodeURIComponent(String(id))}`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -253,7 +253,7 @@ export class CustomerResourceService {
             headers = headers.set("Content-Type", httpContentTypeSelected);
         }
 
-        return this.httpClient.put<Customer>(`${this.basePath}/api/customers`,
+        return this.httpClient.put<Customer>(`api/customers`,
             customer,
             {
                 withCredentials: this.configuration.withCredentials,

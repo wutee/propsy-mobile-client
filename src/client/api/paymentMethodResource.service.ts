@@ -91,7 +91,7 @@ export class PaymentMethodResourceService {
             headers = headers.set("Content-Type", httpContentTypeSelected);
         }
 
-        return this.httpClient.post<PaymentMethod>(`${this.basePath}/api/payment-methods`,
+        return this.httpClient.post<PaymentMethod>(`api/payment-methods`,
             paymentMethod,
             {
                 withCredentials: this.configuration.withCredentials,
@@ -132,7 +132,7 @@ export class PaymentMethodResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.delete<any>(`${this.basePath}/api/payment-methods/${encodeURIComponent(String(id))}`,
+        return this.httpClient.delete<any>(`api/payment-methods/${encodeURIComponent(String(id))}`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -168,7 +168,7 @@ export class PaymentMethodResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.get<Array<PaymentMethod>>(`${this.basePath}/api/payment-methods`,
+        return this.httpClient.get<Array<PaymentMethod>>(`api/payment-methods`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -208,7 +208,7 @@ export class PaymentMethodResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.get<PaymentMethod>(`${this.basePath}/api/payment-methods/${encodeURIComponent(String(id))}`,
+        return this.httpClient.get<PaymentMethod>(`api/payment-methods/${encodeURIComponent(String(id))}`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -253,7 +253,7 @@ export class PaymentMethodResourceService {
             headers = headers.set("Content-Type", httpContentTypeSelected);
         }
 
-        return this.httpClient.put<PaymentMethod>(`${this.basePath}/api/payment-methods`,
+        return this.httpClient.put<PaymentMethod>(`api/payment-methods`,
             paymentMethod,
             {
                 withCredentials: this.configuration.withCredentials,

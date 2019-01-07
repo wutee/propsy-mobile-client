@@ -8,7 +8,7 @@
     "submit": "Submit",
     "cart": "Cart",
     "goToStore": "Go to store",
-    "goToLogin": "Go to login",
+    "goToLogin": "SIGN IN",
     "cartIsEmpty": "Cart is empty",
     "delete": "Delete",
     "sum": "Sum",
@@ -27,5 +27,8 @@
     "restaurants": "Restaurants",
     "login": "LOGIN",
     "register": "REGISTER",
-    "checkbox": "I hereby give my consent for my personal data being processed for the purposes of getting good mark in software engineering"
+    "checkbox": "I hereby give my consent for my personal data being processed for the purposes of getting good mark in software engineering",
+    "logout": "LOGOUT",
+    "home": "Home",
+    "hungry": "Feel hungry?"
 }

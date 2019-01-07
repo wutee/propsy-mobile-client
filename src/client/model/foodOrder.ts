@@ -30,3 +30,7 @@ export interface FoodOrder {
     userComment?: string;
     userOpinion?: string;
 }
+
+export interface IFoodOrder extends FoodOrder {
+
+}

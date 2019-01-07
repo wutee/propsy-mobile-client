@@ -92,7 +92,7 @@ export class UserResourceService {
             headers = headers.set("Content-Type", httpContentTypeSelected);
         }
 
-        return this.httpClient.post<User>(`${this.basePath}/api/users`,
+        return this.httpClient.post<User>(`api/users`,
             userDTO,
             {
                 withCredentials: this.configuration.withCredentials,
@@ -133,7 +133,7 @@ export class UserResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.delete<any>(`${this.basePath}/api/users/${encodeURIComponent(String(login))}`,
+        return this.httpClient.delete<any>(`api/users/${encodeURIComponent(String(login))}`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -213,7 +213,7 @@ export class UserResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.get<Array<UserDTO>>(`${this.basePath}/api/users`,
+        return this.httpClient.get<Array<UserDTO>>(`api/users`,
             {
                 params: queryParameters,
                 withCredentials: this.configuration.withCredentials,
@@ -250,7 +250,7 @@ export class UserResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.get<Array<string>>(`${this.basePath}/api/users/authorities`,
+        return this.httpClient.get<Array<string>>(`api/users/authorities`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -290,7 +290,7 @@ export class UserResourceService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.get<UserDTO>(`${this.basePath}/api/users/${encodeURIComponent(String(login))}`,
+        return this.httpClient.get<UserDTO>(`api/users/${encodeURIComponent(String(login))}`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -335,7 +335,7 @@ export class UserResourceService {
             headers = headers.set("Content-Type", httpContentTypeSelected);
         }
 
-        return this.httpClient.put<UserDTO>(`${this.basePath}/api/users`,
+        return this.httpClient.put<UserDTO>(`api/users`,
             userDTO,
             {
                 withCredentials: this.configuration.withCredentials,

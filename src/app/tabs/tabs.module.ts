@@ -11,6 +11,8 @@ import {BucketPageModule} from '../bucket/bucket.module';
 import {RestaurantPageModule} from '../restaurant/restaurant.module';
 import {FoodInRestaurantPageModule} from '../food-in-restaurant/food-in-restaurant.module';
 import { TranslateModule } from '../translator/translate.module';
+import { ClosestRestaurantPageModule } from '../closest-restaurant/closest-restaurant.module';
+import {HomePageModule} from '../home/home.module';
 
 @NgModule({
   imports: [
@@ -23,6 +25,8 @@ import { TranslateModule } from '../translator/translate.module';
     FoodInRestaurantPageModule,
     OrdersPageModule,
     RestaurantPageModule,
+    ClosestRestaurantPageModule,
+    HomePageModule,
     TranslateModule.forChild()
   ],
   declarations: [TabsPage]

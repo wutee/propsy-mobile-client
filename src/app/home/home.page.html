@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-avatar class="avatar">
+      <img src="assets/login/logo.png">
+    </ion-avatar>
+    <app-language></app-language>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div text-center class="allign-bottom">
+    <link href='https://fonts.googleapis.com/css?family=Sancreek' rel='stylesheet' type='text/css'>
+
+    <div data-text="a hipster-ish" class="dashed-shadow hipsterish">{{'hungry' | translate}}</div> <br />
+
+    <ion-button color="success" href="login">{{ 'goToLogin' | translate }}</ion-button>
+    <ion-button color="tertiary" (click)="logout()">{{'logout' | translate}}</ion-button>
+    <ion-button color="secondary" href="tabs/(restaurant:restaurant)">{{ 'goToStore' | translate }}</ion-button>
+  </div>
+
+
+
+
+
+</ion-content>
+

@@ -19,6 +19,13 @@ import { OrderFormModule } from './order-form/order-form.module';
 import {LoginPageModule} from './login/login.module';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
+import { GeopositionService } from './closest-restaurant/service/geoposition.service';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { GoogleMaps } from '@ionic-native/google-maps/ngx';
+import {AuthModule} from './auth/auth.module';
+import {HomePageModule} from './home/home.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -30,15 +37,21 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     ReactiveFormsModule,
     HttpClientModule,
     ApiModule,
+    AuthModule,
     OrderFormModule,
     TranslateModule.forRoot(),
     LoginPageModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    HomePageModule,
+    BrowserAnimationsModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [
     StatusBar,
     SplashScreen,
+    Geolocation,
+    GoogleMaps,
+    GeopositionService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide: HTTP_INTERCEPTORS, useClass: PropsyHttpInterceptor, multi: true },
     TranslationService

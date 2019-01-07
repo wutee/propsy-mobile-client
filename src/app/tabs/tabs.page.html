@@ -1,4 +1,7 @@
 <ion-tabs>
+  <ion-tab label="{{ 'home' | translate }}" icon="home" href="/tabs/(home:home)">
+    <ion-router-outlet name="home"></ion-router-outlet>
+  </ion-tab>
   <ion-tab label="{{ 'restaurants' | translate }}" icon="restaurant" href="/tabs/(restaurant:restaurant)">
     <ion-router-outlet name="restaurant"></ion-router-outlet>
   </ion-tab>
@@ -7,5 +10,8 @@
   </ion-tab>
   <ion-tab label="{{ 'order' | translate }}" icon="md-list-box" href="/tabs/(orders:orders)">
     <ion-router-outlet name="orders"></ion-router-outlet>
+  </ion-tab>
+  <ion-tab label="Map" icon="navigate" href="/tabs/(closest-restaurant:closest-restaurant)">
+    <ion-router-outlet name="closest-restaurant"></ion-router-outlet>
   </ion-tab>
 </ion-tabs>
