@@ -15,7 +15,7 @@ export class PaymentComponent implements OnInit {
 
   constructor(
     public orderFormService: OrderFormService,
-  ) {};
+  ) {}
 
   ngOnInit() {
   }
@@ -24,7 +24,7 @@ export class PaymentComponent implements OnInit {
     this.orderFormService.makeOrder();
   }
 
-  private selectPaymentForm(method: string) {
+  public selectPaymentForm(method: string) {
     this.selectedMethod = method;
     this.buyButton = method === 'cash';
   }
