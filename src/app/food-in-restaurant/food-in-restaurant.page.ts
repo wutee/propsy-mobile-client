@@ -1,9 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {BucketService} from '../bucket/service/bucket.service';
+import {BucketService} from '../bucket/bucket.service';
 import {Router} from '@angular/router';
-import {Restaurant, MenuResourceService, Menu, Food} from '../../client';
-import { equal } from 'assert';
-import {RestaurantService} from '../restaurant/service/restaurant.service';
+import {MenuResourceService, Menu, Food} from '../../client';
+import {RestaurantService} from '../restaurant/restaurant.service';
 
 @Component({
   selector: 'app-food-in-restaurant',
@@ -12,8 +11,12 @@ import {RestaurantService} from '../restaurant/service/restaurant.service';
 })
 export class FoodInRestaurantPage implements OnInit {
 
-  constructor(public bucketService: BucketService,
-              private router: Router, private menuService: MenuResourceService, private restaurantService: RestaurantService) {
+  constructor(
+    public bucketService: BucketService,
+    private router: Router,
+    private menuService: MenuResourceService,
+    private restaurantService: RestaurantService
+  ) {
   }
 
   @Input()
@@ -35,21 +38,23 @@ export class FoodInRestaurantPage implements OnInit {
             menu => menu.restaurant.id === this.restaurantId
           );
         }
-      )
+      );
   }
 
   toggleMenu(menu: Menu) {
-    if(this.currentMenu == menu)
+    if (this.currentMenu == menu) {
       this.currentMenu = null;
-    else
+    } else {
       this.currentMenu = menu;
+    }
   }
 
   toggleFood(food: Food) {
-    if(this.currentFood == food)
+    if (this.currentFood == food) {
       this.currentFood = null;
-    else
+    } else {
       this.currentFood = food;
+    }
   }
 
   addProductToBucket(food) {

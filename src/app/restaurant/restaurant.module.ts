@@ -6,8 +6,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { RestaurantPage } from './restaurant.page';
-import {FoodInRestaurantPage} from "../food-in-restaurant/food-in-restaurant.page";
+import {FoodInRestaurantPage} from '../food-in-restaurant/food-in-restaurant.page';
 import { TranslateModule } from '../translator/translate.module';
+import {LoadingIconComponent} from '../components/loading-icon/loading-icon.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,6 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     TranslateModule.forChild()
   ],
-  declarations: [RestaurantPage, FoodInRestaurantPage]
+  declarations: [RestaurantPage, FoodInRestaurantPage, LoadingIconComponent]
 })
 export class RestaurantPageModule {}

@@ -22,9 +22,11 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { GeopositionService } from './closest-restaurant/service/geoposition.service';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { GoogleMaps } from '@ionic-native/google-maps/ngx';
-import {AuthModule} from './auth/auth.module';
+import {AuthModule} from './components/auth/auth.module';
 import {HomePageModule} from './home/home.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoadingIconComponent } from './components/loading-icon/loading-icon.component';
+import {LanguageComponent} from './components/language/language.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -39,7 +41,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ApiModule,
     AuthModule,
     OrderFormModule,
-    TranslateModule.forRoot(),
+    TranslateModule.forChild(),
     LoginPageModule,
     AngularFontAwesomeModule,
     HomePageModule,

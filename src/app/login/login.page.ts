@@ -1,13 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {AuthService} from '../auth/auth.service';
+import {AuthService} from '../components/auth/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage implements OnInit {
+export class LoginPage {
   username: string;
   password: string;
 
@@ -17,7 +17,7 @@ export class LoginPage implements OnInit {
   ) {
   }
 
-  ngOnInit() {
+  canActivate() {
     if (this.authService.isAuthenticated()) {
       this.router.navigate(['']);
     }

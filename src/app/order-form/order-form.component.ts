@@ -1,10 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {OrderFormService} from '../service/order-form.service';
-import {Customer} from '../models/customer';
+import {OrderFormService} from './order-form.service';
+import {Customer} from './customer';
 import {ActivatedRoute} from '@angular/router';
-import { TranslationService } from '../../translator/translation.service';
+import { TranslationService } from '../translator/translation.service';
 import {Router} from '@angular/router';
+import {BucketService} from '../bucket/bucket.service';
 
 @Component({
   selector: 'app-order-form-component',
@@ -22,7 +23,8 @@ export class OrderFormComponent implements OnInit {
     private orderFormService: OrderFormService,
     private route: ActivatedRoute,
     public translationService: TranslationService,
-    private router: Router
+    private router: Router,
+    public bucketService: BucketService
   ) {
     this.form = new FormGroup({
       name: new FormControl('', [Validators.required]),

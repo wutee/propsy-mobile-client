@@ -4,7 +4,7 @@ import { LanguageComponent } from './language.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { TranslationService } from '../translator/translation.service';
+import { TranslationService } from '../../translator/translation.service';
 
 describe('LanguageComponent', () => {
   let component: LanguageComponent;

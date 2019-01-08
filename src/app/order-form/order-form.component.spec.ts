@@ -3,12 +3,12 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {OrderFormComponent} from './order-form.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {OrderFormService} from '../service/order-form.service';
-import {TranslationService} from '../../translator/translation.service';
+import {OrderFormService} from './order-form.service';
+import {TranslationService} from '../translator/translation.service';
 import {IonicModule} from '@ionic/angular';
-import {TranslateModule} from '../../translator/translate.module';
+import {TranslateModule} from '../translator/translate.module';
 import {CommonModule} from '@angular/common';
-import {OrderFormModule} from '../order-form.module';
+import {OrderFormModule} from './order-form.module';
 
 xdescribe('OrderFormComponent', () => {
   let component: OrderFormComponent;

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslatePipe } from './translate.pipe';
 import { TranslationService } from './translation.service';
-import { LanguageComponent } from '../language/language.component';
+import { LanguageComponent } from '../components/language/language.component';
 import { FormsModule } from '@angular/forms';
 
 

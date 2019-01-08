@@ -1,4 +1,33 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
-  <app-language></app-language>
+  <ion-menu side="end">
+
+    <ion-content>
+      <div style="margin-top: 80px">
+        <ion-list>
+          <ion-item></ion-item>
+          <ion-item>Wybór języka<app-language></app-language></ion-item>
+          <ion-item (click)="goto('home')">{{ 'home' | translate}}</ion-item>
+          <ion-item (click)="goto('restaurants')">{{ 'goToStore' | translate }}</ion-item>
+          <ion-item (click)="goto('login')">{{ 'goToLogin' | translate }}</ion-item>
+          <ion-item (click)="logout()">{{'logout' | translate}}</ion-item>
+        </ion-list>
+      </div>
+    </ion-content>
+  </ion-menu>
+
+  <ion-header translucent>
+    <ion-toolbar>
+      <ion-buttons slot="end">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+
+      <ion-avatar class="avatar">
+        <img src="assets/login/logo.png">
+      </ion-avatar>
+
+    </ion-toolbar>
+  </ion-header>
+  <ion-router-outlet main></ion-router-outlet>
+
+
 </ion-app>

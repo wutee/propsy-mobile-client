@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {OrderFormService} from "../order-form/service/order-form.service";
+import {OrderFormService} from "../order-form/order-form.service";
 
 @Component({
   selector: 'app-payment',

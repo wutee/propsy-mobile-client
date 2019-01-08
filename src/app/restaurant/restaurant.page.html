@@ -1,31 +1,28 @@
 <ion-router-outlet name="restaurant"></ion-router-outlet>
-<ion-header>
-  <ion-toolbar>
-    <ion-title>{{ title }}</ion-title>
-    <app-language></app-language>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
 
-<ion-content padding>
-    <ion-list inset *ngIf="restaurantList;else restaurantDetails">
-      <!--<ion-item (click)="getRestaurantFoods(restaurant.id, restaurant.nameSlug)" *ngFor="let restaurant of restaurants">-->
-          <!--{{ restaurant.nameSlug }} - {{ restaurant.address }}-->
-        <ion-card (click)="getRestaurantFoods(restaurant.id, restaurant.nameSlug)" *ngFor="let restaurant of restProvider.restaurants">
-          <!--<img src="http://ninlive.com/navbar/archives.jpg"/>-->
-          <ion-card-content>
-            <ion-card-title>
-              {{ restaurant.nameSlug }}
-            </ion-card-title>
-            <p>
-              <ion-badge>{{ restaurant.address }}</ion-badge>
-            </p>
-          </ion-card-content>
-        </ion-card>
-      <!--</ion-item>-->
-    </ion-list>
-    
-    <ng-template #restaurantDetails>
-        <ion-button (click)="backButton()"><</ion-button>
-        <app-food-in-restaurant></app-food-in-restaurant>
-      </ng-template>
+  <div text-center class="allign-bottom">
+    <link href='https://fonts.googleapis.com/css?family=Sancreek' rel='stylesheet' type='text/css'>
+    <div data-text="a hipster-ish" class="dashed-shadow hipsterish">{{'restaurants' | translate}}</div>
+    <app-loading-icon></app-loading-icon>
+  </div>
+  <div *ngIf="restaurantList;else restaurantDetails">
+    <ion-card (click)="getRestaurantFoods(restaurant.id, restaurant.nameSlug)"
+              *ngFor="let restaurant of restProvider.restaurants">
+      <ion-img [src]="'data:' + restaurant.photoBlobContentType +';base64,' + restaurant.photoBlob"></ion-img>
+
+      <ion-card-header>
+        <ion-card-title>{{ restaurant.nameSlug }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{restaurant.address}}, {{restaurant.city}}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <ng-template #restaurantDetails>
+    <ion-button (click)="backButton()"><</ion-button>
+    <app-food-in-restaurant></app-food-in-restaurant>
+  </ng-template>
+
 </ion-content>

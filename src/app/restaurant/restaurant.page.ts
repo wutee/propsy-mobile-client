@@ -1,7 +1,8 @@
 import {Component} from '@angular/core';
-import {RestaurantService} from './service/restaurant.service';
+import {RestaurantService} from './restaurant.service';
 import {Restaurant} from '../../client';
-import {BucketService} from "../bucket/service/bucket.service";
+import {BucketService} from '../bucket/bucket.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-restaurant',
@@ -14,7 +15,11 @@ export class RestaurantPage {
   restaurantList: boolean;
   title: string;
 
-  constructor(public restProvider: RestaurantService, public bucketService: BucketService) {
+  constructor(
+    public restProvider: RestaurantService,
+    public bucketService: BucketService,
+    private router: Router
+  ) {
     this.getRestaurants();
   }
 
@@ -28,7 +33,7 @@ export class RestaurantPage {
     this.restaurantList = false;
     this.title = name;
     this.restProvider.setSelectedRestaurant(id);
-  }
+  }r
 
   backButton() {
     if (this.bucketService.getFoods().length == 0) {

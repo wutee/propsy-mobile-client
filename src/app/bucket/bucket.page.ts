@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
-import {BucketService} from './service/bucket.service'
+import {BucketService} from './bucket.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-bucket',
@@ -10,7 +11,10 @@ export class BucketPage {
 
   static sum = 0;
 
-  constructor(public bucketService: BucketService) {
+  constructor(
+    public bucketService: BucketService,
+    private router: Router
+  ) {
   }
 
   sumProducts() {
@@ -24,6 +28,10 @@ export class BucketPage {
 
   countProducts() {
     return BucketService.foods.length;
+  }
+
+  order() {
+    this.router.navigate(['order-form']);
   }
 
 }

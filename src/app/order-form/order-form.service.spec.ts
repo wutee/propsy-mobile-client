@@ -1,7 +1,7 @@
 import {TestBed} from '@angular/core/testing';
 
 import {OrderFormService} from './order-form.service';
-import {Customer} from '../models/customer';
+import {Customer} from './customer';
 
 xdescribe('OrderFormService', () => {
 

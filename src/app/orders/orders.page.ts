@@ -3,7 +3,7 @@ import 'hammerjs';
 import {OrdersService} from './service/orders.service';
 import {ActionSheetController} from '@ionic/angular';
 import {FoodOrder} from '../../client';
-import {BucketService} from '../bucket/service/bucket.service';
+import {BucketService} from '../bucket/bucket.service';
 import {Observable} from 'rxjs';
 import {tap} from 'rxjs/operators';
 

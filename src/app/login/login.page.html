@@ -1,38 +1,37 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-avatar class="avatar">
-      <img src="assets/login/logo.png">
-    </ion-avatar>
-    <app-language></app-language>
-  </ion-toolbar>
-</ion-header>
+<!--<ion-header>-->
+<!--<ion-toolbar>-->
+<!--<ion-avatar class="avatar">-->
+<!--<img src="assets/login/logo.png">-->
+<!--</ion-avatar>-->
+<!--<app-language></app-language>-->
+<!--</ion-toolbar>-->
+<!--</ion-header>-->
 
-<ion-content padding>
+<ion-content>
   <ion-thumbnail slot="start">
     <img src="assets/login/logo.png">
   </ion-thumbnail>
 
-<ion-item>
-  <form class="form-1">
+  <ion-item>
+    <form class="form-1">
+      <ion-item>
+        <ion-label position="floating">Login</ion-label>
+        <ion-input (ionChange)="onInputChange($event)" name="username"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Hasło</ion-label>
+        <ion-input (ionChange)="onInputChange($event)" name="password" type="password"></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label position="floating">Login</ion-label>
-      <ion-input (ionChange)="onInputChange($event)" name="username"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Hasło</ion-label>
-      <ion-input (ionChange)="onInputChange($event)" name="password" type="password"></ion-input>
-    </ion-item>
+      <ion-button (click)="onSubmit()" color="warning" expand="full">{{'login' | translate }}</ion-button>
+      <ion-button [routerLink]="'/home'" color="danger" expand="full">{{'register' | translate }}</ion-button>
+      <ion-item>
+        <ion-checkbox checked="false" color="warning"></ion-checkbox>
+        <ion-label text-wrap>
+          {{'checkbox' | translate}}
+        </ion-label>
+      </ion-item>
 
-    <ion-button (click)="onSubmit()" color="warning" expand="full">{{'login' | translate }}</ion-button>
-    <ion-button (click)="onSubmit()" color="danger" expand="full">{{'register' | translate }}</ion-button>
-    <ion-item>
-      <ion-checkbox checked="false" color="warning"></ion-checkbox>
-      <ion-label text-wrap>
-        {{'checkbox' | translate}}
-      </ion-label>
-    </ion-item>
-
-  </form>
-</ion-item>
+    </form>
+  </ion-item>
 </ion-content>
