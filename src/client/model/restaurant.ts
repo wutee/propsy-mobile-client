@@ -16,6 +16,8 @@ import { Menu } from './menu';
 export interface Restaurant {
     address?: string;
     id?: number;
+    latitude: number;
+    longitude: number;
     menus?: Array<Menu>;
     nameSlug: string;
     orders?: Array<FoodOrder>;

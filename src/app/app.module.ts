@@ -14,19 +14,20 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {PropsyHttpInterceptor} from './propsyHttpInterceptor';
 import {TranslationService} from './translator/translation.service';
 import {ApiModule} from '../client';
-import { TranslateModule } from './translator/translate.module';
-import { OrderFormModule } from './order-form/order-form.module';
+import {TranslateModule} from './translator/translate.module';
+import {OrderFormModule} from './order-form/order-form.module';
 import {LoginPageModule} from './login/login.module';
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import {AngularFontAwesomeModule} from 'angular-font-awesome';
 
-import { GeopositionService } from './closest-restaurant/service/geoposition.service';
-import { Geolocation } from '@ionic-native/geolocation/ngx';
-import { GoogleMaps } from '@ionic-native/google-maps/ngx';
 import {AuthModule} from './components/auth/auth.module';
 import {HomePageModule} from './home/home.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoadingIconComponent } from './components/loading-icon/loading-icon.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {LoadingIconComponent} from './components/loading-icon/loading-icon.component';
 import {LanguageComponent} from './components/language/language.component';
+
+import { MapPageModule } from './map/map.module';
+import { AgmCoreModule } from '@agm/core';
+import { AgmDirectionModule } from 'agm-direction'
 
 @NgModule({
   declarations: [AppComponent],
@@ -45,15 +46,17 @@ import {LanguageComponent} from './components/language/language.component';
     LoginPageModule,
     AngularFontAwesomeModule,
     HomePageModule,
-    BrowserAnimationsModule
+    MapPageModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBNvmvnqWm94i0QPftK95siu8dMErRnF1g'
+    }),
+    AgmDirectionModule,
+    BrowserAnimationsModule,
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [
     StatusBar,
     SplashScreen,
-    Geolocation,
-    GoogleMaps,
-    GeopositionService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide: HTTP_INTERCEPTORS, useClass: PropsyHttpInterceptor, multi: true },
     TranslationService

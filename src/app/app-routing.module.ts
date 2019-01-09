@@ -11,9 +11,9 @@ const routes: Routes = [
   { path: 'orders', loadChildren: './orders/orders.module#OrdersPageModule' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule', canActivate: [NotAuthGuard] },
   { path: 'payment', loadChildren: './payment/payment.module#PaymentModule'},
-  { path: 'closest-restaurant', loadChildren: './closest-restaurant/closest-restaurant.module#ClosestRestaurantPageModule' },
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
-  { path: 'food-in-restaurant/:id', loadChildren: './food-in-restaurant/food-in-restaurant.module#FoodInRestaurantPageModule'}
+  { path: 'food-in-restaurant/:id', loadChildren: './food-in-restaurant/food-in-restaurant.module#FoodInRestaurantPageModule'},
+  { path: 'map', loadChildren: './map/map.module#MapPageModule' }
 ];
 
 @NgModule({

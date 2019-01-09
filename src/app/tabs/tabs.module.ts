@@ -10,9 +10,9 @@ import {OrdersPageModule} from '../orders/orders.module';
 import {BucketPageModule} from '../bucket/bucket.module';
 import {RestaurantPageModule} from '../restaurant/restaurant.module';
 import {FoodInRestaurantPageModule} from '../food-in-restaurant/food-in-restaurant.module';
-import { TranslateModule } from '../translator/translate.module';
-import { ClosestRestaurantPageModule } from '../closest-restaurant/closest-restaurant.module';
+import {TranslateModule} from '../translator/translate.module';
 import {HomePageModule} from '../home/home.module';
+import {MapPageModule} from '../map/map.module';
 
 @NgModule({
   imports: [
@@ -25,8 +25,8 @@ import {HomePageModule} from '../home/home.module';
     FoodInRestaurantPageModule,
     OrdersPageModule,
     RestaurantPageModule,
-    ClosestRestaurantPageModule,
     HomePageModule,
+    MapPageModule,
     TranslateModule.forChild()
   ],
   declarations: [TabsPage]

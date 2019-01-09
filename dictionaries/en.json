@@ -30,5 +30,10 @@
     "checkbox": "I hereby give my consent for my personal data being processed for the purposes of getting good mark in software engineering",
     "logout": "LOGOUT",
     "home": "Home",
-    "hungry": "Feel hungry?"
+    "hungry": "Feel hungry?",
+    "map": "Map",
+    "closestRestaurant": "Closest restaurant",
+    "allRestaurants": "All restaurants",
+    "showRoute": "Show route",
+    "hideRoute": "Hide route"
 }

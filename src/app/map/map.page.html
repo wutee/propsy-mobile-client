@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>map</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="visible_device != null">
+  <agm-map [latitude]="visible_device.latitude" [longitude]="visible_device.longitude">
+    <div *ngIf="!visible_route">
+      <agm-marker [latitude]="visible_device.latitude" [longitude]="visible_device.longitude"></agm-marker>
+      <agm-marker *ngFor="let restaurant of visible_restaurants" [latitude]="restaurant.latitude"
+                  [longitude]="restaurant.longitude"></agm-marker>
+    </div>
+    <agm-direction [visible]="visible_route" [origin]="origin" [destination]="destination"></agm-direction>
+  </agm-map>
+  <ion-button expand="full" (click)="set_closest_restaurant()">{{ 'closestRestaurant' | translate }}</ion-button>
+  <ion-button expand="full" (click)="set_all_restaurants()">{{ 'allRestaurants' | translate }}</ion-button>
+  <div *ngIf="visible_restaurants.length === 1">
+    <ion-button expand="full" *ngIf="!visible_route" (click)="toggle_route()">{{ 'showRoute' | translate }}</ion-button>
+    <ion-button expand="full" *ngIf="visible_route" (click)="toggle_route()">{{ 'hideRoute' | translate }}</ion-button>
+  </div>
+</ion-content>

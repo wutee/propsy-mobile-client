@@ -5,8 +5,8 @@ import { TabsPage } from './tabs.page';
 import { BucketPage } from '../bucket/bucket.page';
 import { OrdersPage } from '../orders/orders.page';
 import { RestaurantPage } from '../restaurant/restaurant.page';
-import { ClosestRestaurantPage } from '../closest-restaurant/closest-restaurant.page';
 import {HomePage} from '../home/home.page';
+import { MapPage } from '../map/map.page';
 
 const routes: Routes = [
   {
@@ -39,9 +39,9 @@ const routes: Routes = [
         component: RestaurantPage
       },
       {
-        path: 'closest-restaurant',
-        outlet: 'closest-restaurant',
-        component: ClosestRestaurantPage
+        path: 'map',
+        outlet: 'map',
+        component: MapPage
       }
     ]
   },

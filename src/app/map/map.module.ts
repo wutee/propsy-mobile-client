@@ -5,12 +5,16 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ClosestRestaurantPage } from './closest-restaurant.page';
+import { MapPage } from './map.page';
+import { AgmCoreModule } from '@agm/core';
+import { TranslateModule } from '../translator/translate.module';
+import { AgmDirectionModule } from 'agm-direction';
+
 
 const routes: Routes = [
   {
     path: '',
-    component: ClosestRestaurantPage
+    component: MapPage
   }
 ];
 
@@ -19,8 +23,11 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    AgmCoreModule,
+    AgmDirectionModule,
+    TranslateModule.forChild(),
     RouterModule.forChild(routes)
   ],
-  declarations: [ClosestRestaurantPage]
+  declarations: [MapPage]
 })
-export class ClosestRestaurantPageModule {}
+export class MapPageModule {}
