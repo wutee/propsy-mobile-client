@@ -3,23 +3,30 @@ import {HttpClient} from '@angular/common/http';
 import {FoodOrder, FoodOrderResourceService} from '../../../client';
 import {map, tap} from 'rxjs/operators';
 import {OrderStatus} from '../../order-status.enum';
+import {AuthService} from '../../components/auth/auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrdersService {
   private foodOrders;
+  private myAccount;
 
   constructor(
     public http: HttpClient,
-    public foodOrderResourceService: FoodOrderResourceService
+    public foodOrderResourceService: FoodOrderResourceService,
+    public authService: AuthService
   ) {
   }
 
+
   getOrders() {
+    this.authService.me().subscribe(() => {
+      this.myAccount = this.authService.whoAmI();
+    });
     return this.foodOrderResourceService.getAllFoodOrdersUsingGET()
       .pipe(
-        map(i => i.filter(a => a.restaurant != null)),
+        map(i => i.filter(a => a.restaurant != null && a.purchaser != null && (this.myAccount.id === a.purchaser.id))),
         tap(i => {
           this.foodOrders = i;
         })

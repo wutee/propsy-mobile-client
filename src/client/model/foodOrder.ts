@@ -23,7 +23,7 @@ export interface FoodOrder {
     id?: number;
     lastUpdatedDate: string;
     loyaltyPoints?: number;
-    orderee?: Customer;
+    purchaser?: Customer;
     price: number;
     restaurant?: Restaurant;
     status: number;
