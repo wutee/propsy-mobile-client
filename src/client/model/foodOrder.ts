@@ -21,12 +21,13 @@ export interface FoodOrder {
     deliveryManComment?: string;
     foodItems?: Array<Food>;
     id?: number;
+    city?: string;
     lastUpdatedDate: string;
     loyaltyPoints?: number;
     purchaser?: Customer;
     price: number;
     restaurant?: Restaurant;
-    status: number;
+    status: string;
     userComment?: string;
     userOpinion?: string;
 }

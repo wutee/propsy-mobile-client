@@ -1,11 +1,13 @@
 import {Component} from '@angular/core';
 import 'hammerjs';
 import {OrdersService} from './service/orders.service';
-import {ActionSheetController} from '@ionic/angular';
+import {ActionSheetController, AlertController} from '@ionic/angular';
 import {FoodOrder} from '../../client';
 import {BucketService} from '../bucket/bucket.service';
 import {Observable} from 'rxjs';
 import {tap} from 'rxjs/operators';
+import {AlertOptions} from '../../../node_modules/@ionic/core';
+import {BucketPage} from '../bucket/bucket.page';
 
 @Component({
   selector: 'app-orders',
@@ -27,13 +29,23 @@ export class OrdersPage {
   constructor(
     public orderService: OrdersService,
     public actionSheetCtrl: ActionSheetController,
-    public bucketService: BucketService
+    public bucketService: BucketService,
+    private alertCtrl: AlertController,
   ) {
     this.getOrders();
     this.showDetails = false;
     this.timeRating = 0;
     this.qualityRating = 0;
     this.priceRating = 0;
+  }
+
+  async presentAlert() {
+    const alert = await this.alertCtrl.create(<AlertOptions>{
+      header: 'Ups, too late :/',
+      message: 'Order already in preparation',
+      buttons: ['Ok']
+    });
+    await alert.present();
   }
 
   async presentActionSheet(order: any) {
@@ -54,11 +66,39 @@ export class OrdersPage {
         {
           text: 'Edit ',
           handler: () => {
-            if (order.status >= 2) {
+            if (order.status === 'NEW') {
+
+              const body = {
+                id: order.id,
+                date: order.date,
+                address: order.address,
+                city: order.city,
+                status: 'DELIVERED',
+                price: order.price,
+                foodItems: order.foodItems,
+                restaurant: order.restaurant,
+                purchaser: order.purchaser
+              };
+
+              fetch('https://propsy-backend-jwt.herokuapp.com/api/food-orders', {
+                'credentials': 'include',
+                'headers': {
+                  'accept': 'application/json, text/plain, */*',
+                  'accept-language': 'pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7',
+                  'authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU0Njg4NTgyMH0.Y7A0Wn1bEYHLAzlTHHrnU4Tx-SyZY6bxaIENeXzE6hXtlp5P91DPvOhxcaCa4K8fvEaJrA_iYz2Mx-ArN51AIQ',
+                  'content-type': 'application/json',
+                },
+                'referrerPolicy': 'no-referrer-when-downgrade',
+                'body': JSON.stringify(body),
+                'method': 'PUT',
+                'mode': 'cors'
+              }).then();
               for (const food of order.foodItems) {
                 this.bucketService.addProduct(food);
               }
 
+            } else {
+              this.presentAlert();
             }
           }
         },
