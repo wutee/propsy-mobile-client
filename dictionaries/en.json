@@ -35,5 +35,6 @@
     "closestRestaurant": "Closest restaurant",
     "allRestaurants": "All restaurants",
     "showRoute": "Show route",
-    "hideRoute": "Hide route"
+    "hideRoute": "Hide route",
+    "goToRestaurant": "Go to Restaurants"
 }
