@@ -23,7 +23,7 @@
               <ion-icon name="add-circle" *ngIf="food !== currentFood"></ion-icon>
               <ion-icon name="close-circle" *ngIf="food === currentFood"></ion-icon>
             </ion-button>
-            <img style="width: 40px; height: 40px; margin-right: 20px" src="http://www.myiconfinder.com/uploads/iconsets/256-256-0f43ad237c666c8c587e295215c2a20a-food.png" alt="Photo">
+            <img style="width: 40px; height: 40px; margin-right: 20px" [src]="food.photoBlob ? 'data:' + food.photoBlobContentType +';base64,' + food.photoBlob : '/assets/example/food.png'" alt="Photo">
             <ion-badge style="background-color: #3880ff" >{{food.nameSlug | uppercase}}: {{food.price}} ZŁ</ion-badge>
             <ion-button slot="end" fill="clear" (click)="addProductToBucket(food)">
               <ion-icon name="basket"></ion-icon>

@@ -7,7 +7,6 @@ import {BucketService} from '../bucket/bucket.service';
 import {Observable} from 'rxjs';
 import {tap} from 'rxjs/operators';
 import {AlertOptions} from '../../../node_modules/@ionic/core';
-import {BucketPage} from '../bucket/bucket.page';
 
 @Component({
   selector: 'app-orders',
@@ -15,11 +14,11 @@ import {BucketPage} from '../bucket/bucket.page';
   styleUrls: ['./orders.page.scss'],
 })
 export class OrdersPage {
-  orders$: Observable<FoodOrder[]>;
-  orders: FoodOrder[];
+  orders$: Observable<any[]>;
+  orders: any[];
   showDetails: boolean;
   timeRating: number;
-  presentOrder: FoodOrder;
+  presentOrder: any;
   isSavedComment: boolean;
   isEditingComment: boolean;
   priceRating: number;
@@ -124,7 +123,24 @@ export class OrdersPage {
   }
 
   saveOrder() {
-    this.orderService.saveOrder(this.presentOrder).then(() => this.getOrders());
+    const body = {...this.presentOrder};
+    fetch('https://propsy-backend-jwt.herokuapp.com/api/food-orders', {
+      'credentials': 'include',
+      'headers': {
+        'accept': 'application/json, text/plain, */*',
+        'accept-language': 'pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7',
+        'authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU0Njg4NTgyMH0.Y7A0Wn1bEYHLAzlTHHrnU4Tx-SyZY6bxaIENeXzE6hXtlp5P91DPvOhxcaCa4K8fvEaJrA_iYz2Mx-ArN51AIQ',
+        'content-type': 'application/json',
+      },
+      'referrerPolicy': 'no-referrer-when-downgrade',
+      'body': JSON.stringify(body),
+      'method': 'PUT',
+      'mode': 'cors'
+    }).then( () => {
+      this.isSavedComment = true;
+      this.getOrders();}
+    );
+    // this.orderService.saveOrder(this.presentOrder).then(() => this.getOrders());
   }
 
   pressEvent() {
@@ -143,6 +159,10 @@ export class OrdersPage {
 
   addComment() {
     this.isEditingComment = true;
+    this.timeRating = this.presentOrder.timeRating;
+    this.priceRating = this.presentOrder.priceRating;
+    this.qualityRating = this.presentOrder.qualityRating;
+    this.comment = this.presentOrder.purchaserComment;
   }
 
   onTimeRatingChangeClick(rating: number) {
@@ -164,7 +184,10 @@ export class OrdersPage {
   saveComment() {
     this.isSavedComment = true;
     this.isEditingComment = false;
-    this.presentOrder.userComment = '{ssss}';
+    this.presentOrder.purchaserComment = this.comment;
+    this.presentOrder.timeRating = this.timeRating;
+    this.presentOrder.qualityRating = this.qualityRating;
+    this.presentOrder.priceRating = this.priceRating;
     this.saveOrder();
   }
 
