@@ -35,5 +35,6 @@
   "closestRestaurant": "Najbliższa restauracja",
   "allRestaurants": "Wszystkie restauracje",
   "showRoute": "Wyświetl trasę",
-  "hideRoute": "Ukryj trasę"
+  "hideRoute": "Ukryj trasę",
+  "goToRestaurant": "Przejdź do restauracji"
 }
