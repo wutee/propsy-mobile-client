@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {FoodOrder, FoodOrderResourceService} from '../../../client';
 import {map, tap} from 'rxjs/operators';
-import {OrderStatus} from '../../order-status.enum';
 import {AuthService} from '../../components/auth/auth.service';
 
 @Injectable({

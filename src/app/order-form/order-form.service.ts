@@ -33,7 +33,7 @@ export class OrderFormService {
         (r) => r.id === this.restaurantService.id
       );
     const body = {
-      date: '2019-01-09',
+      date: new Date(),
       address: OrderFormService.customer.address + ' ' + OrderFormService.customer.zipCode,
       city: OrderFormService.customer.city,
       status: 'NEW',
@@ -41,6 +41,15 @@ export class OrderFormService {
       foodItems: BucketService.foods,
       restaurant: restaurant,
     };
+
+    // this.http.post('https://propsy-backend-jwt.herokuapp.com/api/food-orders', body)
+    //   .pipe(
+    //     tap(data => {
+    //       BucketService.foods = [];
+    //       this.error = false;
+    //       this.router.navigateByUrl('/tabs/(orders:orders)');
+    //     })
+    //   );
 
     // return this.http.post('api/food-orders', body)
     //   .pipe(
@@ -50,7 +59,6 @@ export class OrderFormService {
     //       this.router.navigateByUrl('/tabs/(orders:orders)');
     //     })
     //   );
-
 
     fetch('https://propsy-backend-jwt.herokuapp.com/api/food-orders', {
       'credentials': 'include',
