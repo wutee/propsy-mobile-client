@@ -17,3 +17,4 @@ Aplikacja mobilna dla klienta końcowego - zamawiającego jedzenie.
 5) `npm run fast-rest`
 
 #### [Powered by Ionic - Docs](https://beta.ionicframework.com/docs/)
+# clothe_store
