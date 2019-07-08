@@ -18,3 +18,4 @@ Aplikacja mobilna dla klienta końcowego - zamawiającego jedzenie.
 
 #### [Powered by Ionic - Docs](https://beta.ionicframework.com/docs/)
 # clothe_store
+# clothe_store
