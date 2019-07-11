@@ -1,0 +1,24 @@
+﻿<Properties StartupConfiguration="{0F97FDF2-EE28-4ACE-9527-388C9602A8CB}|Default">
+  <MonoDevelop.Ide.ItemProperties.Ef__clothes__store PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Ef_clothes_store/appsettings.json">
+    <Files>
+      <File FileName="Ef_clothes_store/appsettings.json" Line="11" Column="1" />
+      <File FileName="Ef_clothes_store/Startup.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Ef_clothes_store" expanded="True" selected="True">
+            <Node name="Ef_clothes_store" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
